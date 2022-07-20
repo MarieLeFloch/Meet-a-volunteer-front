@@ -1,0 +1,30 @@
+// == Import
+
+import { Carousel } from 'react-responsive-carousel';
+import './style.scss';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import image1 from '../../../../assets/image/1.jpg';
+import image2 from '../../../../assets/image/2.jpg';
+import image3 from '../../../../assets/image/3.jpg';
+
+
+function Sliders() {
+  return (
+    <div className="app">
+      <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
+        <div>
+          <img src={image1} alt="" />
+        </div>
+        <div>
+          <img src={image2} alt="" />
+        </div>
+        <div>
+          <img src={image3} alt="" />
+        </div>
+      </Carousel>
+    </div>
+  );
+}
+
+// == Export
+export default Sliders;
