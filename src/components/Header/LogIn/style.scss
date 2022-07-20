@@ -4,9 +4,34 @@
   position: absolute;
   top: 3em;
   right: 1em;
+}
+
+.logIn__form{
+  position: absolute;
+  top: 3em;
+  right: 5em;
+  border-radius: 10px;
+  padding: 1em;
+  background-color: vars.$color-light2;
+  color : vars.$color-dark2;
+  border: none;
+  margin: 0.5em;
+}
+
+.logIn__button, .logIn__form__button {
   border-radius: 10px;
   padding: 0.2em 0.5em;
   background-color: vars.$color-main;
   color : vars.$color-light2;
   border: none;
+  font-size: 1.1em;
+}
+
+.field{
+  margin-bottom: 0.8em;
+}
+
+.field input{
+  border-radius: 5px;
+  padding: 0.5em;
 }
