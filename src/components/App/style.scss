@@ -1,6 +1,9 @@
+// Mobile
 .app {
-  margin: 1em auto;
+  margin: 0.2em auto;
   text-align: center;
+  
+  @media screen and (min-width: 1025px) {
+    margin: 1em auto;
+    }
 }
-
-
