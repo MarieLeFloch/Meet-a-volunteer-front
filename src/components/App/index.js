@@ -1,14 +1,15 @@
 // == Import
-import Sliders from '../Home/HomeHeader/Sliders';
+import Sliders from '../Header/HomeHeader/Sliders';
 import './style.scss';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import HomeHeader from '../Home';
 
 
 // == Composant
 function App() {
   return (
     <div className="app">
-      <Sliders />
+      <HomeHeader />
     </div>
   );
 }
