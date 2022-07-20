@@ -1,17 +1,18 @@
 // Composant qui gère l'affichage du formulaire de connexion
 // Commun à toutes les pages - Lorsque l'utilisateur n'est pas connecté
 // == Import
+
 import './style.scss';
-import { Button, Checkbox, Form } from 'semantic-ui-react';
-
-
+import logo from '../../../assets/image/logo-mini.png'
+import { Image, Button, Checkbox, Form, Icon } from 'semantic-ui-react';
 
 function LogIn() {
   return (
     <div className="logIn">
       <Button className="logIn__button">Login</Button>
-
       <Form className="logIn__form">
+      <Button icon className="close__button" circular ><Icon  name="close" /></Button>
+      <Image src={logo} size='mini' centered/>
         <Form.Field>
           <label>Email</label>
           <input placeholder='Email' />

@@ -1,7 +1,10 @@
 // == Import
 import Sliders from '../HomeHeader/Sliders';
 import LogIn from '../LogIn';
+import SignIn from '../SignIn';
+import 'semantic-ui-css/semantic.min.css'
 import './style.scss';
+
 
 
 function HomeHeader() {
@@ -13,6 +16,9 @@ function HomeHeader() {
       <LogIn>
 
       </LogIn>
+      <SignIn>
+
+      </SignIn>
     </div>
   );
 }
