@@ -1,3 +1,5 @@
+// Composant qui gère l'affichage du slider
+// Spécifique à la page Home
 // == Import
 
 import { Carousel } from 'react-responsive-carousel';
@@ -10,7 +12,7 @@ import image3 from '../../../../assets/image/3.jpg';
 
 function Sliders() {
   return (
-    <div className="app">
+    <div className="Sliders">
       <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
         <div>
           <img src={image1} alt="" />

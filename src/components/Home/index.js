@@ -1,14 +1,13 @@
-import Sliders from '../Header/HomeHeader/Sliders';
+// Imports
+import HomeHeader from '../Header/HomeHeader';
 
-function HomeHeader() {
+//! HomeHeader -> Home
+function Home() {
   return (
     <div>
-      <Sliders />
-      <div>
-        <p>kebab</p>
-      </div>
+      <HomeHeader />
     </div>
   );
 }
 
-export default HomeHeader;
+export default Home;
