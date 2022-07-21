@@ -5,6 +5,7 @@ import LogIn from '../LogIn';
 import SignIn from '../SignIn';
 import 'semantic-ui-css/semantic.min.css'
 import './style.scss';
+import NavBar from '../Nav';
 
 
 
@@ -23,6 +24,7 @@ function HomeHeader() {
       <Description>
 
       </Description>
+      
     </div>
   );
 }
