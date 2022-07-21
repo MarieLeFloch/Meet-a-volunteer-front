@@ -1,0 +1,19 @@
+@use 'src/styles/vars';
+
+.Description{
+  color: vars.$color-dark2;
+  text-shadow: vars.$color-light2 0.1em 0.1em 0.2em;
+  position: absolute;
+  top: 13em;
+  right: 10%;
+  width: 80%;
+
+  @media screen and (min-width: 1025px) {
+    top: 15em;
+    width: 80%;
+  }
+}
+
+.Description__subtitle{
+  font-size: 20px;
+}
