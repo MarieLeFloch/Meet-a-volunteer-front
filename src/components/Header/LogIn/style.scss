@@ -1,6 +1,6 @@
 @use 'src/styles/vars';
 
-.logIn{
+.logIn__form--display{
   z-index: 10;
 }
 
@@ -9,6 +9,7 @@
   position: absolute;
   top: 4em;
   right: 1em;
+  width: 85px;
 
   @media screen and (min-width: 1025px) {
     top: 1.5em;
@@ -16,7 +17,8 @@
   }
 }
 
-.logIn__form{
+.logIn__form--hidden{
+  display: none;
   position: absolute !important;
   top: 3em;
   right: 5em;
@@ -39,4 +41,9 @@
 
 .close__button{
   margin-left: 80% !important;
+}
+
+
+.logIn__form--display{
+  display: block;
 }

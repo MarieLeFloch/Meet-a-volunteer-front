@@ -1,15 +1,15 @@
 @use 'src/styles/vars';
 
 //? Mettre en premier plan pour ne pas voir les boutons du slider
-.signIn{
+.signIn__form--display{
   z-index: 10;
 }
-
 
 .signIn__button{
   position: absolute;
   top: 1em;
   right: 1em;
+  width: 85px;
 
   @media screen and (min-width: 1025px) {
     top: 1.5em;
@@ -17,7 +17,8 @@
   }
 }
 
-.signIn__form{
+.signIn__form--hidden{
+  display: none;
   position: absolute !important;
   top: 3em;
   right: 3.5em;
@@ -40,4 +41,9 @@
 
 .close__button{
   margin-left: 80% !important;
+  float: right;
+}
+
+.signIn__form--display{
+  display: block;
 }

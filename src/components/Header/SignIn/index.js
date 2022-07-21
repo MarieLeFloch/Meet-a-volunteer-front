@@ -1,6 +1,7 @@
 // Composant qui gère l'affichage du formulaire de connexion
 // Commun à toutes les pages - Lorsque l'utilisateur n'est pas connecté
 // == Import
+import { useState } from 'react';
 import './style.scss';
 import logo from '../../../assets/image/logo-mini.png'
 import { Image, Button, Form, Select, Icon } from 'semantic-ui-react';
@@ -11,11 +12,36 @@ const options = [
 ]
 
 function SignIn() {
+  // Mise en place d'un emplacement dans le state pour l'affichage de l'encart d'inscription
+  // La valeur par défaut est false, car fermée de prime abord
+  const [isSignInOpened, setIsSignInOpened] = useState(false);
   return (
     <div className="signIn">
-      <Button className="signIn__button">Sign in</Button>
-      <Form className="signIn__form">
-      <Button icon className="close__button" circular ><Icon  name="close" /></Button>
+      <Button 
+        onClick={
+          () => {
+            setIsSignInOpened(!isSignInOpened);
+            const form = document.querySelector('.signIn__form--hidden');
+            form.classList.add("signIn__form--display");
+          }
+        }
+        className="signIn__button"
+      >
+          Sign in
+      </Button>
+      <Form className="signIn__form--hidden">
+      <Button 
+        onClick={
+          () => {
+            setIsSignInOpened(!isSignInOpened);
+            const form = document.querySelector('.signIn__form--hidden');
+            form.classList.remove("signIn__form--display");          
+          }
+        }
+        icon className="close__button" 
+        circular ><Icon  
+        name="close" />
+      </Button>
       <Image className='logo__mini' src={logo} size='mini' centered />
         <Form.Field>
           <label>Firstname*</label>

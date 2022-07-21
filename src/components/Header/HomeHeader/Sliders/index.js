@@ -1,7 +1,6 @@
 // Composant qui gère l'affichage du slider
 // Spécifique à la page Home
 // == Import
-
 import { Carousel } from 'react-responsive-carousel';
 import './style.scss';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
