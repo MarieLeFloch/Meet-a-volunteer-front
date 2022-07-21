@@ -1,16 +1,17 @@
 // == Import
 import './style.scss';
+import { useState } from 'react';
 
-function NavList(isOpen) {
+function NavList( {isOpen} ) {
   return (
     <div className="list">
       {isOpen && (
-      <ul>
-        <li className="list-item"><a href=''>Experiences</a></li>
-        <li className="list-item"><a href=''>Volunteers</a></li>
-        <li className="list-item"><a href=''>Thematics</a></li>
-        <li className="list-item"><a href=''>Thematics</a></li>
-        <li className="list-item"><a href=''>Thematics</a></li>
+      <ul className="list__container">
+        <li className="list-item"><a href="">Experiences</a></li>
+        <li className="list-item"><a href="">Volunteers</a></li>
+        <li className="list-item"><a href="">Thematics</a></li>
+        <li className="list-item"><a href="">Thematics</a></li>
+        <li className="list-item"><a href="">Thematics</a></li>
       </ul>
       ) }
 
@@ -18,4 +19,4 @@ function NavList(isOpen) {
   );
 }
 
-export default NavList
+export default NavList;

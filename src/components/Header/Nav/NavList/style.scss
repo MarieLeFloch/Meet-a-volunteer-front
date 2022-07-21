@@ -1,0 +1,59 @@
+@use 'src/styles/vars';
+
+.list {
+  width: 175px;
+  text-align: center;
+  background-color: white;
+  margin: auto;
+  border-radius: 5px;
+  color: black;
+  text-shadow: vars.$color-light2 0.1em 0.1em 0.2em;
+  position: absolute;
+    &-item {
+      padding: 10% 0% 10% 0%;
+      box-sizing: border-box;
+      
+      & a {
+
+        color: black;
+        font-weight: 600;
+        cursor: pointer;
+        
+      }
+    } 
+
+      &-item a:hover {
+        text-decoration: underline vars.$color-dark1;
+        text-underline-offset: 3px;
+      }
+      
+      &__close--button {
+        margin-top: 4%;
+        margin-left : 70%
+      }
+}
+
+@media screen and (min-width: 1025px) {
+      
+  .list {
+    list-style: none;
+    border: none;
+    background: none;
+    width: 200px;
+    top: -2em;
+    left: 40em;
+    
+      &-item {
+        margin-right : 25%;
+        display: inline;
+        font-size: larger;
+      }
+
+      &__close--button {
+        display: none;
+      }
+
+  }
+
+
+}

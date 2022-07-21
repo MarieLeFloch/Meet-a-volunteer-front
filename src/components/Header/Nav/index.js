@@ -1,8 +1,10 @@
 // == Import
 import './style.scss';
+import { Image } from 'semantic-ui-react';
 import HamburgerMenu from 'react-hamburger-menu';
 import { useState, useEffect } from 'react';
 import NavList from './NavList';
+
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +13,7 @@ function NavBar() {
     setIsOpen(!isOpen);
   };
   return (
-    <nav>
+    <nav className="nav__bar">
       <div>
         <HamburgerMenu
           isOpen={isOpen}
@@ -26,10 +28,10 @@ function NavBar() {
           className="nav__button"
         />
       </div>
-      <div>
-        <NavList />
+      <div className="nav__list">
+        <NavList isOpen={isOpen} />
       </div>
-      </nav>
+    </nav>
   );
 }
 

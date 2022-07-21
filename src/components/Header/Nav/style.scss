@@ -1,68 +1,19 @@
-.nav__button{
+.nav__bar{
   position:absolute;
-  top: 0;
+  top: 2em;
+  left:3em;
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.list {
-  width: 170px;
-  text-align: center;
-  background-color: white;
-  margin: auto;
-  // border: 1px solid lightgray;
-  border-radius: 5px;
-  text-transform: uppercase;
-  color: black;
-  
-    &-item {
-      padding: 10% 0% 10% 0%;
-      box-sizing: border-box;
-      
-      & a {
-
-        color: black;
-        font-weight: 600;
-        cursor: pointer;
-        
-      }
-    } 
-
-      &-item a:hover {
-        font-size: 110%;
-        color: #3AAFA9;
-        text-decoration: underline #17252A;
-        text-underline-offset: 3px;
-        font-style: italic;
-      }
-  
+.nav__list {
+  position: absolute;
+  top: 2em;
 }
+
 
 @media screen and (min-width: 1025px) {
-      
-  .list {
-    list-style: none;
-    border: none;
-    
-      &-item {
-        display: inline;
-        margin-right : 15%
-      }
+
+  .nav__button {
+    display: none;
   }
-
-
 }
-
-
