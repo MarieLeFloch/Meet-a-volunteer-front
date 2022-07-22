@@ -7,8 +7,9 @@ import './style.scss';
 function HomeContent() {
   return (
     <div className='home__content'>
-      <CardList />
+      <div></div>
       <ThematicList />
+      <CardList />
       <AuthorList />
     </div>
   );

@@ -1,0 +1,18 @@
+@use 'src/styles/vars';
+
+.thematic__list{
+  padding-bottom: 3px;
+  display: flex;
+  overflow-x: hidden;
+
+  &:hover{
+    overflow-x: scroll;
+  }
+}
+
+::-webkit-scrollbar {
+  height: 4px !important;
+  border: none;
+  background-color: vars.$color-main ;
+}
+
