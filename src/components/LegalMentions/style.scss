@@ -14,7 +14,9 @@ h1{
 
 .test{
   display: flex;
+  
 }
+
 
 .corps{
   margin: 2rem;
@@ -40,7 +42,6 @@ a{
 
 li{
   margin-bottom: 2rem;
-  
 }
 
 a:hover{
@@ -49,9 +50,17 @@ a:hover{
 }
 
 .nav{
+  position: sticky;
+  top: 50%;
   min-width: 25%;
   text-align: justify;
   border-right: solid, #2B7A78, 1px;
   margin: 2rem;
   padding-right: 2rem;
+  
+}
+
+ul{
+  position: sticky;
+  top: 10%;
 }
