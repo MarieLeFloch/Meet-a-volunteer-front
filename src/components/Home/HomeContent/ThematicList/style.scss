@@ -1,0 +1,16 @@
+@use 'src/styles/vars';
+
+.thematic__button {
+  color: vars.$color-dark1 !important;
+  border-color: vars.$color-dark1 !important;
+}
+
+.thematic__list{
+  display: flex;
+  overflow-x: hidden;
+
+  &:hover{
+    overflow-x: scroll;
+  }
+}
+
