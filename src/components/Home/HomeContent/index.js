@@ -6,7 +6,7 @@ import './style.scss';
 
 function HomeContent() {
   return (
-    <div className='home__content'>
+    <div className="home__content">
       <CardList />
       <ThematicList />
       <AuthorList />
