@@ -1,0 +1,8 @@
+.home__content{
+  width: 95%;
+  margin: auto;
+  @media screen and (min-width: 1025px) {
+    width:75%;
+    margin:auto;
+  }
+}
