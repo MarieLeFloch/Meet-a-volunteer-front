@@ -1,0 +1,22 @@
+@use 'src/styles/vars';
+
+.footer{
+  background-color: vars.$color-dark2;
+  height: 10em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.footer__logo{
+  background-color: vars.$color-main !important;
+  color: vars.$color-light2 !important;
+  margin: 0em 0.5em !important;
+}
+
+.footer__logos{
+  border-bottom: 0.1em solid vars.$color-light2;
+  padding-bottom: 0.5em;
+}
