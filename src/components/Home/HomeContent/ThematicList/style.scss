@@ -3,15 +3,16 @@
 .thematic__list{
   padding-bottom: 3px;
   display: flex;
-  overflow-x: hidden;
+  //overflow-x: hidden;
+  overflow-x: scroll;
 
-  &:hover{
-    overflow-x: scroll;
-  }
+  // &:hover{
+  //   overflow-x: scroll;
+  // }
 }
 
-::-webkit-scrollbar {
-  height: 4px !important;
+.thematic__list::-webkit-scrollbar {
+  height: 7px !important;
   border: none;
   background-color: vars.$color-main ;
 }
