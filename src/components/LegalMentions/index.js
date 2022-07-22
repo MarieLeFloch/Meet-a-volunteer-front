@@ -10,7 +10,7 @@ function LegalMentions () {
    <h1>Legal Mentions</h1>
 
 
-    <div className="test">
+    <div className="flexbox">
       <div className="nav">
         <ul>
         <li className="sticky"><a href="#1">What is the Privacy Policy and what does it cover</a></li>
