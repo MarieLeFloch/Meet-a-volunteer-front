@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .home__content{
   width: 95%;
   margin: auto;
@@ -6,4 +8,12 @@
     width:75%;
     margin:auto;
   }
+}
+
+.experiences__content--title{
+  color: vars.$color-dark2;
+  padding-bottom: 1em;
+  text-transform : uppercase;
+  letter-spacing : 0.3em;
+  //font-size: 0.9rem;
 }
