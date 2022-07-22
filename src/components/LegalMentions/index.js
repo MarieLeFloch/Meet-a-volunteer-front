@@ -3,7 +3,11 @@ import './style.scss';
 
 
 function LegalMentions () {
-  return ()
+  return (
+    <div>
+      
+    </div>
+  )
 }
 
 export default LegalMentions;

@@ -3,7 +3,11 @@ import './style.scss';
 
 
 function Contacts () {
-  return ()
+  return (
+    <div>
+      
+    </div>
+  )
 }
 
 export default Contacts;
