@@ -2,7 +2,7 @@
 
 .bloc__contact {
 
-  width: 80%;
+  width: 90%;
   margin: auto;
   height: 30vh;
   margin-top: 4em;
@@ -14,19 +14,49 @@
     max-width: 100%;
     height: 100%;
     margin:auto;
-    display:flex;
+    
+    display:block;
+    
+    @media screen and (min-width: 1025px) {
+    
+      display:flex;
+      justify-content: space-evenly;
+      
+
+
     }
+  }
 
 
     .phone__bloc, .mail__bloc, .location__bloc {
 
       display: flex;
-      width: 40%;
+      width: 80%;
+      
+
+      @media screen and (min-width: 1025px) {
+    
+          
+        display: flex;
+        width: 30%;
+  
+  
+      }
 
 
       .phone__picto, .mail__picto, .location__picto {
 
-        width: 40%;
+        width: 15%;
+
+        @media screen and (min-width: 1025px) {
+    
+          
+          
+          width: 35%;
+          line-height: 3em;
+    
+    
+        }
 
           .phone__img, .mail__img, .location__img {
 
@@ -43,7 +73,7 @@
         padding-top: 2em;
 
         p {
-          line-height: 0.2em;
+          line-height: 1.5em;
 
         }
 
@@ -53,12 +83,20 @@
           text-align: left;
         }
 
+        @media screen and (min-width: 1025px) {
+    
+          
+          p {
+            line-height: 0.3em;
+  
+          }
+    
+    
+        }
+
       }
 
     }
-
-
-    
 
     
   }
@@ -67,6 +105,7 @@
 
 @media screen and (min-width: 1025px) {
 
+  
 
 
 }
