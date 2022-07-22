@@ -2,10 +2,10 @@
 import './style.scss';
 import { useState } from 'react';
 
-function NavList( {isOpen} ) {
+function NavList({ isOpen }) {
   return (
-    <div className="list">
-      {isOpen && (
+    <div className={(isOpen) ? 'list' : 'list__off'}>
+
       <ul className="list__container">
         <li className="list-item"><a href="">Experiences</a></li>
         <li className="list-item"><a href="">Volunteers</a></li>
@@ -13,7 +13,6 @@ function NavList( {isOpen} ) {
         <li className="list-item"><a href="">Thematics</a></li>
         <li className="list-item"><a href="">Thematics</a></li>
       </ul>
-      ) }
 
     </div>
   );
