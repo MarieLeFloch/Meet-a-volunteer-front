@@ -5,7 +5,7 @@ import './style.scss';
 
 function Home() {
   return (
-    <div>
+    <div className="home__container">
       <HomeHeader />
       <HomeContent />
     </div>
