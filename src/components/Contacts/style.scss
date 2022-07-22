@@ -1,0 +1,44 @@
+@use 'src/styles/vars';
+
+.bloc__contact {
+
+  width: 75%;
+  margin: auto;
+  height: 20vh;
+  margin-top: 2.5em;
+  
+  
+
+  h1 {
+
+    font-size: 2.2rem;
+    
+
+  }
+
+  .item__container {
+
+    background-color: vars.$color-light1;
+    max-width: 90%;
+    height: 100%;
+    margin:auto;
+  }
+
+  .phone__contact {
+
+    display: flex;
+  }
+
+  .phone__icon {
+
+    width: 35%;
+  }
+
+}
+
+
+@media screen and (min-width: 1025px) {
+
+
+
+}

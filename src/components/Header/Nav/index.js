@@ -4,6 +4,8 @@ import { Image } from 'semantic-ui-react';
 import HamburgerMenu from 'react-hamburger-menu';
 import { useState, useEffect } from 'react';
 import NavList from './NavList';
+import Logo from '../../../assets/image/logo.png';
+
 
 
 function NavBar() {
@@ -27,6 +29,9 @@ function NavBar() {
           animationDuration={0.5}
           className="nav__button"
         />
+      </div>
+      <div>
+        <img src={Logo} alt="" className="nav__logo" />
       </div>
       <div className="nav__list">
         <NavList isOpen={isOpen} />
