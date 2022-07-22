@@ -2,39 +2,67 @@
 
 .bloc__contact {
 
-  width: 75%;
+  width: 80%;
   margin: auto;
-  height: 20vh;
-  margin-top: 2.5em;
+  height: 30vh;
+  margin-top: 4em;
   
-  
-
-  h1 {
-
-    font-size: 2.2rem;
-    
-
-  }
 
   .item__container {
 
-    background-color: vars.$color-light1;
-    max-width: 90%;
+    // background-color: vars.$color-light1;
+    max-width: 100%;
     height: 100%;
     margin:auto;
+    display:flex;
+    }
+
+
+    .phone__bloc, .mail__bloc, .location__bloc {
+
+      display: flex;
+      width: 40%;
+
+
+      .phone__picto, .mail__picto, .location__picto {
+
+        width: 40%;
+
+          .phone__img, .mail__img, .location__img {
+
+            width:100%;
+          }
+      }
+    
+
+      .phone__number, .mail__adress, .location__adress {
+
+        width: 60%;
+        text-align: left;
+        box-sizing: border-box;
+        padding-top: 2em;
+
+        p {
+          line-height: 0.2em;
+
+        }
+
+
+        h1 {
+          font-size: 1.5em;
+          text-align: left;
+        }
+
+      }
+
+    }
+
+
+    
+
+    
   }
 
-  .phone__contact {
-
-    display: flex;
-  }
-
-  .phone__icon {
-
-    width: 35%;
-  }
-
-}
 
 
 @media screen and (min-width: 1025px) {
