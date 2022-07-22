@@ -10,6 +10,11 @@ function Footer() {
         <Button  className='footer__logo' circular icon='twitter' />
         <Button  className='footer__logo' circular icon='instagram' />
       </div>
+      <div className='footer__links'>
+        <a className='footer__link'>About</a>
+        <a className='footer__link'>Contact</a>
+        <a className='footer__link'>Legal mentions</a>
+      </div>
     </div>
   );
 }

@@ -3,20 +3,33 @@
 .footer{
   background-color: vars.$color-dark2;
   height: 10em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  
 }
+
+.footer__logos{
+  border-bottom: 0.1em solid vars.$color-light2;
+  padding: 2em 0em 1em 0em;
+  width: 170px;
+  margin: auto;
+ }
 
 .footer__logo{
   background-color: vars.$color-main !important;
   color: vars.$color-light2 !important;
   margin: 0em 0.5em !important;
+  &:hover{
+    background-color: vars.$color-dark1 !important;
+  }
 }
 
-.footer__logos{
-  border-bottom: 0.1em solid vars.$color-light2;
-  padding-bottom: 0.5em;
+.footer__links{
+  padding-top: 0.8em;
+}
+
+.footer__link{
+  color: vars.$color-light2 ;
+  padding: 0.8em 0.6em;
+  &:hover{
+    color: vars.$color-main !important;
+    cursor: pointer;
+  }
 }
