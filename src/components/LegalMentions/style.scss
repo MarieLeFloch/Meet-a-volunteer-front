@@ -64,3 +64,25 @@ ul{
   position: sticky;
   top: 10%;
 }
+
+ @media (max-width: 800px){
+
+  h1{
+    margin: auto;
+  }
+
+  .test{
+    display: block;
+    margin: auto;
+  }
+   .nav, {
+     min-width:100%;
+     position:relative;
+     border:none;
+  }
+
+  .legalMentions{
+    padding: 1rem;
+  }
+
+ }
