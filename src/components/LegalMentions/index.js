@@ -5,13 +5,13 @@ import './style.scss';
 function LegalMentions () {
   return (
     
-    <div className="legalMentions">
+  <div className="legalMentions">
 
-   <h1>Legal Mentions</h1>
+   <h1 className="legalMentions__title">Legal Mentions</h1>
 
 
-    <div className="flexbox">
-      <div className="nav">
+    <div className="legalMentions__content">
+      <div className="legalMentions__content--nav">
         <ul>
         <li className="sticky"><a href="#1">What is the Privacy Policy and what does it cover</a></li>
         <li><a href="#2">What information do we collect</a></li>
@@ -23,7 +23,7 @@ function LegalMentions () {
         </ul>
       </div>
 
-      <div className="corps">
+      <div className="legalMentions__content--main">
         
         <h2 id="1">What is the Privacy Policy and what does it cover ?</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at nulla facilisis, sodales mauris in, hendrerit libero. Praesent tincidunt elit et quam imperdiet, id egestas erat congue. Praesent pharetra malesuada lectus quis lacinia. Curabitur tincidunt, leo ut fermentum posuere, neque odio interdum massa, sed faucibus ligula nisi non orci. Morbi vehicula massa ut ipsum finibus rhoncus. Donec sodales ex id sollicitudin lobortis. Nullam eu aliquam justo. Donec blandit metus quis leo volutpat, vitae rutrum sapien tempus. Nulla hendrerit, erat in malesuada pellentesque, justo diam gravida sem, at suscipit lorem tortor eu erat. Suspendisse sed lacus vitae lacus pellentesque consectetur.</p>
