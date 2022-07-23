@@ -1,0 +1,87 @@
+@use 'src/styles/vars';
+
+h1{
+  font-size: 2rem;
+  margin: 5rem;
+  color: #689998;
+}
+
+.legalMentions{
+  background-color: white;
+  padding: 5rem;
+  font-size: 1rem;
+}
+
+.flexbox{
+  display: flex;
+  
+}
+
+
+.corps{
+  margin: 2rem;
+}
+
+p{
+  text-align: justify;
+}
+
+h2{
+  text-align: justify;
+  font-size: 1.5rem;
+  color: #689998;
+}
+
+a{
+  text-decoration: none;
+  color: #689998;
+  font-size:larger;
+  border-radius: 0.2rem;
+  
+}
+
+li{
+  margin-bottom: 2rem;
+}
+
+a:hover{
+  color: #2B7A78;
+  background-color: #cce5e4;
+}
+
+.nav{
+  position: sticky;
+  top: 50%;
+  min-width: 25%;
+  text-align: justify;
+  border-right: solid, #2B7A78, 1px;
+  margin: 2rem;
+  padding-right: 2rem;
+  
+}
+
+ul{
+  position: sticky;
+  top: 10%;
+}
+
+ @media (max-width: 800px){
+
+  h1{
+    margin: auto;
+  }
+
+  .flexbox{
+    display: block;
+    margin: auto;
+  }
+   .nav, {
+     min-width:100%;
+     position:relative;
+     border:none;
+  }
+
+  .legalMentions{
+    padding: 1rem;
+  }
+ }
