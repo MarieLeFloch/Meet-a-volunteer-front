@@ -6,9 +6,11 @@ import avatar_m from '../../../assets/image/avatar_m.png';
 
 function AboutContent() {
   return (
-    <div className="about__content">
+    <div className="about">
 
       <h1>About</h1>
+
+      <div className='about__content'>
 
       <div className='about__content--presentation'>
       <h2>Why Meet a volunteer ?</h2>
@@ -56,13 +58,15 @@ function AboutContent() {
             <Image src={avatar_m} avatar size="tiny" />
             <div>
               <span className="team__name">Romain.L</span><br/>
-              <span className="team__role1">Web Developer / Front-end</span><br/>
+              <span className="team__role1">Web Developer / Back-end</span><br/>
               <span className="team__role2">Lead Teach Back</span>
             </div>
           </div>
         </div>
       
       </div>
+
+    </div>
 
     </div>
   )
