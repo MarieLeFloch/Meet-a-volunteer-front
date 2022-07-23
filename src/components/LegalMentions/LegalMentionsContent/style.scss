@@ -1,0 +1,92 @@
+@use 'src/styles/vars';
+
+// Cette page est organisée en PC first
+
+.legalMentions__title{
+  font-size: 2rem;
+  margin: 5rem;
+  color: vars.$color-dark2;
+}
+
+.legalMentions{
+  background-color: vars.$color-light2;
+  padding: 5rem;
+}
+
+.legalMentions__content{
+  display: flex;
+}
+
+.legalMentions__content--main{
+  margin: 2rem;
+
+  & p{
+   text-align: justify;
+  }
+
+  & h2{
+  text-align: justify;
+  font-size: 1.5rem;
+  color: vars.$color-main;
+  }
+}
+
+.legalMentions__content--nav{
+  position: sticky;
+  top: 50%;
+  min-width: 25%;
+  text-align: justify;
+  border-right: solid,vars.$color-dark2, 1px;
+  margin: 2rem;
+  padding-right: 2rem;
+
+  & a{
+    text-decoration: none;
+    color: vars.$color-main;
+    font-size:larger;
+    border-radius: 0.2rem;  
+  }
+
+  & a:hover{
+    color: vars.$color-dark1;
+    //background-color: #cce5e4;
+  }
+
+  & li{
+    margin-bottom: 2rem;
+  }
+
+  & ul{
+    position: sticky;
+    top: 10%;
+  }
+}
+
+ @media (max-width: 1024px){
+
+  .legalMentions__title{
+    margin: auto;
+    padding: 1em 0em;
+  }
+
+  .legalMentions__content{
+    display: block;
+    margin: auto;
+  }
+   .legalMentions__content--nav {
+     min-width:100%;
+     position:relative;
+     border:none;
+     border-bottom: 1px solid vars.$color-dark1;
+     margin: 0em;
+     padding : 2em;
+
+     & ul{
+       position: static;
+     }
+  }
+
+  .legalMentions{
+    padding: 1rem;
+  }
+ }
