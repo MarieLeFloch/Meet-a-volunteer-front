@@ -7,6 +7,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from '../Home';
 import Contacts from '../Contacts';
 import LegalMentions from '../LegalMentions';
+import About from '../About';
 import Error from '../404';
 
 // == Composant
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/legal-mentions" element={<LegalMentions />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>

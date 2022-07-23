@@ -1,0 +1,40 @@
+@use 'src/styles/vars';
+
+.about__content {
+  padding-top: 7em;
+  width: 90%;
+  margin: auto;
+
+  & h2{
+    color: vars.$color-main;
+  }
+
+  & p{
+    text-align: justify ;
+  }
+}
+
+.about__content--presentation, .about__content--team {
+  margin-bottom: 1.5em;
+}
+
+.team__name {
+  color: vars.$color-main;
+  font-size: 1.5em;
+}
+
+.team__role1{
+  color: vars.$color-dark2;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.team__card{
+  margin-bottom: 0.8em;
+}
+
+.team__cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
