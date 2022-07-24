@@ -9,6 +9,7 @@ import Contacts from '../Contacts';
 import LegalMentions from '../LegalMentions';
 import About from '../About';
 import Error from '../404';
+import ExperiencePage from '../Experience';
 
 // == Composant
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contacts" element={<Contacts />} />
+        <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/legal-mentions" element={<LegalMentions />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Error />} />

@@ -1,4 +1,4 @@
-// Imports
+// == Imports
 import './style.scss';
 import { Button } from 'semantic-ui-react';
 

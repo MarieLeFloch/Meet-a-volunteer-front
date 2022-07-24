@@ -6,9 +6,13 @@
   background-color: white;
   margin: auto;
   border-radius: 5px;
-  color: black;
+  border: 1px solid vars.$color-dark1;
+  color: vars.$color-dark1;
+  text-transform : uppercase;
+  letter-spacing : 0.1em;
   text-shadow: vars.$color-light2 0.1em 0.1em 0.2em;
   position: absolute;
+  z-index: 100;
     &-item {
       padding: 10% 0% 10% 0%;
       box-sizing: border-box;
@@ -23,8 +27,8 @@
     } 
 
       &-item a:hover {
-        text-decoration: underline vars.$color-dark1;
-        text-underline-offset: 3px;
+        color: vars.$color-dark1;
+        transition: 0.5s;
       }
       
 }

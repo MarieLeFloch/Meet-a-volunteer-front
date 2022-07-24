@@ -1,0 +1,126 @@
+@use 'src/styles/vars';
+
+.experience {
+  margin:13rem auto auto auto;
+  border-top: 1px solid vars.$color-dark1;
+  width: 95%;
+  position: relative;
+  margin-bottom: 5rem;
+  &__title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: vars.$color-dark2;
+    text-transform : uppercase;
+    letter-spacing : 0.3em;
+  }
+
+  &__content {
+    width: 100%;
+    @media (min-width: 1025px) {
+      width: 80%
+    }
+  }
+
+  &__main {
+    display: block;
+    @media (min-width: 1025px) {
+      display: flex;
+      margin-top: 5rem;
+    }
+  }
+  &__text {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    & p {
+      @media (min-width: 1025px){
+        width: 60%;
+        text-align: center;
+        font-size: 150%;
+      }
+    }
+  }
+
+}
+
+
+.experience__image img {
+  object-fit: fill;
+  border-radius: 10px;
+  max-width: 100%;
+  max-height: 80%;
+  @media (min-width: 1025px) {
+    max-width: 60%;
+    max-height: 80%;
+  }
+}
+
+.experience__aside {
+  border-top: solid 1px vars.$color-dark2;
+  margin-top: 2rem;
+  @media (min-width: 1025px){
+    position: sticky;
+    top: 0;
+    margin-top: 0;
+    border-top: 0;
+    border-left: solid 1px vars.$color-dark2;
+  }
+}
+
+.experience__profil {
+  
+  background-color: vars.$color-light1;
+  border-radius: 5%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  @media (min-width: 1025px){
+    background: none;
+    font-size: 150%;
+    margin-left: 2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  & li {
+    margin-top: 2%;
+  }
+
+  &--contact {
+    margin-top: 200%;
+  }
+}
+
+.experience__profil--avatar img {
+  margin-top: 2rem;
+  object-fit: fill;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  @media (min-width: 1025px){
+    width: 200px;
+    height: 200px;
+    margin-top: 0;
+  }
+}
+
+
+.experience__item {
+  border-top: 1px solid vars.$color-dark2;
+  @media (min-width: 1025px) {
+    margin-left: 2rem;
+  }
+
+  & h3 {
+    margin-top: 2rem;
+    text-transform : uppercase;
+    letter-spacing : 0.3em;
+    @media (min-width: 1025px) {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.experience__item--list li { 
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}

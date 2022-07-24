@@ -1,13 +1,12 @@
 // == Import
 import './style.scss';
-import { Image } from 'semantic-ui-react';
 import HamburgerMenu from 'react-hamburger-menu';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import NavList from './NavList';
 import Logo from '../../../assets/image/logo.png';
 
 function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleNav = () => {
     setIsOpen(!isOpen);
