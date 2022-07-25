@@ -19,7 +19,6 @@ function SignIn() {
   const { isSigninOpened , isLoginOpened } = useSelector((state)=>state.user.settings);
   
   const countryList = useSelector((state)=>state.country.countryList)
-  console.log(countryList)
   
   const dispatch = useDispatch();
   const handleToggleSignin = () => {
