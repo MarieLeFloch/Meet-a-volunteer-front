@@ -5,6 +5,7 @@
 // Import d'axios pour les requêtes API
 import axios from 'axios';
 import { FETCH_COUNTRY, saveCountry } from '../actions/country';
+import { sortBy } from 'lodash';
 
 
 
@@ -29,7 +30,9 @@ const countryMiddleware = (store) => (next) => (action) => {
                 value: country.name.common,
                 });
             });
-            store.dispatch(saveCountry(countryName));
+            const countryNameSorted = _.sortBy(countryName, 'value');
+            console.log(countryNameSorted);
+            store.dispatch(saveCountry(countryNameSorted));
         },
         )
         .catch(
