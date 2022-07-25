@@ -10,9 +10,19 @@ import LegalMentions from '../LegalMentions';
 import About from '../About';
 import Error from '../404';
 import ExperiencePage from '../Experience';
+import { fetchCountry } from '../../actions/country';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux'
 
 // == Composant
 function App() {
+  const dispatch = useDispatch();
+  useEffect(
+    ()=> {
+      dispatch(fetchCountry());
+    },
+    [],
+  )
   return (
     <div className="app">
       <Routes>

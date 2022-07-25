@@ -3,20 +3,24 @@
 // == Import
 import { useDispatch, useSelector } from 'react-redux';
 import './style.scss';
+import { useEffect } from 'react';
 import { Image, Button, Form, Select, Icon } from 'semantic-ui-react';
 import logo from '../../../assets/image/logo-mini.png';
 import { toggleSettingSignin } from '../../../actions/user';
 import { toggleSettingLogin } from '../../../actions/user';
 
+
 const options = [
-  { key: '1', text: 'France', value: 'France' },
-  { key: '2', text: 'Japan', value: 'Japan' },
-];
+   { key: '1', text: 'France', value: 'France' },
+   { key: '2', text: 'Japan', value: 'Japan' }, ];
 
 function SignIn() {
   // On récupère la propriété du store dans user settings
   const { isSigninOpened , isLoginOpened } = useSelector((state)=>state.user.settings);
-
+  
+  const countryList = useSelector((state)=>state.country.countryList)
+  console.log(countryList)
+  
   const dispatch = useDispatch();
   const handleToggleSignin = () => {
     dispatch(toggleSettingSignin());
@@ -24,7 +28,6 @@ function SignIn() {
       dispatch(toggleSettingLogin())
     };
   }
-
   return (
     <div className="signIn">
       <Button
@@ -59,7 +62,7 @@ function SignIn() {
         <Form.Field
           control={Select}
           label="Country*"
-          options={options}
+          options={countryList}
           placeholder="Country"
           search
         />

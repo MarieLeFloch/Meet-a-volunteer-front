@@ -7,14 +7,14 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reducer from 'src/reducers';
 
 // middleware : gestion des fonctions asynchrones (call API)
-import userMiddleware from '../middlewares/user';
+import countryMiddleware from '../middlewares/country';
 
 // lie le projet au redux devtools (accès state - extension redux)
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // permet d'ajouter des fonctionnalités à notre store Redux, ici on lie le store à notre devtool 
 const enhancers = composeEnhancers(
-  applyMiddleware(),
+  applyMiddleware(countryMiddleware),
 );
 
 // Création du store (createStore: deprécié mais toujours fonctionnel)
