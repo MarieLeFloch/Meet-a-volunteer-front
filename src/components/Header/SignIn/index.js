@@ -1,12 +1,12 @@
 // Composant qui gère l'affichage du formulaire de connexion
 // Commun à toutes les pages - Lorsque l'utilisateur n'est pas connecté
 // == Import
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './style.scss';
-import {
-  Image, Button, Form, Select, Icon,
-} from 'semantic-ui-react';
+import { Image, Button, Form, Select, Icon } from 'semantic-ui-react';
 import logo from '../../../assets/image/logo-mini.png';
+import { toggleSettingSignin } from '../../../actions/user';
+import { toggleSettingLogin } from '../../../actions/user';
 
 const options = [
   { key: '1', text: 'France', value: 'France' },
@@ -14,32 +14,28 @@ const options = [
 ];
 
 function SignIn() {
-  // Mise en place d'un emplacement dans le state pour l'affichage de l'encart d'inscription
-  // La valeur par défaut est false, car fermée de prime abord
-  const [isSignInOpened, setIsSignInOpened] = useState(false);
+  // On récupère la propriété du store dans user settings
+  const { isSigninOpened , isLoginOpened } = useSelector((state)=>state.user.settings);
+
+  const dispatch = useDispatch();
+  const handleToggleSignin = () => {
+    dispatch(toggleSettingSignin());
+    if ( isLoginOpened ) {
+      dispatch(toggleSettingLogin())
+    };
+  }
+
   return (
     <div className="signIn">
       <Button
-        onClick={
-          () => {
-            setIsSignInOpened(!isSignInOpened);
-            const form = document.querySelector('.signIn__form--hidden');
-            form.classList.add('signIn__form--display');
-          }
-        }
+        onClick={handleToggleSignin}
         className="signIn__button"
       >
         Sign in
       </Button>
-      <Form className="signIn__form--hidden">
+      <Form className={(isSigninOpened) ? " signIn__form--hidden signIn__form--display" : "signIn__form--hidden"}>
         <Button
-          onClick={
-          () => {
-            setIsSignInOpened(!isSignInOpened);
-            const form = document.querySelector('.signIn__form--hidden');
-            form.classList.remove('signIn__form--display');
-          }
-        }
+          onClick={handleToggleSignin}
           icon
           className="close__button"
           circular

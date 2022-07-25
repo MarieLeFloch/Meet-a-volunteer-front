@@ -8,36 +8,40 @@ import {
   Image, Button, Checkbox, Form, Icon,
 } from 'semantic-ui-react';
 import logo from '../../../assets/image/logo-mini.png';
-import { toggleSetting } from '../../../actions/user';
+import { toggleSettingLogin } from '../../../actions/user';
+import { toggleSettingSignin } from '../../../actions/user';
+
 
 function LogIn() {
   // Mise en place d'un emplacement dans le state pour l'affichage de l'encart d'inscription
   // La valeur par défaut est false, car fermée de prime abord
-  // const [isLogInOpened, setIsLogInOpened] = useState(false); 
 
   // useSelector : hook permettant d'accéder au store
   // va récupérer la prop isOpen dans le reducer user, prop settings
-  const { isOpen } = useSelector((state)=>state.user.settings);
+  const { isSigninOpened , isLoginOpened } = useSelector((state)=>state.user.settings);
 
   // dispatch, fonction du store redux, permet d'émettre une intention
   // intention = action qu'on passe en argument
   // cette action est traduite dans le reducer user
   const dispatch = useDispatch();
-  const handleToggle = () => {
-    dispatch(toggleSetting())
+  const handleToggleLogin = () => {
+    dispatch(toggleSettingLogin());
+    if ( isSigninOpened ) {
+      dispatch(toggleSettingSignin())
+    };
   }
   
   return (
     <div className="logIn">
       <Button
-        onClick={handleToggle}
+        onClick={handleToggleLogin}
         className="logIn__button"
       >
         Login
       </Button>
-      <Form className={(isOpen) ? " logIn__form--hidden logIn__form--display" : "logIn__form--hidden"}>
+      <Form className={(isLoginOpened) ? " logIn__form--hidden logIn__form--display" : "logIn__form--hidden"}>
         <Button
-          onClick={handleToggle}
+          onClick={handleToggleLogin}
           icon
           className="close__button"
           circular

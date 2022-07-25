@@ -1,4 +1,4 @@
-import { TOGGLE_SETTINGS } from "../actions/user";
+import { TOGGLE_SETTINGS_LOGIN, TOGGLE_SETTINGS_SIGNIN } from "../actions/user";
 
 
 
@@ -11,20 +11,35 @@ export const initialState = {
   logged: false,
   // sous paramètre d'affichage du formulaire
   settings : {
-    isOpen : false
+    isLoginOpened : false,
+    isSigninOpened : false,
   }
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case TOGGLE_SETTINGS :
-    return {
-        ...state,
-        settings: {
-            ...state.settings,
-            isOpen: !state.settings.isOpen,
-        },
-    };
+    // à l'action TOGGLE_SETTINGS
+    case TOGGLE_SETTINGS_LOGIN :
+      return {
+        // retourne l'ensemble du state courant
+          ...state,
+          // mais dans settings
+          settings: {
+              // retourne le contenu courant
+              ...state.settings,
+              // sauf la prop isLoginOpened que tu modifies par l'inverse de sa valeur
+              isLoginOpened: !state.settings.isLoginOpened,
+          },
+      };
+    case TOGGLE_SETTINGS_SIGNIN :
+      return {
+          ...state,
+          settings: {
+              ...state.settings,
+              isSigninOpened: !state.settings.isSigninOpened,
+          },
+      };
+  
     default:
       return state;
   }

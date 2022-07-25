@@ -9,9 +9,7 @@ function NavList({ isOpen }) {
       <ul className="list__container">
         <li className="list-item"><a href="">Experiences</a></li>
         <li className="list-item"><a href="">Volunteers</a></li>
-        <li className="list-item"><a href="">Thematics</a></li>
-        <li className="list-item"><a href="">Thematics</a></li>
-        <li className="list-item"><a href="">Thematics</a></li>
+        <li className="list-item"><a href="">Messages</a></li>
       </ul>
 
     </div>
