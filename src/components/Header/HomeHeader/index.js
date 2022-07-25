@@ -8,8 +8,6 @@ import 'semantic-ui-css/semantic.min.css';
 import './style.scss';
 import NavBar from '../Nav';
 
-
-
 function HomeHeader() {
   return (
     <div className="HomeHeader">
