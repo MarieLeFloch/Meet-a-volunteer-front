@@ -31,7 +31,7 @@ const countryMiddleware = (store) => (next) => (action) => {
                 });
             });
             const countryNameSorted = _.sortBy(countryName, 'value');
-            console.log(countryNameSorted);
+            //console.log(countryNameSorted);
             store.dispatch(saveCountry(countryNameSorted));
         },
         )

@@ -7,7 +7,6 @@ export const initialState = {
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_COUNTRY:
-        console.log(action);
       return {
         ...state,
         countryList: action.list,
