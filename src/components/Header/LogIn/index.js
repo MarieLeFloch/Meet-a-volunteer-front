@@ -1,39 +1,43 @@
 // Composant qui gère l'affichage du formulaire de connexion
 // Commun à toutes les pages - Lorsque l'utilisateur n'est pas connecté
 // == Import
-import { useState } from 'react';
+// import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './style.scss';
 import {
   Image, Button, Checkbox, Form, Icon,
 } from 'semantic-ui-react';
 import logo from '../../../assets/image/logo-mini.png';
+import { toggleSetting } from '../../../actions/user';
 
 function LogIn() {
   // Mise en place d'un emplacement dans le state pour l'affichage de l'encart d'inscription
   // La valeur par défaut est false, car fermée de prime abord
-  const [isLogInOpened, setIsLogInOpened] = useState(false); return (
+  // const [isLogInOpened, setIsLogInOpened] = useState(false); 
+
+  // useSelector : hook permettant d'accéder au store
+  // va récupérer la prop isOpen dans le reducer user, prop settings
+  const { isOpen } = useSelector((state)=>state.user.settings);
+
+  // dispatch, fonction du store redux, permet d'émettre une intention
+  // intention = action qu'on passe en argument
+  // cette action est traduite dans le reducer user
+  const dispatch = useDispatch();
+  const handleToggle = () => {
+    dispatch(toggleSetting())
+  }
+  
+  return (
     <div className="logIn">
       <Button
-        onClick={
-          () => {
-            setIsLogInOpened(!isLogInOpened);
-            const form = document.querySelector('.logIn__form--hidden');
-            form.classList.add('logIn__form--display');
-          }
-        }
+        onClick={handleToggle}
         className="logIn__button"
       >
         Login
       </Button>
-      <Form className="logIn__form--hidden">
+      <Form className={(isOpen) ? " logIn__form--hidden logIn__form--display" : "logIn__form--hidden"}>
         <Button
-          onClick={
-          () => {
-            setIsLogInOpened(!isLogInOpened);
-            const form = document.querySelector('.logIn__form--hidden');
-            form.classList.remove('logIn__form--display');
-          }
-        }
+          onClick={handleToggle}
           icon
           className="close__button"
           circular
