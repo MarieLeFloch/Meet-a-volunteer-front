@@ -64,3 +64,12 @@ export function login() {
     type: LOGIN,
   };
 }
+
+export const IS_LOGGED = 'IS_LOGGED';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function isLogged() {
+  return {
+    type: IS_LOGGED,
+  };
+}

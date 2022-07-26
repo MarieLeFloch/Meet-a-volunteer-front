@@ -1,4 +1,4 @@
-import { TOGGLE_SETTINGS_LOGIN, TOGGLE_SETTINGS_SIGNIN, CHANGE_LOGIN_FIELD_VALUE, CHANGE_SIGNIN_FIELD_VALUE} from "../actions/user";
+import { TOGGLE_SETTINGS_LOGIN, TOGGLE_SETTINGS_SIGNIN, CHANGE_LOGIN_FIELD_VALUE, CHANGE_SIGNIN_FIELD_VALUE, IS_LOGGED} from "../actions/user";
 
 
 
@@ -72,6 +72,11 @@ const reducer = (state = initialState, action = {}) => {
           ...state.signin,
           [action.field] : action.value
         }
+      }
+    case IS_LOGGED:
+      return {
+        ...state,
+        logged : !state.logged
       }
     default:
       return state;

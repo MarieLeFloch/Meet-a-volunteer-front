@@ -12,11 +12,19 @@ import Error from '../404';
 import ExperiencePage from '../Experience';
 import { fetchCountry } from '../../actions/country';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import Volunteers from '../Volunteers';
+import Profile from '../Profile';
+import Conversation from '../Conversation';
 
 // == Composant
 function App() {
+
+  const {logged} = useSelector((state)=>state.user)
+  console.log(logged)
+
   const dispatch = useDispatch();
+  // On récupère dès le chargement de notre application la liste des pays pour le formulaire d'inscription
   useEffect(
     ()=> {
       dispatch(fetchCountry());
@@ -27,11 +35,16 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/contacts" element={<Contacts />} />
         <Route path="/experience" element={<ExperiencePage />} />
+        <Route path='/volunteers' element={<Volunteers />} />
+        <Route path='/volunteers/pseudo' element={<Profile />} />
         <Route path="/legal-mentions" element={<LegalMentions />} />
+        <Route path="/contacts" element={<Contacts />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Error />} />
+        {(logged) ? <Route path='/experience/add' /> : <Route path="*" element={<Error />} />}
+         <Route path='/conversation' element={<Conversation />} />
+        
       </Routes>
     </div>
   );

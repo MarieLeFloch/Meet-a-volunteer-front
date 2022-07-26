@@ -1,7 +1,7 @@
 //== Imports
 
 import axios from 'axios';
-
+import { isLogged } from '../actions/user';
 import { LOGIN }  from '../actions/user';
 
 
@@ -24,8 +24,10 @@ const userMiddleware = (store) => (next) => action => {
               },
             )
               .then((response) => {
-                // console.log(response);            
+                console.log(response);   
+                store.dispatch(isLogged())         
                 return next(action);
+                
               })
               .catch((error) => {
                 console.log(error);
