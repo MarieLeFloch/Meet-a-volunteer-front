@@ -115,19 +115,24 @@ function SignIn() {
           <input 
             placeholder="Email" 
             onChange={handleEmailChange} 
-            value = {email}  />
+            value = {email}
+            type='email' />
         </Form.Field>
         <Form.Field>
           <label>Password*</label>
           <input placeholder="Password"
           onChange={handlePasswordChange} 
-          value = {password} />
+          value = {password} 
+          type = 'password'
+          />
         </Form.Field>
         <Form.Field>
           <label>Confirm Password*</label>
           <input placeholder="Confirm Password"
           onChange={handleConfirmPasswordChange} 
-          value = {confirmPassword} />
+          value = {confirmPassword}
+          type = 'password'
+           />
         </Form.Field>
         <Button type="submit" className="signIn__form__button">Sign in</Button>
       </Form>
