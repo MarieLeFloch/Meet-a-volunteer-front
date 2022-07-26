@@ -8,9 +8,7 @@ import {
   Image, Button, Checkbox, Form, Icon,
 } from 'semantic-ui-react';
 import logo from '../../../assets/image/logo-mini.png';
-import { toggleSettingLogin } from '../../../actions/user';
-import { toggleSettingSignin } from '../../../actions/user';
-
+import { toggleSettingLogin, toggleSettingSignin, changeFieldValue } from '../../../actions/user';
 
 function LogIn() {
   // Mise en place d'un emplacement dans le state pour l'affichage de l'encart d'inscription
@@ -19,7 +17,7 @@ function LogIn() {
   // useSelector : hook permettant d'accéder au store
   // va récupérer la prop isOpen dans le reducer user, prop settings
   const { isSigninOpened , isLoginOpened } = useSelector((state)=>state.user.settings);
-
+  const {email, password} = useSelector ((state)=>state.user.login);
   // dispatch, fonction du store redux, permet d'émettre une intention
   // intention = action qu'on passe en argument
   // cette action est traduite dans le reducer user
@@ -30,6 +28,17 @@ function LogIn() {
       dispatch(toggleSettingSignin())
     };
   }
+
+  // On récupère la méthode pour changer la valeur des champs (controle en lecture)
+  const handleEmailChange = (event) => {
+     dispatch(changeFieldValue(event.currentTarget.value, 'email'));
+  };
+
+  const handlePasswordChange = (event) => {
+    dispatch(changeFieldValue(event.currentTarget.value, 'password'));
+   
+ };
+  
   
   return (
     <div className="logIn">
@@ -52,11 +61,17 @@ function LogIn() {
         <Image src={logo} size="mini" centered />
         <Form.Field>
           <label>Email</label>
-          <input placeholder="Email" />
+          <input 
+            placeholder="Email" 
+            onChange={handleEmailChange} 
+            value = {email} />
         </Form.Field>
         <Form.Field>
           <label>Password</label>
-          <input placeholder="Password" />
+          <input 
+            placeholder="Password" 
+            onChange={handlePasswordChange} 
+            value = {password} />
         </Form.Field>
         <Form.Field>
           <Checkbox label="Stay connected" />

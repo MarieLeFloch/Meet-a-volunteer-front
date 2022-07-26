@@ -20,3 +20,20 @@ export function toggleSettingSignin() {
     type: TOGGLE_SETTINGS_SIGNIN,
   };
 }
+
+// Action Type => On l'utilise dans l'action creator ET dans le reducer
+export const CHANGE_FIELD_VALUE = 'CHANGE_FIELD_VALUE';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function changeFieldValue(value, field) {
+  return {
+    type: CHANGE_FIELD_VALUE,
+    /*
+      EQUIVAUT A
+      value: value,
+      field: field,
+    */
+    value: value,
+    field: field,
+  };
+}
