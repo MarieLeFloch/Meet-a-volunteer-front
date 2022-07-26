@@ -54,3 +54,13 @@ export function changeSigninFieldValue(value, field) {
     field: field,
   };
 }
+
+// Action Type => On l'utilise dans l'action creator ET dans le reducer
+export const LOGIN = 'LOGIN';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function login() {
+  return {
+    type: LOGIN,
+  };
+}

@@ -8,7 +8,7 @@ import {
   Image, Button, Checkbox, Form, Icon,
 } from 'semantic-ui-react';
 import logo from '../../../assets/image/logo-mini.png';
-import { toggleSettingLogin, toggleSettingSignin, changeLoginFieldValue } from '../../../actions/user';
+import { toggleSettingLogin, toggleSettingSignin, changeLoginFieldValue, login } from '../../../actions/user';
 
 function LogIn() {
   // Mise en place d'un emplacement dans le state pour l'affichage de l'encart d'inscription
@@ -22,6 +22,7 @@ function LogIn() {
   // intention = action qu'on passe en argument
   // cette action est traduite dans le reducer user
   const dispatch = useDispatch();
+
   const handleToggleLogin = () => {
     dispatch(toggleSettingLogin());
     if ( isSigninOpened ) {
@@ -37,8 +38,15 @@ function LogIn() {
   const handlePasswordChange = (event) => {
     dispatch(changeLoginFieldValue(event.currentTarget.value, 'password'));
  };
-  
-  
+
+  // CONNEXION
+
+  // Méthoder pour gérer la connexion
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    dispatch(login());
+  };
+
   return (
     <div className="logIn">
       <Button
@@ -47,7 +55,7 @@ function LogIn() {
       >
         Login
       </Button>
-      <Form className={(isLoginOpened) ? " logIn__form--hidden logIn__form--display" : "logIn__form--hidden"}>
+      <Form  onSubmit={handleSubmit} className={(isLoginOpened) ? " logIn__form--hidden logIn__form--display" : "logIn__form--hidden"}>
         <Button
           onClick={handleToggleLogin}
           icon
