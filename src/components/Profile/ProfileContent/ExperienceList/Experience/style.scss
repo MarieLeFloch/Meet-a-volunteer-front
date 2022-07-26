@@ -1,0 +1,15 @@
+@use 'src/styles/vars';
+
+.profile__experience {
+    display: flex;
+    flex-direction: column;
+
+    &--image{
+        margin: auto;
+    }
+
+    @media screen and (min-width: 1025px) {
+        width: 80%;
+        flex-direction: row;
+    }
+}

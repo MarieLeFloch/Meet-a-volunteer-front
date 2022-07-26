@@ -1,11 +1,17 @@
 // Imports
+import Footer from '../Footer';
+import PageHeader from '../Header/PageHeader';
+import ProfileContent from './ProfileContent';
 import './style.scss';
 
-function profile() {
+function Profile() {
   return (
-    <div className="profile__container">
-    </div>
+    <>
+      <PageHeader />
+      <ProfileContent />
+      <Footer />
+    </>
   );
 }
 
-export default profile;
+export default Profile;

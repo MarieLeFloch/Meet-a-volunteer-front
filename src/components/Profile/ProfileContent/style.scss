@@ -1,0 +1,21 @@
+@use 'src/styles/vars';
+
+.profile__content {
+    padding-top: 8em;
+    width: 90%;
+    margin: auto;
+    padding-bottom : 2em;
+
+    @media screen and (min-width: 1025px) {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+}
+
+.flex__bottomPart {
+    @media screen and (min-width: 1025px) {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}

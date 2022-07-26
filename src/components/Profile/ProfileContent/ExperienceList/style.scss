@@ -1,0 +1,9 @@
+@use 'src/styles/vars';
+
+.profile__experienceList {
+    margin-bottom: 1.5em;
+
+    @media screen and (min-width: 1025px) {
+        width: 70%;
+    }
+}
