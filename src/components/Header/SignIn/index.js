@@ -8,7 +8,7 @@ import { Image, Button, Form, Select, Icon } from 'semantic-ui-react';
 import logo from '../../../assets/image/logo-mini.png';
 import { toggleSettingSignin } from '../../../actions/user';
 import { toggleSettingLogin } from '../../../actions/user';
-
+import { changeSigninFieldValue } from '../../../actions/user';
 
 const options = [
    { key: '1', text: 'France', value: 'France' },
@@ -18,6 +18,8 @@ function SignIn() {
   // On récupère la propriété du store dans user settings
   const { isSigninOpened , isLoginOpened } = useSelector((state)=>state.user.settings);
   
+  const { firstname, lastname, pseudo, country,  email, password, confirmPassword  } = useSelector ((state)=>state.user.signin);
+
   const countryList = useSelector((state)=>state.country.countryList)
   
   const dispatch = useDispatch();
@@ -27,6 +29,40 @@ function SignIn() {
       dispatch(toggleSettingLogin())
     };
   }
+
+  // CHAMPS CONTROLES
+  // On récupère la méthode pour changer la valeur des champs (controle en lecture)
+  const handleFirstnameChange = (event) => {
+      dispatch(changeSigninFieldValue(event.currentTarget.value, 'firstname'));
+  };
+ 
+  const handleLastnameChange = (event) => {
+     dispatch(changeSigninFieldValue(event.currentTarget.value, 'lastname'));
+  };
+
+  const handlePseudoChange = (event) => {
+    dispatch(changeSigninFieldValue(event.currentTarget.value, 'pseudo'));
+  };
+
+  const handleCountryChange = (event, value) => {
+    console.log(value.value);
+    dispatch(changeSigninFieldValue(value.value, 'country'));
+  };
+
+  const handleEmailChange = (event) => {
+    dispatch(changeSigninFieldValue(event.currentTarget.value, 'email'));
+  };
+
+  const handlePasswordChange = (event) => {
+    dispatch(changeSigninFieldValue(event.currentTarget.value, 'password'));
+  };
+
+  const handleConfirmPasswordChange = (event) => {
+    dispatch(changeSigninFieldValue(event.currentTarget.value, 'confirmPassword'));
+  };
+
+  
+
   return (
     <div className="signIn">
       <Button
@@ -48,15 +84,23 @@ function SignIn() {
         <Image className="logo__mini" src={logo} size="mini" centered />
         <Form.Field>
           <label>Firstname*</label>
-          <input placeholder="Firstname" />
+          <input 
+            placeholder="Firstname"
+            onChange={handleFirstnameChange} 
+            value = {firstname} />
         </Form.Field>
         <Form.Field>
           <label>Lastname*</label>
-          <input placeholder="Lastname" />
+          <input placeholder="Lastname"
+            onChange={handleLastnameChange} 
+            value = {lastname} />
         </Form.Field>
         <Form.Field>
           <label>Pseudo*</label>
-          <input placeholder="Pseudo" />
+          <input 
+            placeholder="Pseudo"
+            onChange={handlePseudoChange} 
+            value = {pseudo} />
         </Form.Field>
         <Form.Field
           control={Select}
@@ -64,18 +108,26 @@ function SignIn() {
           options={countryList}
           placeholder="Country"
           search
+          onChange={handleCountryChange}
         />
         <Form.Field>
           <label>Email*</label>
-          <input placeholder="Password" />
+          <input 
+            placeholder="Email" 
+            onChange={handleEmailChange} 
+            value = {email}  />
         </Form.Field>
         <Form.Field>
           <label>Password*</label>
-          <input placeholder="Password" />
+          <input placeholder="Password"
+          onChange={handlePasswordChange} 
+          value = {password} />
         </Form.Field>
         <Form.Field>
           <label>Confirm Password*</label>
-          <input placeholder="Password" />
+          <input placeholder="Confirm Password"
+          onChange={handleConfirmPasswordChange} 
+          value = {confirmPassword} />
         </Form.Field>
         <Button type="submit" className="signIn__form__button">Sign in</Button>
       </Form>

@@ -1,4 +1,4 @@
-import { TOGGLE_SETTINGS_LOGIN, TOGGLE_SETTINGS_SIGNIN, CHANGE_FIELD_VALUE } from "../actions/user";
+import { TOGGLE_SETTINGS_LOGIN, TOGGLE_SETTINGS_SIGNIN, CHANGE_LOGIN_FIELD_VALUE, CHANGE_SIGNIN_FIELD_VALUE} from "../actions/user";
 
 
 
@@ -54,7 +54,7 @@ const reducer = (state = initialState, action = {}) => {
               isSigninOpened: !state.settings.isSigninOpened,
           },
       };
-    case CHANGE_FIELD_VALUE:
+    case CHANGE_LOGIN_FIELD_VALUE:
       return {
         ...state,
         // Avec le crochet : on accède dynamiquement à une des propriétés
@@ -65,7 +65,14 @@ const reducer = (state = initialState, action = {}) => {
         }
         
       };
-  
+    case CHANGE_SIGNIN_FIELD_VALUE:
+      return {
+        ...state,
+        signin : {
+          ...state.signin,
+          [action.field] : action.value
+        }
+      }
     default:
       return state;
   }

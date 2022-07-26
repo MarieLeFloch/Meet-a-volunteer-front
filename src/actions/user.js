@@ -22,12 +22,29 @@ export function toggleSettingSignin() {
 }
 
 // Action Type => On l'utilise dans l'action creator ET dans le reducer
-export const CHANGE_FIELD_VALUE = 'CHANGE_FIELD_VALUE';
+export const CHANGE_LOGIN_FIELD_VALUE = 'CHANGE_FIELD_LOGIN_VALUE';
 
 // Action creator => On l'utilise au moment du dispatch()
-export function changeFieldValue(value, field) {
+export function changeLoginFieldValue(value, field) {
   return {
-    type: CHANGE_FIELD_VALUE,
+    type: CHANGE_LOGIN_FIELD_VALUE,
+    /*
+      EQUIVAUT A
+      value: value,
+      field: field,
+    */
+    value: value,
+    field: field,
+  };
+}
+
+// Action Type => On l'utilise dans l'action creator ET dans le reducer
+export const CHANGE_SIGNIN_FIELD_VALUE = 'CHANGE_SIGNIN_LOGIN_VALUE';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function changeSigninFieldValue(value, field) {
+  return {
+    type: CHANGE_SIGNIN_FIELD_VALUE,
     /*
       EQUIVAUT A
       value: value,

@@ -8,7 +8,7 @@ import {
   Image, Button, Checkbox, Form, Icon,
 } from 'semantic-ui-react';
 import logo from '../../../assets/image/logo-mini.png';
-import { toggleSettingLogin, toggleSettingSignin, changeFieldValue } from '../../../actions/user';
+import { toggleSettingLogin, toggleSettingSignin, changeLoginFieldValue } from '../../../actions/user';
 
 function LogIn() {
   // Mise en place d'un emplacement dans le state pour l'affichage de l'encart d'inscription
@@ -28,15 +28,14 @@ function LogIn() {
       dispatch(toggleSettingSignin())
     };
   }
-
+  // CHAMPS CONTROLES
   // On récupère la méthode pour changer la valeur des champs (controle en lecture)
   const handleEmailChange = (event) => {
-     dispatch(changeFieldValue(event.currentTarget.value, 'email'));
+     dispatch(changeLoginFieldValue(event.currentTarget.value, 'email'));
   };
 
   const handlePasswordChange = (event) => {
-    dispatch(changeFieldValue(event.currentTarget.value, 'password'));
-   
+    dispatch(changeLoginFieldValue(event.currentTarget.value, 'password'));
  };
   
   
@@ -71,7 +70,7 @@ function LogIn() {
           <input 
             placeholder="Password" 
             onChange={handlePasswordChange} 
-            value = {password} />
+            value = {password} type="password" />
         </Form.Field>
         <Form.Field>
           <Checkbox label="Stay connected" />
