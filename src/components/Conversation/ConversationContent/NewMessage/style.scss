@@ -1,0 +1,22 @@
+@use 'src/styles/vars';
+
+.new__message{
+    margin-top: 4em; 
+    margin-bottom: 2em;
+}
+
+.new__message__form {
+    margin: 1em auto;
+    padding: 1em;
+    border : 1px solid rgb(209, 209, 209);
+    border-radius: 3px;
+
+    @media screen and (min-width: 1025px) {
+        width: 60%;
+    }
+
+    & .field button {
+        background-color: vars.$color-main;
+        color : vars.$color-light2;
+    }
+}

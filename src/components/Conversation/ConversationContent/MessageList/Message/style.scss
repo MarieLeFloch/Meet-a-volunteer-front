@@ -1,13 +1,15 @@
 @use 'src/styles/vars';
 
 .received__message {
-    border: 1px solid vars.$color-dark2;
-    width: 90%;
+    // border: 1px solid vars.$color-dark2;
+    background-color: vars.$color-light1;
+    border-radius: 3px;
+    // width: 90%;
     margin: 1em auto;
     padding: 0.5em;
 
     @media screen and (min-width: 1025px) {
-        width: 50%;
+        width: 60%;
     }
 
     &__topBar {
