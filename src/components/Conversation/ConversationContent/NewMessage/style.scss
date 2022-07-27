@@ -1,12 +1,18 @@
 @use 'src/styles/vars';
 
 .new__message{
-    margin-top: 4em; 
-    margin-bottom: 2em;
+    display: none;
+
+    &--display {
+        display: block;
+        margin: 1em auto;
+        margin-top: 4em; 
+    }
 }
 
-.new__message__form {
-    margin: 1em auto;
+.new__message__container {
+    margin:auto;
+    margin-bottom: 2em;
     padding: 1em;
     border : 1px solid rgb(209, 209, 209);
     border-radius: 3px;
@@ -14,9 +20,30 @@
     @media screen and (min-width: 1025px) {
         width: 60%;
     }
+}
 
-    & .field button {
+.new__message__form {
+
+    & .send__button {
         background-color: vars.$color-main;
         color : vars.$color-light2;
     }
+
+    &--hidden{
+        display: none;
+    }
+}
+
+.new__message__success {
+    display: none;
+
+    &--display{
+        display: block;
+        margin-top: 4em !important;
+    }
+}
+
+.message__close__button{
+    //float: right;
+    margin-left: 94%!important;
 }

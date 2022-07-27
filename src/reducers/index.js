@@ -9,13 +9,15 @@ import { combineReducers } from 'redux';
 // Import des reducers
 import experiencesReducer from './experiences';
 import userReducer from './user';
-import countryReducer from './country'
+import countryReducer from './country';
+import messageReducer from './message';
 
 // On combine les différents reducers en un seul
 const rootReducer = combineReducers({
   experiences: experiencesReducer,
   user: userReducer,
   country: countryReducer,
+  message: messageReducer,
 });
 
 export default rootReducer;

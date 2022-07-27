@@ -1,13 +1,41 @@
 // Imports
 import './style.scss';
-import { Form, Input, TextArea, Button, Icon } from 'semantic-ui-react'
+import { Form, Input, TextArea, Button, Icon, Message } from 'semantic-ui-react'
+import { toggleNewMessageSettings, toggleSuccessMessage } from '../../../../actions/message';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function NewMessage() {
+  // On récupère la propriété du store dans message settings
+  const { isNewMessageOpened, hasANewMessageBeenSent } = useSelector((state)=>state.message.settings);
+  
+  const dispatch = useDispatch();
+  
+  const handleToggleNewMessage = () => {
+    console.log('je suis la');
+    dispatch(toggleNewMessageSettings());
+    dispatch(toggleSuccessMessage());
+  }
+
+  const handleToggleSuccessMessage = () => {
+    dispatch(toggleSuccessMessage());
+  }
+
+
   return (
-    <div className='new__message'>
+    <div className={(isNewMessageOpened) ? 'new__message--display' : 'new__message'}>
         <h3>Send a new message  <Icon name="edit"/></h3>
-        <Form className='new__message__form'>
+        <div className='new__message__container'>
+        <Button
+            onClick={handleToggleNewMessage}
+            icon
+            className="message__close__button"
+            circular
+            ><Icon
+            name="close"
+            />
+        </Button>
+        <Form className={(hasANewMessageBeenSent) ? 'new__message__form--hidden' : 'new__message__form'} >
             <Form.Field
                 control={Input}
                 label='Pseudo'
@@ -18,8 +46,16 @@ function NewMessage() {
             label='Your message'
             placeholder='Hi ! I wanted to ask you ...'
             />
-            <Form.Field control={Button}>Send</Form.Field>
-        </Form>
+            <Button 
+              className="send__button" 
+              onClick={handleToggleSuccessMessage}>
+              Send
+            </Button>
+          </Form>
+          <Message className={(hasANewMessageBeenSent) ? 'new__message__success--display' : 'new__message__success'} positive>
+              <Message.Header>Your message has been sent </Message.Header>
+            </Message>
+          </div>
     </div>
   );
 }
