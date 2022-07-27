@@ -1,11 +1,17 @@
 // Imports
+import Footer from '../Footer';
+import PageHeader from '../Header/PageHeader';
+import ConversationContent from './ConversationContent';
 import './style.scss';
 
-function conversation() {
+function Conversation() {
   return (
-    <div className="conversation__container">
-    </div>
+    <>
+      <PageHeader />
+      <ConversationContent />
+      <Footer />
+    </>
   );
 }
 
-export default conversation;
+export default Conversation;
