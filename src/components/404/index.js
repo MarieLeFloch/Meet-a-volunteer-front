@@ -17,7 +17,7 @@ function Error() {
         <hr />
         <div className="_1">THE PAGE</div>
         <div className="_2">WAS NOT FOUND</div>
-        <a className="btn" href="#">BACK TO HOME</a>
+        <a className="btn" href="/">BACK TO HOME</a>
       </div>
     </div>
   );

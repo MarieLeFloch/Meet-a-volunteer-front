@@ -1,6 +1,7 @@
 // == Import
 import './style.scss';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function NavList({ isOpen }) {
   return (
@@ -10,6 +11,7 @@ function NavList({ isOpen }) {
         <li className="list-item"><a href="">Experiences</a></li>
         <li className="list-item"><a href="">Volunteers</a></li>
         <li className="list-item"><a href="">Messages</a></li>
+        <Link to="/experience/add"><li className="list-item"><a href="">Share</a></li> </Link>
       </ul>
 
     </div>

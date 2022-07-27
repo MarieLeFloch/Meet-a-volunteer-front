@@ -1,83 +1,82 @@
-import { TOGGLE_SETTINGS_LOGIN, TOGGLE_SETTINGS_SIGNIN, CHANGE_LOGIN_FIELD_VALUE, CHANGE_SIGNIN_FIELD_VALUE, IS_LOGGED} from "../actions/user";
-
-
-
+import {
+  TOGGLE_SETTINGS_LOGIN, TOGGLE_SETTINGS_SIGNIN, CHANGE_LOGIN_FIELD_VALUE, CHANGE_SIGNIN_FIELD_VALUE, IS_LOGGED,
+} from '../actions/user';
 
 // On crée un emplacement dans le state correspondant au user : la connexion et l'inscription
 // Ouverture - fermeture des formulaires
 // Envoie des informations pour la connexion et l'inscription
 // Par défaut, ils sont à false
 export const initialState = {
-  logged: false,
+  logged: true,
   // sous paramètre d'affichage du formulaire
-  settings : {
-    isLoginOpened : false,
-    isSigninOpened : false,
+  settings: {
+    isLoginOpened: false,
+    isSigninOpened: false,
   },
 
-  signin : {
-    firstname : '',
-    lastname : '',
-    pseudo : '',
-    country : '',
-    email : '',
-    password : '',
-    confirmPassword : ''
+  signin: {
+    firstname: '',
+    lastname: '',
+    pseudo: '',
+    country: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
   },
 
-  login : {
-    email : '',
-    password : '', 
-  }
+  login: {
+    email: '',
+    password: '',
+  },
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     // à l'action TOGGLE_SETTINGS
-    case TOGGLE_SETTINGS_LOGIN :
+    case TOGGLE_SETTINGS_LOGIN:
       return {
         // retourne l'ensemble du state courant
-          ...state,
-          // mais dans settings
-          settings: {
-              // retourne le contenu courant
-              ...state.settings,
-              // sauf la prop isLoginOpened que tu modifies par l'inverse de sa valeur
-              isLoginOpened: !state.settings.isLoginOpened,
-          },
+        ...state,
+        // mais dans settings
+        settings: {
+          // retourne le contenu courant
+          ...state.settings,
+          // sauf la prop isLoginOpened que tu modifies par l'inverse de sa valeur
+          isLoginOpened: !state.settings.isLoginOpened,
+        },
       };
-    case TOGGLE_SETTINGS_SIGNIN :
+    case TOGGLE_SETTINGS_SIGNIN:
       return {
-          ...state,
-          settings: {
-              ...state.settings,
-              isSigninOpened: !state.settings.isSigninOpened,
-          },
+        ...state,
+        settings: {
+          ...state.settings,
+          isSigninOpened: !state.settings.isSigninOpened,
+        },
       };
     case CHANGE_LOGIN_FIELD_VALUE:
       return {
         ...state,
         // Avec le crochet : on accède dynamiquement à une des propriétés
         // Selon ce qu'on entre en argument à l'appel de la fonction
-        login : {
+        login: {
           ...state.login,
           [action.field]: action.value,
-        }
-        
+        },
+
       };
     case CHANGE_SIGNIN_FIELD_VALUE:
       return {
         ...state,
-        signin : {
+        signin: {
           ...state.signin,
-          [action.field] : action.value
-        }
-      }
+          [action.field]: action.value,
+        },
+      };
     case IS_LOGGED:
       return {
         ...state,
-        logged : !state.logged
-      }
+        logged: !state.logged,
+      };
     default:
       return state;
   }
