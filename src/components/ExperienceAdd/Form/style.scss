@@ -1,8 +1,4 @@
 .experience__form {
-<<<<<<< HEAD
-    margin-top: 10rem;
-    margin-bottom: 10rem;
-=======
     margin: 10rem auto;
     width: 90%;
     @media (min-width: 1025px) {
@@ -23,6 +19,9 @@
     // }
 }
 
+.experience__form--imgpreview img{
+    width: 50%;
+}
 .experience__form--main {
     display: flex;
     flex-direction: column;
@@ -31,6 +30,9 @@
     }
     & > * {
         margin-bottom: 1rem;
+    }
+    &__input {
+        max-width: 60%;
     }
 }   
 
@@ -52,5 +54,4 @@
     &__select {
         width: 50%;
     }
->>>>>>> Experience-add-form
 }

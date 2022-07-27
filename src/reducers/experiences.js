@@ -2,6 +2,7 @@ import { CHANGE_FIELD_VALUE } from '../actions/experience';
 
 export const initialState = {
   addExperience: {
+    image: '',
     title: '',
     typeOfVolunteering: '',
     hostOrganization: '',

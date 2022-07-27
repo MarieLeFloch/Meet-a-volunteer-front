@@ -124,6 +124,12 @@ function SignIn() {
           />
         </Form.Field>
         <Form.Field>
+          <label>Picture</label>
+          <input type='file'
+            placeholder="Email"
+          />
+        </Form.Field>
+        <Form.Field>
           <label>Password*</label>
           <input
             placeholder="Password"
