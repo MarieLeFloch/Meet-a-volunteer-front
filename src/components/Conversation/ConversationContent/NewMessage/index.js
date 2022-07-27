@@ -13,8 +13,10 @@ function NewMessage() {
   
   const handleToggleNewMessage = () => {
     console.log('je suis la');
+    if(hasANewMessageBeenSent){
+      dispatch(toggleSuccessMessage());
+    }
     dispatch(toggleNewMessageSettings());
-    dispatch(toggleSuccessMessage());
   }
 
   const handleToggleSuccessMessage = () => {
