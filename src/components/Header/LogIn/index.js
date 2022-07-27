@@ -8,7 +8,9 @@ import {
   Image, Button, Checkbox, Form, Icon,
 } from 'semantic-ui-react';
 import logo from '../../../assets/image/logo-mini.png';
-import { toggleSettingLogin, toggleSettingSignin, changeLoginFieldValue, login } from '../../../actions/user';
+import {
+  toggleSettingLogin, toggleSettingSignin, changeLoginFieldValue, login,
+} from '../../../actions/user';
 
 function LogIn() {
   // Mise en place d'un emplacement dans le state pour l'affichage de l'encart d'inscription
@@ -16,8 +18,8 @@ function LogIn() {
 
   // useSelector : hook permettant d'accéder au store
   // va récupérer la prop isOpen dans le reducer user, prop settings
-  const { isSigninOpened , isLoginOpened } = useSelector((state)=>state.user.settings);
-  const {email, password} = useSelector ((state)=>state.user.login);
+  const { isSigninOpened, isLoginOpened } = useSelector((state) => state.user.settings);
+  const { email, password } = useSelector((state) => state.user.login);
   // dispatch, fonction du store redux, permet d'émettre une intention
   // intention = action qu'on passe en argument
   // cette action est traduite dans le reducer user
@@ -25,19 +27,19 @@ function LogIn() {
 
   const handleToggleLogin = () => {
     dispatch(toggleSettingLogin());
-    if ( isSigninOpened ) {
-      dispatch(toggleSettingSignin())
-    };
-  }
+    if (isSigninOpened) {
+      dispatch(toggleSettingSignin());
+    }
+  };
   // CHAMPS CONTROLES
   // On récupère la méthode pour changer la valeur des champs (controle en lecture)
   const handleEmailChange = (event) => {
-     dispatch(changeLoginFieldValue(event.currentTarget.value, 'email'));
+    dispatch(changeLoginFieldValue(event.currentTarget.value, 'email'));
   };
 
   const handlePasswordChange = (event) => {
     dispatch(changeLoginFieldValue(event.currentTarget.value, 'password'));
- };
+  };
 
   // CONNEXION
 
@@ -55,7 +57,7 @@ function LogIn() {
       >
         Login
       </Button>
-      <Form  onSubmit={handleSubmit} className={(isLoginOpened) ? " logIn__form--hidden logIn__form--display" : "logIn__form--hidden"}>
+      <Form onSubmit={handleSubmit} className={(isLoginOpened) ? ' logIn__form--hidden logIn__form--display' : 'logIn__form--hidden'}>
         <Button
           onClick={handleToggleLogin}
           icon
@@ -68,17 +70,20 @@ function LogIn() {
         <Image src={logo} size="mini" centered />
         <Form.Field>
           <label>Email</label>
-          <input 
-            placeholder="Email" 
-            onChange={handleEmailChange} 
-            value = {email} />
+          <input
+            placeholder="Email"
+            onChange={handleEmailChange}
+            value={email}
+          />
         </Form.Field>
         <Form.Field>
           <label>Password</label>
-          <input 
-            placeholder="Password" 
-            onChange={handlePasswordChange} 
-            value = {password} type="password" />
+          <input
+            placeholder="Password"
+            onChange={handlePasswordChange}
+            value={password}
+            type="password"
+          />
         </Form.Field>
         <Form.Field>
           <Checkbox label="Stay connected" />

@@ -1,0 +1,51 @@
+.experience__form {
+    margin: 10rem auto;
+    width: 90%;
+    @media (min-width: 1025px) {
+        width: 60%;
+    }
+    
+    &--title {
+        text-transform : uppercase;
+        letter-spacing : 0.3em;
+    }
+    &--content {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+    }
+    // &--field {
+    //     width: 100%;
+    // }
+}
+
+.experience__form--main {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 1025px) {
+        max-width: 60%;
+    }
+    & > * {
+        margin-bottom: 1rem;
+    }
+}   
+
+.experience__form--accomodation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    &__select {
+        width: 50%;
+    }
+}
+
+.experience__form--food{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    &__select {
+        width: 50%;
+    }
+}

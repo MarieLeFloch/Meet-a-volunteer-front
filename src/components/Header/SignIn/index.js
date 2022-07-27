@@ -4,40 +4,42 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './style.scss';
 import { useEffect } from 'react';
-import { Image, Button, Form, Select, Icon } from 'semantic-ui-react';
+import {
+  Image, Button, Form, Select, Icon,
+} from 'semantic-ui-react';
 import logo from '../../../assets/image/logo-mini.png';
-import { toggleSettingSignin } from '../../../actions/user';
-import { toggleSettingLogin } from '../../../actions/user';
-import { changeSigninFieldValue } from '../../../actions/user';
+import { toggleSettingSignin, toggleSettingLogin, changeSigninFieldValue } from '../../../actions/user';
 
 const options = [
-   { key: '1', text: 'France', value: 'France' },
-   { key: '2', text: 'Japan', value: 'Japan' }, ];
+  { key: '1', text: 'France', value: 'France' },
+  { key: '2', text: 'Japan', value: 'Japan' }];
 
 function SignIn() {
   // On récupère la propriété du store dans user settings
-  const { isSigninOpened , isLoginOpened } = useSelector((state)=>state.user.settings);
-  
-  const { firstname, lastname, pseudo, country,  email, password, confirmPassword  } = useSelector ((state)=>state.user.signin);
+  const { isSigninOpened, isLoginOpened } = useSelector((state) => state.user.settings);
 
-  const countryList = useSelector((state)=>state.country.countryList)
-  
+  const {
+    firstname, lastname, pseudo, country, email, password, confirmPassword,
+  } = useSelector((state) => state.user.signin);
+
+  const countryList = useSelector((state) => state.country.countryList);
+
   const dispatch = useDispatch();
   const handleToggleSignin = () => {
     dispatch(toggleSettingSignin());
-    if ( isLoginOpened ) {
-      dispatch(toggleSettingLogin())
-    };
-  }
+    if (isLoginOpened) {
+      dispatch(toggleSettingLogin());
+    }
+  };
 
   // CHAMPS CONTROLES
   // On récupère la méthode pour changer la valeur des champs (controle en lecture)
   const handleFirstnameChange = (event) => {
-      dispatch(changeSigninFieldValue(event.currentTarget.value, 'firstname'));
+    dispatch(changeSigninFieldValue(event.currentTarget.value, 'firstname'));
   };
- 
+
   const handleLastnameChange = (event) => {
-     dispatch(changeSigninFieldValue(event.currentTarget.value, 'lastname'));
+    dispatch(changeSigninFieldValue(event.currentTarget.value, 'lastname'));
   };
 
   const handlePseudoChange = (event) => {
@@ -61,8 +63,6 @@ function SignIn() {
     dispatch(changeSigninFieldValue(event.currentTarget.value, 'confirmPassword'));
   };
 
-  
-
   return (
     <div className="signIn">
       <Button
@@ -71,7 +71,7 @@ function SignIn() {
       >
         Sign in
       </Button>
-      <Form className={(isSigninOpened) ? " signIn__form--hidden signIn__form--display" : "signIn__form--hidden"}>
+      <Form className={(isSigninOpened) ? ' signIn__form--hidden signIn__form--display' : 'signIn__form--hidden'}>
         <Button
           onClick={handleToggleSignin}
           icon
@@ -84,23 +84,27 @@ function SignIn() {
         <Image className="logo__mini" src={logo} size="mini" centered />
         <Form.Field>
           <label>Firstname*</label>
-          <input 
+          <input
             placeholder="Firstname"
-            onChange={handleFirstnameChange} 
-            value = {firstname} />
+            onChange={handleFirstnameChange}
+            value={firstname}
+          />
         </Form.Field>
         <Form.Field>
           <label>Lastname*</label>
-          <input placeholder="Lastname"
-            onChange={handleLastnameChange} 
-            value = {lastname} />
+          <input
+            placeholder="Lastname"
+            onChange={handleLastnameChange}
+            value={lastname}
+          />
         </Form.Field>
         <Form.Field>
           <label>Pseudo*</label>
-          <input 
+          <input
             placeholder="Pseudo"
-            onChange={handlePseudoChange} 
-            value = {pseudo} />
+            onChange={handlePseudoChange}
+            value={pseudo}
+          />
         </Form.Field>
         <Form.Field
           control={Select}
@@ -112,27 +116,30 @@ function SignIn() {
         />
         <Form.Field>
           <label>Email*</label>
-          <input 
-            placeholder="Email" 
-            onChange={handleEmailChange} 
-            value = {email}
-            type='email' />
+          <input
+            placeholder="Email"
+            onChange={handleEmailChange}
+            value={email}
+            type="email"
+          />
         </Form.Field>
         <Form.Field>
           <label>Password*</label>
-          <input placeholder="Password"
-          onChange={handlePasswordChange} 
-          value = {password} 
-          type = 'password'
+          <input
+            placeholder="Password"
+            onChange={handlePasswordChange}
+            value={password}
+            type="password"
           />
         </Form.Field>
         <Form.Field>
           <label>Confirm Password*</label>
-          <input placeholder="Confirm Password"
-          onChange={handleConfirmPasswordChange} 
-          value = {confirmPassword}
-          type = 'password'
-           />
+          <input
+            placeholder="Confirm Password"
+            onChange={handleConfirmPasswordChange}
+            value={confirmPassword}
+            type="password"
+          />
         </Form.Field>
         <Button type="submit" className="signIn__form__button">Sign in</Button>
       </Form>
