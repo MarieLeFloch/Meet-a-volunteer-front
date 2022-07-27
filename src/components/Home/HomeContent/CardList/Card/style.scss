@@ -10,7 +10,9 @@
   color : vars.$color-light2 !important;
   margin-top: 1em !important;
 }
-
+.experience__preview {
+  overflow: hidden;
+}
 .experience__country{
   position: absolute !important;
   top: 0.7em;
