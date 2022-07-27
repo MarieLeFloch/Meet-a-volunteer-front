@@ -3,13 +3,39 @@
 .profile__experience {
     display: flex;
     flex-direction: column;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #bebebe ;
 
-    &--image{
-        margin: auto;
+    &:last-child{
+        border-bottom: none;
     }
 
     @media screen and (min-width: 1025px) {
         width: 80%;
         flex-direction: row;
     }
+
+    &--image{
+        margin: auto;
+
+        @media screen and (min-width: 1025px) {
+            width: 600px;
+        }
+    }
+
+    &--text{
+        padding: 1em;
+
+        & h3{
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            text-align: left;
+
+        }
+
+        & p{
+            text-align: justify;
+        }
+    }
+
 }

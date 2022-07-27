@@ -1,15 +1,20 @@
 @use 'src/styles/vars';
 
 .profile__infos {
-    border : 1px solid vars.$color-dark2;
+    border : 1px solid rgb(190, 190, 190);
     border-radius: 5px;
     margin-bottom: 1.5em;
+    padding: 1em;
 
 
     @media screen and (min-width: 1025px) {
         height: 100%;
-        padding: 1em;
         //margin-left: 5em;
+    }
+
+    & h4 {
+        letter-spacing: .3em;
+        text-transform: uppercase;
     }
 
 }

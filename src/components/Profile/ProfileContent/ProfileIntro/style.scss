@@ -1,10 +1,19 @@
 @use 'src/styles/vars';
 
 .profile__intro {
-    padding-bottom: 1.5em;
+    padding-bottom: 3em;
 
     @media screen and (min-width: 1025px) {
         width: 30%;
         margin: auto;
+    }
+
+    &--image img{
+        width: 200px;
+    }
+
+    &--pseudo h2 {
+        letter-spacing: .3em;
+        text-transform: uppercase;
     }
 }
