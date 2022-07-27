@@ -2,6 +2,7 @@
 import './style.scss';
 import HamburgerMenu from 'react-hamburger-menu';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import NavList from './NavList';
 import Logo from '../../../assets/image/logo.png';
 
@@ -28,7 +29,7 @@ function NavBar() {
         />
       </div>
       <div>
-        <img src={Logo} alt="" className="nav__logo" />
+        <Link to="/"><img src={Logo} alt="" className="nav__logo" /></Link>
       </div>
       <div className="nav__list">
         <NavList isOpen={isOpen} />

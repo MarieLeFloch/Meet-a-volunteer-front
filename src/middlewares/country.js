@@ -1,39 +1,35 @@
 // Middleware : s'occupe de ce qui est asynchrone
 // typiquement : appels API
 
-//== Imports 
+//= = Imports
 // Import d'axios pour les requêtes API
 import axios from 'axios';
-import { FETCH_COUNTRY, saveCountry } from '../actions/country';
 import { sortBy } from 'lodash';
-
-
+import { FETCH_COUNTRY, saveCountry } from '../actions/country';
 
 const countryMiddleware = (store) => (next) => (action) => {
-    switch (action.type) {
-       case FETCH_COUNTRY: {
+  switch (action.type) {
+    case FETCH_COUNTRY: {
+      const state = store.getState();
+      const { countryList } = state.user.settings;
 
-        const state = store.getState()
-        const { countryList } = state.user.settings;
+      axios.get('https://restcountries.com/v3.1/all?fields=name')
 
-        axios.get('https://restcountries.com/v3.1/all?fields=name') 
-        
-        .then ((response)=> {
-            // console.log(response)
-            let countryName = [
-            ];
-            let i = 0;
-            response.data.forEach(country => {
-              countryName.push({
-                key: i++ ,
-                text : country.name.common,
-                value: country.name.common,
-                });
+        .then((response) => {
+          // console.log(response)
+          const countryName = [
+          ];
+          let i = 0;
+          response.data.forEach((country) => {
+            countryName.push({
+              key: i++,
+              text: country.name.common,
+              value: country.name.common,
             });
-            const countryNameSorted = _.sortBy(countryName, 'value');
-            store.dispatch(saveCountry(countryNameSorted));
-        },
-        )
+          });
+          const countryNameSorted = _.sortBy(countryName, 'value');
+          store.dispatch(saveCountry(countryNameSorted));
+        })
         .catch(
           (error) => {
             console.log(error);
@@ -41,11 +37,11 @@ const countryMiddleware = (store) => (next) => (action) => {
         );
 
       return next(action);
-      }
-            
-        default :
-        next(action);
     }
-}
+
+    default:
+      next(action);
+  }
+};
 
 export default countryMiddleware;
