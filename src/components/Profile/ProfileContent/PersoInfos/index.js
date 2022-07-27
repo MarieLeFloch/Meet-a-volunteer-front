@@ -1,10 +1,16 @@
 // Imports
 import './style.scss';
+import { Button, Icon } from 'semantic-ui-react';
+
 
 
 function PersoInfos() {
   return (
     <div className='profile__infos'>
+    <Button icon className='profile__icon profile__infos--icon'>
+        <Icon name='edit'/>
+      </Button>
+
         <h4>Personnal informations</h4>
         <ul>
             <li>Pseudo</li>
