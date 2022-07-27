@@ -1,0 +1,47 @@
+@use 'src/styles/vars';
+
+.profile__intro {
+    padding-bottom: 3em;
+    position: relative;
+
+    @media screen and (min-width: 1025px) {
+        width: 30%;
+        margin: auto;
+    }
+
+    &--image {
+        display : inline-block;
+        position: relative;
+    }
+
+    &--image img{
+        width: 200px;
+        padding-bottom: 0.5em;
+        // Pour faciliter la position du bouton de modif :
+    }
+
+    &--pseudo h2 {
+        letter-spacing: .3em;
+        text-transform: uppercase;
+        padding-bottom: 0.5em;
+    }
+
+    &--bio {
+        padding-top: 0.5em;
+        text-align: justify;
+        position: relative;
+    }
+
+    &__img--icon {
+        position: absolute;
+        right: 0em;
+        z-index: 10;
+    }
+
+    &__bio--icon {
+        position: absolute;
+        right: -1em;
+        top: -2em;
+    }
+}
+
