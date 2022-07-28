@@ -23,6 +23,7 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
+          
           store.dispatch(isLogged());
           return next(action);
         })

@@ -13,6 +13,7 @@ import About from '../About';
 import Error from '../404';
 import ExperiencePage from '../Experience';
 import { fetchCountry } from '../../actions/country';
+import { fetchThematics } from '../../actions/thematic';
 import Volunteers from '../Volunteers';
 import Profile from '../Profile';
 import Conversation from '../Conversation';
@@ -31,6 +32,16 @@ function App() {
     },
     [],
   );
+
+  // On récupère dès le chargement de notre application la liste des thématiques
+  useEffect(
+    () => {
+      dispatch(fetchThematics());
+    },
+    [],
+  );
+
+
   return (
     <div className="app">
       <Routes>
