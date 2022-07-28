@@ -18,7 +18,9 @@ const chosenOptions = [
 ];
 
 function ExperienceForm() {
-  const { title, participationFees, feedBack, image } = useSelector((state) => state.experiences.addExperience);
+  const {
+    title, participationFees, feedBack, image,
+  } = useSelector((state) => state.experiences.addExperience);
   const countryList = useSelector((state) => state.country.countryList);
   const experienceState = useSelector((state) => state.experiences.addExperience);
   const dispatch = useDispatch();
@@ -29,9 +31,8 @@ function ExperienceForm() {
   const handleImageChange = (event) => {
     // const output = document.getElementById('output');
     // output.src = URL.createObjectURL(event.target.files[0]);
-    dispatch(changeFieldValue(URL.createObjectURL(event.target.files[0]), 'image'))
-
-  }
+    dispatch(changeFieldValue(URL.createObjectURL(event.target.files[0]), 'image'));
+  };
   const handleTitleChange = (event) => {
     dispatch(changeFieldValue(event.currentTarget.value, 'title'));
   };
@@ -78,7 +79,7 @@ function ExperienceForm() {
         </div>
         <div className="experience__form--fields">
           <Form onSubmit={handleSubmit} unstackable className="experience__form--main">
-            <Input onChange={handleImageChange} type="file" label="Select an image" accept="image/png" className='experience__form--main__input' />
+            <Input onChange={handleImageChange} type="file" label="Select an image" accept="image/png" className="experience__form--main__input" />
             <Form.Field>
               <label>Title</label>
               <input value={title} onChange={handleTitleChange} />
