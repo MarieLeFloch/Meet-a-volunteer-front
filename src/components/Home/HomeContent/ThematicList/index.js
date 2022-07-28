@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function ThematicList() {
 
   const thematicList = useSelector((state) => state.thematic.thematicList);
-   console.log(thematicList);
+  // console.log(thematicList);
   return (
     <div>
       <ul className='thematic__list'>
