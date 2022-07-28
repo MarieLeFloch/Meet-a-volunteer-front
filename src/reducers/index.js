@@ -11,6 +11,7 @@ import experiencesReducer from './experiences';
 import userReducer from './user';
 import countryReducer from './country';
 import messageReducer from './message';
+import thematicReducer from './thematic';
 
 // On combine les différents reducers en un seul
 const rootReducer = combineReducers({
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   country: countryReducer,
   message: messageReducer,
+  thematic: thematicReducer
 });
 
 export default rootReducer;
