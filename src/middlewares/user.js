@@ -1,7 +1,8 @@
 //= = Imports
 
 import axios from 'axios';
-import { isLogged, LOGIN } from '../actions/user';
+import jwt_decode from 'jwt-decode';
+import { isLogged, LOGIN, saveToken, saveUserID, saveUserPseudo } from '../actions/user';
 
 const axiosInstance = axios.create({
   // par exemple, on peut définir une url de base !
@@ -22,9 +23,11 @@ const userMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
-          
+          store.dispatch(saveToken(response.data.token));
           store.dispatch(isLogged());
+          const decodedToken = jwt_decode(response.data.token);
+          store.dispatch(saveUserID(decodedToken.id));
+          store.dispatch(saveUserPseudo(decodedToken.username));
           return next(action);
         })
         .catch((error) => {

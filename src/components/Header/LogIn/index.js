@@ -19,7 +19,7 @@ function LogIn() {
   // useSelector : hook permettant d'accéder au store
   // va récupérer la prop isOpen dans le reducer user, prop settings
   const { isSigninOpened, isLoginOpened } = useSelector((state) => state.user.settings);
-  const { email, password } = useSelector((state) => state.user.login);
+  const { email, password, } = useSelector((state) => state.user.login);
   // dispatch, fonction du store redux, permet d'émettre une intention
   // intention = action qu'on passe en argument
   // cette action est traduite dans le reducer user

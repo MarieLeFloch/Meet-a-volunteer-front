@@ -29,18 +29,10 @@ function App() {
   useEffect(
     () => {
       dispatch(fetchCountry());
-    },
-    [],
-  );
-
-  // On récupère dès le chargement de notre application la liste des thématiques
-  useEffect(
-    () => {
       dispatch(fetchThematics());
     },
     [],
   );
-
 
   return (
     <div className="app">
@@ -48,7 +40,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/volunteers" element={<Volunteers />} />
-        <Route path="/volunteers/pseudo" element={<Profile />} />
+        <Route path="/volunteers/:slug" element={<Profile />} />
         <Route path="/legal-mentions" element={<LegalMentions />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/about" element={<About />} />
