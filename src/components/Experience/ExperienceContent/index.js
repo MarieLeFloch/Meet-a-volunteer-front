@@ -4,6 +4,7 @@ import { Button, Icon } from 'semantic-ui-react';
 import Image from '../../../assets/image/5.jpg';
 import Avatar from '../../../assets/image/user-default.png';
 
+
 function Experience() {
   return (
     <div className="experience">
