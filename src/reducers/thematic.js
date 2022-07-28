@@ -1,7 +1,9 @@
-import { SAVE_THEMATICS } from '../actions/thematic';
+import { SAVE_THEMATICS, FILTRED_THEMATIC } from '../actions/thematic';
 
 export const initialState = {
   thematicList: [],
+  filtredThematicId: '',
+  filtredThematicName: ''
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -11,7 +13,13 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         thematicList: action.list,
       };
-    default:
+    case FILTRED_THEMATIC:
+      return {
+        ...state,
+        filtredThematicId: action.id,
+        filtredThematicName: action.name,
+      };
+      default:
       return state;
   }
 };

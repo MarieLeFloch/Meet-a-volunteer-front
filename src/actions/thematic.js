@@ -18,3 +18,15 @@ export function saveThematics(thematicList) {
     list: thematicList,
   };
 }
+
+// Filtre des expériences par thématique
+export const FILTRED_THEMATIC = 'FILTRED_THEMATIC';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function filtredThematic(thematicId, thematicName) {
+  return {
+    type: FILTRED_THEMATIC,
+    id: thematicId,
+    name: thematicName,
+  };
+}
