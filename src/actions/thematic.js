@@ -30,3 +30,24 @@ export function filtredThematic(thematicId, thematicName) {
     name: thematicName,
   };
 }
+
+// Récupération des expériences par thématique
+export const FETCH_EXPERIENCES_BY_THEMATIC = 'FETCH_EXPERIENCES_BY_THEMATIC';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function fetchExperiencesByThematic() {
+  return {
+    type: FETCH_EXPERIENCES_BY_THEMATIC,
+  };
+}
+
+// Sauvegarde des expériences par thématique
+export const SAVE_EXPERIENCES_BY_THEMATIC = 'SAVE_EXPERIENCES_BY_THEMATIC';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function saveExperiencesByThematic(experienceList) {
+  return {
+    type: SAVE_EXPERIENCES_BY_THEMATIC,
+    list: experienceList,
+  };
+}

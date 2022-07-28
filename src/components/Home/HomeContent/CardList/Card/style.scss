@@ -22,6 +22,10 @@
   text-transform: uppercase;
 }
 
+.experience__title{
+  margin-top: 0.5em!important;
+}
+
 .user__image {
   position: absolute !important;
   top: 11.5em;
@@ -31,7 +35,5 @@
 
 .author__name{
   // text-align: right !important;
-  //! A rectifier car ne vas pas s'adapter
-  padding-right: 80%;
   color:vars.$color-dark1;
 }

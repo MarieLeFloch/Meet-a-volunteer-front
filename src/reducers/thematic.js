@@ -1,9 +1,11 @@
-import { SAVE_THEMATICS, FILTRED_THEMATIC } from '../actions/thematic';
+import { SAVE_THEMATICS, FILTRED_THEMATIC, SAVE_EXPERIENCES_BY_THEMATIC } from '../actions/thematic';
 
 export const initialState = {
   thematicList: [],
   filtredThematicId: '',
-  filtredThematicName: ''
+  filtredThematicName: '',
+  experiencesFiltredThematic : [],
+
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -19,8 +21,14 @@ const reducer = (state = initialState, action = {}) => {
         filtredThematicId: action.id,
         filtredThematicName: action.name,
       };
-      default:
-      return state;
+    case SAVE_EXPERIENCES_BY_THEMATIC:
+      return {
+        ...state,
+        experiencesFiltredThematic: action.list,
+      };
+      
+    default:
+    return state;
   }
 };
 

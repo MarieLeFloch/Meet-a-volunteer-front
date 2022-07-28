@@ -9,7 +9,7 @@ function ThematicExperienceContent() {
   // Récupération de la valeur dans le state correspondant au nom de la thématique cliquée
   const currentFiltredThematic = useSelector((state) => state.thematic.filtredThematicName)
   return (
-    <div>
+    <div className='experiences__content'>
         <h1 className="experiences__content--title">Volunteer's feedbacks</h1>
         <h2 className="experiences__content--subtitle">{currentFiltredThematic}</h2>
         <ThematicList />
