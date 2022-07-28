@@ -12,7 +12,7 @@ const axiosInstance = axios.create({
 const thematicMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_THEMATICS: {
-      const state = store.getState();
+      const { thematic : thematicList } = store.getState();
       // const { thematicList } = state.thematic.settings;
 
       // On renseigne le end point

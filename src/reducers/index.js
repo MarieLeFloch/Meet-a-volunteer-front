@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   country: countryReducer,
   message: messageReducer,
-  thematic: thematicReducer
+  thematic: thematicReducer,
 });
 
 export default rootReducer;
