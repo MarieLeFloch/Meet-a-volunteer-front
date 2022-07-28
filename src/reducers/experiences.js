@@ -1,4 +1,4 @@
-import { CHANGE_FIELD_VALUE } from '../actions/experience';
+import { CHANGE_FIELD_VALUE, SAVE_EXPERIENCES_HOME } from '../actions/experience';
 
 export const initialState = {
   addExperience: {
@@ -17,6 +17,8 @@ export const initialState = {
     food: '',
     feedBack: '',
   },
+
+  homeExperiences: []
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -29,7 +31,12 @@ const reducer = (state = initialState, action = {}) => {
           [action.field]: action.value,
         },
       };
-    default:
+    case SAVE_EXPERIENCES_HOME:
+      return {
+        ...state,
+        homeExperiences: action.list,
+      };
+      default:
       return state;
   }
 };

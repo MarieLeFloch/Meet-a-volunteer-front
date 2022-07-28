@@ -11,6 +11,7 @@ import countryMiddleware from '../middlewares/country';
 import userMiddleware from '../middlewares/user';
 import thematicMiddleware from '../middlewares/thematic';
 import thematicExperienceMiddleware from '../middlewares/thematicExperience';
+import homeExperienceMiddleware from '../middlewares/homeExperience';
 
 
 // lie le projet au redux devtools (accès state - extension redux)
@@ -18,7 +19,13 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // permet d'ajouter des fonctionnalités à notre store Redux, ici on lie le store à notre devtool 
 const enhancers = composeEnhancers(
-  applyMiddleware(countryMiddleware, userMiddleware, thematicMiddleware, thematicExperienceMiddleware),
+  applyMiddleware(
+    countryMiddleware, 
+    userMiddleware, 
+    thematicMiddleware, 
+    thematicExperienceMiddleware,
+    homeExperienceMiddleware
+    ),
 );
 
 // Création du store (createStore: deprécié mais toujours fonctionnel)

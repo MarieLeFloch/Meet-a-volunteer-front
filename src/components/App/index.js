@@ -19,6 +19,8 @@ import Profile from '../Profile';
 import Conversation from '../Conversation';
 import ExperienceAdd from '../ExperienceAdd';
 import ThematicExperience from '../ThematicExperience';
+import { fetchExperiencesHome } from '../../actions/experience';
+
 
 // == Composant
 function App() {
@@ -42,6 +44,14 @@ function App() {
     [],
   );
 
+  // On récupère dès le chargement de notre application la liste d'expérience au hasard
+  useEffect(
+    () => {
+      dispatch(fetchExperiencesHome());
+    },
+    [],
+  );
+  
 
   return (
     <div className="app">
