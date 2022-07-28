@@ -1,28 +1,21 @@
 // Imports
 import './style.scss';
 import ThematicButton from './ThematicButton';
+import { useDispatch, useSelector } from 'react-redux';
 
 function ThematicList() {
+
+  const thematicList = useSelector((state) => state.thematic.thematicList);
+   console.log(thematicList);
   return (
     <div>
       <ul className='thematic__list'>
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
-      <ThematicButton />
+        {
+          thematicList.map((thematic) => (
+            <ThematicButton key={thematic.id} {...thematic}/>
+            )
+          )
+        }
       </ul>
     </div>
   );
