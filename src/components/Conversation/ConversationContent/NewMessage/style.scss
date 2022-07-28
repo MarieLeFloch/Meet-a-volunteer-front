@@ -45,5 +45,9 @@
 
 .message__close__button{
     //float: right;
-    margin-left: 94.5%!important;
+    margin-left: 90%!important;
+
+    @media screen and (min-width: 1025px) {
+        margin-left: 92%!important;
+    }
 }
