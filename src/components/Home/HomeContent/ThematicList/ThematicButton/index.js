@@ -1,6 +1,7 @@
 // Imports
 import './style.scss';
 import { Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 // Via du destrucuring, on récupère sous forme de variable les éléments
 // passés en props via le composant ThematicList
@@ -8,7 +9,12 @@ import { Button } from 'semantic-ui-react';
 function ThematicButton({ name, slugName }) {
 
   return (
-    <li> <Button basic circular className='thematic__button'>{name}</Button></li>
+    <li> 
+      <Link to={`/experiences/thematics/${slugName}`}>
+        <Button basic circular className='thematic__button'>{name}</Button>
+      </Link>
+    </li>
+    
   );
 }
 
