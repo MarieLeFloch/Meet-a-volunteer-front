@@ -1,12 +1,14 @@
 @use 'src/styles/vars';
 
 
-// .prolific__container {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
+.prolific__user__container {
+  display: flex;
+  flex-wrap: wrap ;
+  justify-content: center;
+  @media screen and (min-width: 1025px) {
+    justify-content: space-between;
+  }
+}
 
 .prolific__container {
   border-top: 2px solid vars.$color-dark1;
@@ -37,7 +39,7 @@
   display: flex;
   justify-content: center;
   @media screen and (min-width: 1025px) {
-    width: 33%;
+   // width: 33%;
   }
 }
 .prolific__user--circle {
