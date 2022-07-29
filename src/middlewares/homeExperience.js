@@ -21,7 +21,7 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
   
             // On traite la réponse
           .then((response) => {
-            console.log(response.data);
+           // console.log(response.data);
             store.dispatch(saveExperiencesHome(response.data));
           })
           // On catche la potentielle erreur

@@ -15,3 +15,22 @@ export function toggleSuccessMessage() {
     type: TOGGLE_SUCCESS_MESSAGE,
   };
 }
+
+export const FETCH_RECEIVED_MESSAGE = 'FETCH_RECEIVED_MESSAGE';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function fetchReceivedMessage() {
+  return {
+    type: FETCH_RECEIVED_MESSAGE,
+  };
+}
+
+export const SAVE_RECEIVED_MESSAGE = 'SAVE_RECEIVED_MESSAGE';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function saveReceivedMessage(messagesList) {
+  return {
+    type: SAVE_RECEIVED_MESSAGE,
+    list: messagesList,
+  };
+}

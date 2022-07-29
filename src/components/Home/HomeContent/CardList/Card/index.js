@@ -11,7 +11,7 @@ function ExperienceCard({country, feedback, picture, title, user, createdAt, id,
 
   return (
     <Card className="experience__card">
-      <Image src={ImageTest} wrapped ui={false} />
+      <Image src={`http://romaingibet-server.eddi.cloud/images/experiencePicture/${picture}`} wrapped ui={false} />
       <Link to={`/volunteers/${userPseudoSlug}`}>
        <Image className="user__image" src={UserImageDefault} size="tiny" />
       </Link>

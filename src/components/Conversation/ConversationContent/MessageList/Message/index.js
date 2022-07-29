@@ -5,7 +5,7 @@ import Avatar from '../../../../../assets/image/user-default.png';
 import { toggleNewMessageSettings } from '../../../../../actions/message';
 import { useDispatch, useSelector } from 'react-redux';
 
-function Message() {
+function Message( {id, message, userSender, createdAt }) {
 
     const { isNewMessageOpened } = useSelector((state)=>state.message.settings);
   
@@ -22,6 +22,8 @@ function Message() {
         p.classList.toggle('preview');
     }
 
+    const pseudoSender = userSender.pseudo;
+
     // function handleNewMessage (event) {
     //    console.log("ça marche");
     //    setIsNewMessageOpened(!isNewMessageOpened);
@@ -35,10 +37,10 @@ function Message() {
         <div className='received__message__topBar'>
             <div className='received__message__topBar--left'>
                 <Image src={Avatar} avatar size="mini" />
-                <span className='pseudo'>Pseudo</span>
+                <span className='pseudo'>{pseudoSender}</span>
             </div>
             <div className='received__message__topBar--right'>
-                <span className='date'>Janv 01, 2022</span>
+                <span className='date'>{createdAt}</span>
                 <div className='received__message__topBar--icon'>
                     <Icon name="edit" onClick={handleToggleNewMessage} />
                     <Icon name="trash" />
@@ -47,7 +49,7 @@ function Message() {
         </div>
 
         <div className='received__message__content'>
-            <p className ='preview' onClick={showEntireMessage}>Tart ice cream gummies jelly-o cheesecake. Fruitcake tart halvah jelly bear claw. Chocolate dessert wafer bonbon ice cream jujubes tiramisu jelly-o sugar plum. Oat cake candy canes caramels lemon drops croissant halvah marzipan.</p>
+            <p className ='preview' onClick={showEntireMessage}>{message}</p>
         </div>
 
     </div>

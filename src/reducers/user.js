@@ -83,8 +83,11 @@ const reducer = (state = initialState, action = {}) => {
     case SAVE_TOKEN:
       return {
         ...state,
-        token: action.value,
-      };
+        login: {
+          ...state.login,
+          token: action.value,
+      }
+    };
     case SAVE_USER_PSEUDO:
       return {
         ...state,

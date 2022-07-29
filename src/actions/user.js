@@ -77,9 +77,10 @@ export function isLogged() {
 export const SAVE_TOKEN = 'SAVE_TOKEN';
 
 // Action creator => On l'utilise au moment du dispatch()
-export function saveToken() {
+export function saveToken(value) {
   return {
     type: SAVE_TOKEN,
+    value: value,
   };
 }
 

@@ -12,6 +12,7 @@ import userMiddleware from '../middlewares/user';
 import thematicMiddleware from '../middlewares/thematic';
 import thematicExperienceMiddleware from '../middlewares/thematicExperience';
 import homeExperienceMiddleware from '../middlewares/homeExperience';
+import messageMiddleware from '../middlewares/message';
 
 
 // lie le projet au redux devtools (accès state - extension redux)
@@ -24,7 +25,8 @@ const enhancers = composeEnhancers(
     userMiddleware, 
     thematicMiddleware, 
     thematicExperienceMiddleware,
-    homeExperienceMiddleware
+    homeExperienceMiddleware,
+    messageMiddleware
     ),
 );
 
