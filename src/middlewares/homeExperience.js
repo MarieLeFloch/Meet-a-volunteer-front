@@ -53,7 +53,7 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
           },
         },
       } = store.getState();
-      const { user: { login: { token } } } = store.getState();
+      const { user: { login: { token, id } } } = store.getState();
       axiosInstance.post(
         '/experiences/',
         {
@@ -62,7 +62,7 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
           year: year,
           duration: duration,
           feedback: feedBack,
-          participation_fee: participationFees,
+          participation_fee: parseInt(participationFees, 10),
           isHosted: accomodation,
           isFed: food,
           volunteeringType: typeOfVolunteering,
@@ -70,6 +70,7 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
           thematic: thematics,
           language: [spokenLanguageFirst, spokenLanguageSecond],
           picture: image,
+          user: id,
         },
         { headers: { Authorization: `Bearer ${token}` } },
       )
@@ -93,6 +94,8 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
               receptionStructure: hostOrganization,
               thematic: thematics,
               language: [spokenLanguageFirst, spokenLanguageSecond],
+              picture: image,
+              user: id,
             });
           },
         );

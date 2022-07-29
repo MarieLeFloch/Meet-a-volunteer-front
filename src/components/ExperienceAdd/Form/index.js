@@ -14,7 +14,7 @@ import {
 function ExperienceForm() {
   // -----------------RECUPERATION DES DONNEES DU STATE------------------
   const {
-    title, participationFees, feedBack, image,
+    title, participationFees, feedBack, image, 
   } = useSelector((state) => state.experiences.addExperience);
 
   const { thematicList } = useSelector((state) => state.thematic);
@@ -33,7 +33,7 @@ function ExperienceForm() {
     });
   });
   // --------------------------------------------------------------------
- 
+
   const dispatch = useDispatch();
   const handleSubmit = () => {
     dispatch(addExperience());
@@ -55,7 +55,7 @@ function ExperienceForm() {
   };
   const handleThematicsChange = (event, value) => {
     dispatch(changeFieldValue(value.value, 'thematics'));
-    console.log(value.value)
+    console.log(value.value);
   };
   const handleCountryChange = (event, value) => {
     dispatch(changeFieldValue(value.value, 'country'));
@@ -73,7 +73,7 @@ function ExperienceForm() {
     dispatch(changeFieldValue(value.value, 'spokenLanguageSecond'));
   };
   const handleFeesChange = (event) => {
-    dispatch(changeFieldValue(event.currentTarget.value, 'participationFees'));
+    dispatch(changeFieldValue((event.currentTarget.value), 'participationFees'));
   };
   const handleAccomodationChange = (event, value) => {
     dispatch(changeFieldValue(value.value, 'accomodation'));

@@ -12,7 +12,7 @@ export const initialState = {
     duration: '',
     spokenLanguageFirst: '',
     spokenLanguageSecond: '',
-    participationFees: '',
+    participationFees: 0,
     accomodation: '',
     food: '',
     feedBack: '',
