@@ -3,6 +3,7 @@
 import axios from 'axios';
 import { FETCH_RECEIVED_MESSAGE, saveReceivedMessage, SAVE_NEW_MESSAGE } from '../actions/message';
 
+
 const axiosInstance = axios.create({
     // on définit l'url de base
     baseURL: 'http://romaingibet-server.eddi.cloud/api/',
@@ -15,6 +16,8 @@ const messageMiddleware = (store) => (next) => (action) => {
         // Récupération de l'id de l'utilisateur connecté dans le state
         const { id, token } = state.user.login;
         // console.log(id);
+        console.log(token);
+
 
         // Requête API avec transmission du token pour authentification
         axiosInstance.get(`/receivedMessages/${id}/20/0`, 
@@ -41,19 +44,18 @@ const messageMiddleware = (store) => (next) => (action) => {
         const { receiverId, messageContent } = state.message.newMessage;
         const { token } = state.user.login;
         // console.log(messageContent);
-        // console.log(token);
+         console.log(token);
 
         // Requête API avec transmission du token pour authentification
+        //! le header à la fin !!
         axiosInstance.post(`/message`, 
-          {  
-            // headers: {
-            //   "Authorization" : `Bearer ${token}`
-            // },
-            // {
-            "message": messageContent,
-            "userReceiver": receiverId
-            // }
-          },
+          { message: messageContent,
+            userReceiver: receiverId 
+          }, { headers: {"Authorization" : `Bearer ${token}`}}
+          // {
+          //   message: messageContent,
+          //   userReceiver: receiverId
+          // },
 
          )
   
