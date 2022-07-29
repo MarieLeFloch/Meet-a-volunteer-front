@@ -3,7 +3,7 @@
 //= = Imports
 // Import d'axios pour les requêtes API
 import axios from 'axios';
-import { FETCH_EXPERIENCES_HOME, saveExperiencesHome } from '../actions/experience';
+import { ADD_EXPERIENCE, FETCH_EXPERIENCES_HOME, saveExperiencesHome } from '../actions/experience';
 
 const axiosInstance = axios.create({
   // on définit l'url de base
@@ -21,13 +21,79 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
 
       // On traite la réponse
         .then((response) => {
-          console.log(response.data);
           store.dispatch(saveExperiencesHome(response.data));
         })
       // On catche la potentielle erreur
         .catch(
           (error) => {
             console.log(error);
+          },
+        );
+
+      return next(action);
+    }
+    case ADD_EXPERIENCE: {
+      const {
+        experiences: {
+          addExperience: {
+            title,
+            typeOfVolunteering,
+            hostOrganization,
+            thematics,
+            country,
+            year,
+            duration,
+            spokenLanguageFirst,
+            spokenLanguageSecond,
+            participationFees,
+            accomodation,
+            food,
+            feedBack,
+            image,
+          },
+        },
+      } = store.getState();
+      const { user: { login: { token } } } = store.getState();
+      axiosInstance.post(
+        '/experiences/',
+        {
+          title: title,
+          country: country,
+          year: year,
+          duration: duration,
+          feedback: feedBack,
+          participation_fee: participationFees,
+          isHosted: accomodation,
+          isFed: food,
+          volunteeringType: typeOfVolunteering,
+          receptionStructure: hostOrganization,
+          thematic: thematics,
+          language: [spokenLanguageFirst, spokenLanguageSecond],
+          picture: image,
+        },
+        { headers: { Authorization: `Bearer ${token}` } },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+      // On catche la potentielle erreur
+        .catch(
+          (error) => {
+            console.log(error);
+            console.log({
+              title: title,
+              country: country,
+              year: year,
+              duration: duration,
+              feedback: feedBack,
+              participation_fee: participationFees,
+              isHosted: accomodation,
+              isFed: food,
+              volunteeringType: typeOfVolunteering,
+              receptionStructure: hostOrganization,
+              thematic: thematics,
+              language: [spokenLanguageFirst, spokenLanguageSecond],
+            });
           },
         );
 

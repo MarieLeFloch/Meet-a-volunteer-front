@@ -32,3 +32,12 @@ export function saveExperiencesHome(experienceList) {
     list: experienceList,
   };
 }
+
+
+export const ADD_EXPERIENCE = 'ADD_EXPERIENCE';
+
+export function addExperience() {
+  return {
+    type: ADD_EXPERIENCE,
+  };
+}

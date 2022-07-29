@@ -6,7 +6,7 @@ import {
 } from 'semantic-ui-react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeFieldValue } from '../../../actions/experience';
+import { addExperience, changeFieldValue } from '../../../actions/experience';
 import {
   chosenOptions, yearsOptions, languageOptions, durationOptions,
 } from '../../../data/formOptions';
@@ -19,6 +19,8 @@ function ExperienceForm() {
 
   const { thematicList } = useSelector((state) => state.thematic);
   const { volunteeringType, receptionStructure } = useSelector((state) => state.categories);
+  const countryList = useSelector((state) => state.country.countryList);
+  const experienceState = useSelector((state) => state.experiences.addExperience);
   //---------------------------------------------------------------------
   // ------------------ Create Thematic Options -------------------------
   const thematicOptions = [];
@@ -27,15 +29,14 @@ function ExperienceForm() {
     thematicOptions.push({
       key: i += 1,
       text: item.name,
-      value: item.name,
+      value: item.id,
     });
   });
   // --------------------------------------------------------------------
-  const countryList = useSelector((state) => state.country.countryList);
-  const experienceState = useSelector((state) => state.experiences.addExperience);
+ 
   const dispatch = useDispatch();
   const handleSubmit = () => {
-    console.log(experienceState);
+    dispatch(addExperience());
   };
   // ----------- HANDLES ON CHANGE ------------
   const handleImageChange = (event) => {
@@ -54,6 +55,7 @@ function ExperienceForm() {
   };
   const handleThematicsChange = (event, value) => {
     dispatch(changeFieldValue(value.value, 'thematics'));
+    console.log(value.value)
   };
   const handleCountryChange = (event, value) => {
     dispatch(changeFieldValue(value.value, 'country'));

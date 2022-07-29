@@ -21,7 +21,7 @@ const categoriesMiddleware = (store) => (next) => (action) => {
             volunteeringType.push({
               key: i += 1,
               text: item.name,
-              value: item.name,
+              value: item.id,
             });
           });
           store.dispatch(saveVolunteeringType(volunteeringType));
@@ -42,7 +42,7 @@ const categoriesMiddleware = (store) => (next) => (action) => {
             receptionStructure.push({
               key: i += 1,
               text: item.name,
-              value: item.name,
+              value: item.id,
             });
           });
           store.dispatch(saveReceptionStructure(receptionStructure));

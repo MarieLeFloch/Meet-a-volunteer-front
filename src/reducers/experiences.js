@@ -2,7 +2,7 @@ import { CHANGE_FIELD_VALUE, SAVE_EXPERIENCES_HOME } from '../actions/experience
 
 export const initialState = {
   addExperience: {
-    image: '',
+    image: '0.jpg',
     title: '',
     typeOfVolunteering: '',
     hostOrganization: '',

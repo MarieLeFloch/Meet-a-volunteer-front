@@ -7,7 +7,7 @@ import {
 // Envoie des informations pour la connexion et l'inscription
 // Par défaut, ils sont à false
 export const initialState = {
-  logged: true,
+  logged: false,
   // sous paramètre d'affichage du formulaire
   settings: {
     isLoginOpened: false,
@@ -83,7 +83,10 @@ const reducer = (state = initialState, action = {}) => {
     case SAVE_TOKEN:
       return {
         ...state,
-        token: action.value,
+        login: {
+          ...state.login,
+          token: action.value,
+        },
       };
     case SAVE_USER_PSEUDO:
       return {
