@@ -34,3 +34,14 @@ export function saveReceivedMessage(messagesList) {
     list: messagesList,
   };
 }
+
+export const SET_NEW_MESSAGE = 'SET_NEW_MESSAGE';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function setNewMessage (receiverId, receiverPseudo) {
+  return {
+    type: SET_NEW_MESSAGE,
+    id: receiverId,
+    pseudo: receiverPseudo,
+  };
+}

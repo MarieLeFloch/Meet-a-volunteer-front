@@ -1,5 +1,9 @@
 import {
-  TOGGLE_NEW_MESSAGE_SETTINGS, TOGGLE_SUCCESS_MESSAGE, SAVE_RECEIVED_MESSAGE
+  TOGGLE_NEW_MESSAGE_SETTINGS, 
+  TOGGLE_SUCCESS_MESSAGE, 
+  SAVE_RECEIVED_MESSAGE,
+  SET_NEW_MESSAGE
+
 } from '../actions/message';
 
 // On crée les emplacements dans le state lié aux messages
@@ -11,6 +15,11 @@ export const initialState = {
     hasANewMessageBeenSent: false,
   },
   receivedMessageList : [],
+  newMessage: {
+    receiverId : '',
+    receiverPseudo : '',
+    messageContent : '',
+  }
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -44,8 +53,22 @@ const reducer = (state = initialState, action = {}) => {
           // enregistre la liste des messages reçus
           receivedMessageList: action.list,
         }; 
+    case SET_NEW_MESSAGE:
+      return {
+        // retourne l'ensemble du state courant
+        ...state,
+        // mais dans newMessage
+        newMessage: {
+          ...state.newMessage,
+          // inverse la valeur de hasANewMessageBeenSent
+          receiverId: action.id,
+          receiverPseudo: action.pseudo,
+        },
+      };
+
       default:
       return state;
+
   }
 };
 
