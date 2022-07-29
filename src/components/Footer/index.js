@@ -1,6 +1,7 @@
 // == Imports
 import './style.scss';
 import { Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -11,9 +12,15 @@ function Footer() {
         <Button  className='footer__logo' circular icon='instagram' />
       </div>
       <div className='footer__links'>
-        <a className='footer__link'>About</a>
-        <a className='footer__link'>Contact</a>
-        <a className='footer__link'>Legal mentions</a>
+      <Link to={`/about`}>
+        <span className='footer__link'>About</span>
+      </Link>
+      <Link to={`/contacts`}>
+        <span className='footer__link'>Contact</span>
+      </Link>
+      <Link to={`/legal-mentions`}>
+        <span className='footer__link'>Legal mentions</span>
+      </Link>
       </div>
     </div>
   );
