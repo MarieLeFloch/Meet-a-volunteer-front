@@ -2,7 +2,8 @@ import {
   TOGGLE_NEW_MESSAGE_SETTINGS, 
   TOGGLE_SUCCESS_MESSAGE, 
   SAVE_RECEIVED_MESSAGE,
-  SET_NEW_MESSAGE
+  SET_NEW_MESSAGE,
+  CHANGE_NEW_MESSAGE_CONTENT
 
 } from '../actions/message';
 
@@ -65,7 +66,18 @@ const reducer = (state = initialState, action = {}) => {
           receiverPseudo: action.pseudo,
         },
       };
-
+      case CHANGE_NEW_MESSAGE_CONTENT:
+        return {
+          // retourne l'ensemble du state courant
+          ...state,
+          // mais dans newMessage
+          newMessage: {
+            ...state.newMessage,
+            // inverse la valeur de hasANewMessageBeenSent
+            messageContent: action.content,
+          },
+        };
+  
       default:
       return state;
 

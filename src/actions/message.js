@@ -45,3 +45,23 @@ export function setNewMessage (receiverId, receiverPseudo) {
     pseudo: receiverPseudo,
   };
 }
+
+export const CHANGE_NEW_MESSAGE_CONTENT = 'CHANGE_NEW_MESSAGE_CONTENT';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function changeNewMessageContent (content) {
+  return {
+    type: CHANGE_NEW_MESSAGE_CONTENT,
+    content: content,
+  };
+}
+
+export const SAVE_NEW_MESSAGE = 'SAVE_NEW_MESSAGE';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function saveNewMessage () {
+  return {
+    type: SAVE_NEW_MESSAGE,
+  };
+}
+
