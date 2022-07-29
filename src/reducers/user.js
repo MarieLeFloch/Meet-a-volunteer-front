@@ -1,5 +1,5 @@
 import {
-  TOGGLE_SETTINGS_LOGIN, TOGGLE_SETTINGS_SIGNIN, CHANGE_LOGIN_FIELD_VALUE, CHANGE_SIGNIN_FIELD_VALUE, IS_LOGGED,
+  TOGGLE_SETTINGS_LOGIN, TOGGLE_SETTINGS_SIGNIN, CHANGE_LOGIN_FIELD_VALUE, CHANGE_SIGNIN_FIELD_VALUE, IS_LOGGED, SAVE_TOKEN, SAVE_USER_PSEUDO, SAVE_USER_ID,
 } from '../actions/user';
 
 // On crée un emplacement dans le state correspondant au user : la connexion et l'inscription
@@ -27,6 +27,9 @@ export const initialState = {
   login: {
     email: '',
     password: '',
+    token: '',
+    pseudo: '',
+    id: '',
   },
 };
 
@@ -76,6 +79,27 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         logged: !state.logged,
+      };
+    case SAVE_TOKEN:
+      return {
+        ...state,
+        token: action.value,
+      };
+    case SAVE_USER_PSEUDO:
+      return {
+        ...state,
+        login: {
+          ...state.login,
+          pseudo: action.value,
+        },
+      };
+    case SAVE_USER_ID:
+      return {
+        ...state,
+        login: {
+          ...state.login,
+          id: action.value,
+        },
       };
     default:
       return state;

@@ -32,27 +32,12 @@ function App() {
   useEffect(
     () => {
       dispatch(fetchCountry());
-    },
-    [],
-  );
-
-  // On récupère dès le chargement de notre application la liste des thématiques
-  useEffect(
-    () => {
       dispatch(fetchThematics());
-    },
-    [],
-  );
-
-  // On récupère dès le chargement de notre application la liste d'expérience au hasard
-  useEffect(
-    () => {
       dispatch(fetchExperiencesHome());
     },
     [],
   );
   
-
   return (
     <div className="app">
       <Routes>
@@ -60,7 +45,7 @@ function App() {
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/experiences/thematics/:slug" element={<ThematicExperience />} />
         <Route path="/volunteers" element={<Volunteers />} />
-        <Route path="/volunteers/pseudo" element={<Profile />} />
+        <Route path="/volunteers/:slug" element={<Profile />} />
         <Route path="/legal-mentions" element={<LegalMentions />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/about" element={<About />} />

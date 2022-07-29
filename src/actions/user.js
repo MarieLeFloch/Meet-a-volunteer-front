@@ -73,3 +73,32 @@ export function isLogged() {
     type: IS_LOGGED,
   };
 }
+
+export const SAVE_TOKEN = 'SAVE_TOKEN';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function saveToken() {
+  return {
+    type: SAVE_TOKEN,
+  };
+}
+
+export const SAVE_USER_PSEUDO = 'SAVE_USER_PSEUDO';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function saveUserPseudo(value) {
+  return {
+    type: SAVE_USER_PSEUDO,
+    value: value,
+  };
+}
+
+export const SAVE_USER_ID = 'SAVE_USER_ID';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function saveUserID(value) {
+  return {
+    type: SAVE_USER_ID,
+    value: value,
+  };
+}
