@@ -10,6 +10,7 @@ function ThematicList() {
 
   return (
     <div>
+      
       <ul className='thematic__list'>
         {
           thematicList.map((thematic) => (

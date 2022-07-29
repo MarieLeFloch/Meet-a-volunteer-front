@@ -1,11 +1,17 @@
 // Imports
+import Footer from '../Footer';
+import PageHeader from '../Header/PageHeader';
+import VolunteersContent from './VolunteersContent';
 import './style.scss';
 
-function volunteers() {
+function Volunteers() {
   return (
-    <div className="volunteers__container">
-    </div>
+    <>
+      <PageHeader />
+      <VolunteersContent />
+      <Footer />
+    </>
   );
 }
 
-export default volunteers;
+export default Volunteers;

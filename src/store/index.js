@@ -13,6 +13,7 @@ import thematicMiddleware from '../middlewares/thematic';
 import thematicExperienceMiddleware from '../middlewares/thematicExperience';
 import homeExperienceMiddleware from '../middlewares/homeExperience';
 import messageMiddleware from '../middlewares/message';
+import volunteersMiddleware from '../middlewares/volunteers';
 
 
 // lie le projet au redux devtools (accès state - extension redux)
@@ -26,8 +27,9 @@ const enhancers = composeEnhancers(
     thematicMiddleware, 
     thematicExperienceMiddleware,
     homeExperienceMiddleware,
-    messageMiddleware
-    ),
+    messageMiddleware,
+    volunteersMiddleware
+  ),
 );
 
 // Création du store (createStore: deprécié mais toujours fonctionnel)
