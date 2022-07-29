@@ -5,7 +5,6 @@ import ImageTest from '../../../../../assets/image/1.jpg';
 import UserImageDefault from '../../../../../assets/image/user-default.png';
 
 function ExperienceCard({country, feedback, picture, title, user, createdAt}) {
-  console.log(country );
   return (
     <Card className="experience__card">
       <Image src={ImageTest} wrapped ui={false} />
@@ -19,8 +18,7 @@ function ExperienceCard({country, feedback, picture, title, user, createdAt}) {
         </Card.Meta>
         <Card.Header className="experience__title">{title}</Card.Header>
         <Card.Description className="experience__preview">
-          Soufflé cake chocolate oat cake powder icing pie brownie powder. Donut fruitcake jelly-o ...
-        </Card.Description>
+{feedback}        </Card.Description>
         <Button
           className="button__experience__details"
         >

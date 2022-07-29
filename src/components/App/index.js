@@ -25,7 +25,6 @@ import { fetchExperiencesHome } from '../../actions/experience';
 // == Composant
 function App() {
   const { logged } = useSelector((state) => state.user);
-  console.log(logged);
 
   const dispatch = useDispatch();
   // On récupère dès le chargement de notre application la liste des pays pour le formulaire d'inscription

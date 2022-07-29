@@ -7,7 +7,7 @@ import {
 // Envoie des informations pour la connexion et l'inscription
 // Par défaut, ils sont à false
 export const initialState = {
-  logged: false,
+  logged: true,
   // sous paramètre d'affichage du formulaire
   settings: {
     isLoginOpened: false,

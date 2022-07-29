@@ -1,26 +1,36 @@
+// == Imports
+
 import './style.scss';
 import {
   Form, Select, Dropdown, Button, Input,
 } from 'semantic-ui-react';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { changeFieldValue } from '../../../actions/experience';
-
-const countryOptions = [
-  { key: 'af', value: 'af', text: 'Afghanistan' },
-  { key: 'ax', value: 'ax', text: 'Aland Islands' },
-  { key: 'en', value: 'en', text: 'England' },
-];
-
-const chosenOptions = [
-  { key: 'Yes', value: 'Yes', text: 'Yes' },
-  { key: 'No', value: 'No', text: 'No' },
-  { key: 'Partially', value: 'Partially', text: 'Partially' },
-];
+import {
+  chosenOptions, yearsOptions, languageOptions, durationOptions,
+} from '../../../data/formOptions';
 
 function ExperienceForm() {
+  // -----------------RECUPERATION DES DONNEES DU STATE------------------
   const {
     title, participationFees, feedBack, image,
   } = useSelector((state) => state.experiences.addExperience);
+
+  const { thematicList } = useSelector((state) => state.thematic);
+  const { volunteeringType, receptionStructure } = useSelector((state) => state.categories);
+  //---------------------------------------------------------------------
+  // ------------------ Create Thematic Options -------------------------
+  const thematicOptions = [];
+  let i = 0;
+  thematicList.forEach((item) => {
+    thematicOptions.push({
+      key: i += 1,
+      text: item.name,
+      value: item.name,
+    });
+  });
+  // --------------------------------------------------------------------
   const countryList = useSelector((state) => state.country.countryList);
   const experienceState = useSelector((state) => state.experiences.addExperience);
   const dispatch = useDispatch();
@@ -50,6 +60,9 @@ function ExperienceForm() {
   };
   const handleYearChange = (event, value) => {
     dispatch(changeFieldValue(value.value, 'year'));
+  };
+  const handleDurationChange = (event, value) => {
+    dispatch(changeFieldValue(value.value, 'duration'));
   };
   const handleFirstLangChange = (event, value) => {
     dispatch(changeFieldValue(value.value, 'spokenLanguageFirst'));
@@ -84,13 +97,14 @@ function ExperienceForm() {
               <label>Title</label>
               <input value={title} onChange={handleTitleChange} />
             </Form.Field>
-            <Form.Field control={Select} onChange={handleVolunteeringChange} label="Volunteering Type" options={countryOptions} required />
-            <Form.Field control={Select} onChange={handleOrganizationChange} label="Type of Host Organization" options={countryOptions} required />
-            <Dropdown onChange={handleThematicsChange} placeholder="Thematics" fluid multiple selection options={countryOptions} />
+            <Form.Field control={Select} onChange={handleVolunteeringChange} label="Volunteering Type" options={volunteeringType} required />
+            <Form.Field control={Select} onChange={handleOrganizationChange} label="Type of Host Organization" options={receptionStructure} required />
+            <Dropdown onChange={handleThematicsChange} placeholder="Thematics" fluid multiple selection options={thematicOptions} />
             <Form.Field control={Select} onChange={handleCountryChange} label="Country" options={countryList} required />
-            <Form.Field onChange={handleYearChange} control={Select} label="Year" options={countryOptions} required />
-            <Form.Field onChange={handleFirstLangChange} control={Select} label="Spoken Languages" options={countryOptions} required />
-            <Form.Field onChange={handleSecondLangChange} control={Select} label="Spoken Languages (optional)" options={countryOptions} />
+            <Form.Field onChange={handleYearChange} control={Select} label="Year" options={yearsOptions} required />
+            <Form.Field onChange={handleDurationChange} control={Select} label="Duration" options={durationOptions} required />
+            <Form.Field onChange={handleFirstLangChange} control={Select} label="Spoken Languages" options={languageOptions} required />
+            <Form.Field onChange={handleSecondLangChange} control={Select} label="Spoken Languages (optional)" options={languageOptions} />
             <Form.Field>
               <label>Participation fee</label>
               <input value={participationFees} onChange={handleFeesChange} />
