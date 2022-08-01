@@ -53,7 +53,7 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
           },
         },
       } = store.getState();
-      const { user: { login: { token, id } } } = store.getState();
+      const { user: { login: { token } } } = store.getState();
       const bodyFormData = new FormData();
       bodyFormData.append('title', title);
       bodyFormData.append('country', country);

@@ -1,13 +1,34 @@
 // Imports
 import Message from './Message';
 import './style.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchReceivedMessage } from '../../../../actions/message';
+import { useEffect } from 'react';
 
 function MessageList() {
+  // Au chargement de la page des message, on lance l'appel API pour récupérer les messages reçus
+  const dispatch = useDispatch();
+  useEffect(
+    () => {
+      dispatch(fetchReceivedMessage());
+    },
+    // tableau vide : le composant courant
+    // Lorsque le composant est vide, donc au chargement de ce composant
+    // on lance la méthode
+    [],
+  );
+  
+  // Récupération de la liste des messages dans le state
+   const messageList = useSelector((state) => state.message.receivedMessageList)
+   console.log(messageList);
+
+
   return (
     <div className='message__list'>
-      <Message />
-      <Message />
-      <Message />
+
+      {messageList.map((message) => (
+          <Message key={message.id} {...message} />
+        ))}
     </div>
   );
 }

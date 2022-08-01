@@ -3,27 +3,39 @@ import './style.scss';
 import { Card, Image, Button } from 'semantic-ui-react';
 import ImageTest from '../../../../../assets/image/1.jpg';
 import UserImageDefault from '../../../../../assets/image/user-default.png';
+import { Link } from 'react-router-dom';
+
+function ExperienceCard({country, feedback, picture, title, user, createdAt, id, slugTitle}) {
+  // console.log(country );
+  const userPseudoSlug = user.pseudoSlug;
 
 function ExperienceCard({country, feedback, picture, title, user, createdAt}) {
   return (
     <Card className="experience__card">
-      <Image src={ImageTest} wrapped ui={false} />
-      <Image className="user__image" src={UserImageDefault} size="tiny" />
+      <Image src={`http://romaingibet-server.eddi.cloud/images/experiencePicture/${picture}`} wrapped ui={false} />
+      <Link to={`/volunteers/${userPseudoSlug}`}>
+       <Image className="user__image" src={UserImageDefault} size="tiny" />
+      </Link>
       <Card.Content>
         <Card.Meta>
           <span className="experience__country">{country}</span>
         </Card.Meta>
         <Card.Meta>
+          <Link to={`/volunteers/${userPseudoSlug}`}>
           <span className="author__name">{user.pseudo}</span>
+          </Link>
         </Card.Meta>
         <Card.Header className="experience__title">{title}</Card.Header>
         <Card.Description className="experience__preview">
-{feedback}        </Card.Description>
-        <Button
-          className="button__experience__details"
-        >
-          See more
-        </Button>
+          Soufflé cake chocolate oat cake powder icing pie brownie powder. Donut fruitcake jelly-o ...
+        </Card.Description>
+        <Link to={`/experiences/${id}/${slugTitle}`}>
+          <Button
+            className="button__experience__details"
+          >
+            See more
+          </Button>
+        </Link>
       </Card.Content>
       <Card.Content extra>
         <Card.Meta>

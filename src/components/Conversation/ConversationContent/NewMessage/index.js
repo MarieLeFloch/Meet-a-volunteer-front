@@ -1,18 +1,20 @@
 // Imports
 import './style.scss';
 import { Form, Input, TextArea, Button, Icon, Message } from 'semantic-ui-react'
-import { toggleNewMessageSettings, toggleSuccessMessage } from '../../../../actions/message';
+import { toggleNewMessageSettings, toggleSuccessMessage, changeNewMessageContent, saveNewMessage } from '../../../../actions/message';
 import { useDispatch, useSelector } from 'react-redux';
 
 
 function NewMessage() {
   // On récupère la propriété du store dans message settings
   const { isNewMessageOpened, hasANewMessageBeenSent } = useSelector((state)=>state.message.settings);
-  
+  // On récupère les infos du destinataire du nouveau message
+  const { receiverPseudo } = useSelector((state)=>state.message.newMessage);
+
   const dispatch = useDispatch();
   
   const handleToggleNewMessage = () => {
-    console.log('je suis la');
+    // console.log('je suis la');
     if(hasANewMessageBeenSent){
       dispatch(toggleSuccessMessage());
     }
@@ -21,12 +23,23 @@ function NewMessage() {
 
   const handleToggleSuccessMessage = () => {
     dispatch(toggleSuccessMessage());
+    dispatch(saveNewMessage());
+    console.log('SAVE NEW MESSAGE');
   }
 
+  const handleNewMessageContent = (event) => {
+    dispatch(changeNewMessageContent(event.currentTarget.value));
+
+  };
+
+  const submitNewMessage = () => {
+    console.log('SAVE NEW MESSAGE');
+    dispatch(saveNewMessage());
+  }
 
   return (
     <div className={(isNewMessageOpened) ? 'new__message--display' : 'new__message'}>
-        <h3>Send a new message  <Icon name="edit"/></h3>
+        <h3>Send a new message</h3>
         <div className='new__message__container'>
         <Button
             onClick={handleToggleNewMessage}
@@ -41,16 +54,18 @@ function NewMessage() {
             <Form.Field
                 control={Input}
                 label='Pseudo'
-                placeholder='Pseudo'
+                // placeholder='Pseudo'
+                value={receiverPseudo}
             />
             <Form.Field
             control={TextArea}
             label='Your message'
+            onChange={handleNewMessageContent}
             placeholder='Hi ! I wanted to ask you ...'
             />
             <Button 
               className="send__button" 
-              onClick={handleToggleSuccessMessage}>
+              onClick={submitNewMessage, handleToggleSuccessMessage}>
               Send
             </Button>
           </Form>

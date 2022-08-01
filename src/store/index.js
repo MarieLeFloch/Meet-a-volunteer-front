@@ -13,6 +13,8 @@ import thematicMiddleware from '../middlewares/thematic';
 import thematicExperienceMiddleware from '../middlewares/thematicExperience';
 import homeExperienceMiddleware from '../middlewares/homeExperience';
 import categoriesMiddleware from '../middlewares/experienceCategories';
+import messageMiddleware from '../middlewares/message';
+import volunteersMiddleware from '../middlewares/volunteers';
 
 
 // lie le projet au redux devtools (accès state - extension redux)
@@ -26,7 +28,12 @@ const enhancers = composeEnhancers(
     thematicMiddleware,
     thematicExperienceMiddleware,
     homeExperienceMiddleware,
+<<<<<<< HEAD
     categoriesMiddleware
+=======
+    messageMiddleware,
+    volunteersMiddleware
+>>>>>>> ea1096c7fe0ccd7efda98e7b0baada24cbb6581c
   ),
 );
 

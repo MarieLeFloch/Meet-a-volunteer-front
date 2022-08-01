@@ -13,7 +13,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case LOGIN: {
       // On récupère dans le store, dans la propriété user, les propriétés email et password
       // via du triple destructuring
-      const { user: { login: { email, password } } } = store.getState();
+      const { user: { login: { email, password, token } } } = store.getState();
 
       axiosInstance.post(
         'login_check',
@@ -23,6 +23,7 @@ const userMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
+          // console.log(response);
           store.dispatch(saveToken(response.data.token));
           store.dispatch(isLogged());
           const decodedToken = jwt_decode(response.data.token);
