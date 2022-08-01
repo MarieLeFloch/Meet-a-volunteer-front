@@ -15,6 +15,7 @@ import homeExperienceMiddleware from '../middlewares/homeExperience';
 import categoriesMiddleware from '../middlewares/experienceCategories';
 import messageMiddleware from '../middlewares/message';
 import volunteersMiddleware from '../middlewares/volunteers';
+import profileMiddleware from '../middlewares/volunteers';
 
 
 // lie le projet au redux devtools (accès state - extension redux)
@@ -31,6 +32,7 @@ const enhancers = composeEnhancers(
     categoriesMiddleware,
     messageMiddleware,
     volunteersMiddleware,
+    profileMiddleware
   ),
 );
 

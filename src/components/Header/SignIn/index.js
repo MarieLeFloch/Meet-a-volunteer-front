@@ -66,14 +66,12 @@ function SignIn() {
   // CONNEXION
 
   // Méthode pour gérer l'envoie de l'inscripion
-  //const error = false;
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
     if(password==confirmPassword){
         dispatch(signIn());
         dispatch(toggleSettingSignin());
     }else{
-        console.log("probleme");
         const errorMsg = document.querySelector('.passwordError');
         errorMsg.classList.toggle('passwordError--display');
         }
