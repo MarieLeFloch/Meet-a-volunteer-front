@@ -69,7 +69,7 @@ function LogIn() {
         </Button>
         <Image src={logo} size="mini" centered />
         <Form.Field>
-          <label>Email</label>
+          <label>Pseudo</label>
           <input
             placeholder="Email"
             onChange={handleEmailChange}

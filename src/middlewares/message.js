@@ -15,7 +15,6 @@ const messageMiddleware = (store) => (next) => (action) => {
       // Récupération de l'id de l'utilisateur connecté dans le state
       const { id, token } = state.user.login;
       // console.log(id);
-      console.log(token);
 
       // Requête API avec transmission du token pour authentification
       axiosInstance.get(
@@ -44,7 +43,6 @@ const messageMiddleware = (store) => (next) => (action) => {
       const { receiverId, messageContent } = state.message.newMessage;
       const { token } = state.user.login;
       // console.log(messageContent);
-      console.log(token);
 
       // Requête API avec transmission du token pour authentification
       //! le header à la fin !!

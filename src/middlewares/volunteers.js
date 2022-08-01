@@ -20,7 +20,6 @@ const volunteersMiddleware = (store) => (next) => (action) => {
 
       // On traite la réponse
         .then((response) => {
-          console.log(response.data);
           store.dispatch(saveVolunteers(response.data));
         })
       // On catche la potentielle erreur

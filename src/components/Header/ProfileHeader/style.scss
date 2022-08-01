@@ -27,4 +27,9 @@
         color: vars.$color-dark2;
         text-shadow: vars.$color-light2 0.1em 0.1em 0.2em;
     }
+
+    &--button {
+        background-color: vars.$color-main !important;
+        color : vars.$color-light2 !important;
+    }
 }

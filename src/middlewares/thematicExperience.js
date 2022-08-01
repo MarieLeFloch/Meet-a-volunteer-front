@@ -21,7 +21,6 @@ const thematicExperienceMiddleware = (store) => (next) => (action) => {
 
       // On traite la réponse
         .then((response) => {
-          console.log(response.data);
           store.dispatch(saveExperiencesByThematic(response.data));
         })
       // On catche la potentielle erreur
