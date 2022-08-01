@@ -3,7 +3,7 @@
 //= = Imports
 // Import d'axios pour les requêtes API
 import axios from 'axios';
-import { FETCH_PROFILE_DETAILS, saveProfileDetails } from '../actions/volunteers';
+import { FETCH_PROFILE_DETAILS, saveProfileDetails } from '../actions/profile';
 
 const axiosInstance = axios.create({
   // on définit l'url de base
@@ -13,14 +13,15 @@ const profileMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_PROFILE_DETAILS: {
       const state = store.getState();
-      // const { thematicList } = state.thematic.settings;
+      const { profileId } = state.profile;
+      console.log(profileId);
 
-      // On renseigne le end point contenant l'id du profil
-      axiosInstance.get('user/1')
+      // On renseigne le end point contenant l'id du profil à afficher
+      axiosInstance.get(`/user/${profileId}`)
 
       // On traite la réponse
         .then((response) => {
-          console.log(response.data);
+          console.log(response);
           store.dispatch(saveProfileDetails(response.data));
         })
       // On catche la potentielle erreur

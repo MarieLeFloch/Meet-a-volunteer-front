@@ -15,7 +15,7 @@ import homeExperienceMiddleware from '../middlewares/homeExperience';
 import categoriesMiddleware from '../middlewares/experienceCategories';
 import messageMiddleware from '../middlewares/message';
 import volunteersMiddleware from '../middlewares/volunteers';
-import profileMiddleware from '../middlewares/volunteers';
+import profileMiddleware from '../middlewares/profile';
 
 
 // lie le projet au redux devtools (accès state - extension redux)

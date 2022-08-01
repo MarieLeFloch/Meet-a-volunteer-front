@@ -6,4 +6,13 @@
     @media screen and (min-width: 1025px) {
         width: 70%;
     }
+
+    &--null {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 18px;
+    }
 }
