@@ -38,4 +38,4 @@ export const durationOptions = [
   { key: 'Between 1 and 6 months', value: 'Between 1 and 6 months', text: 'Between 1 and 6 months' },
   { key: 'Between 6 months and 1 year', value: 'Between 6 months and 1 year', text: 'Between 6 months and 1 year' },
   { key: 'More than a year', value: 'More than a year', text: 'More than a year' },
-]
+];

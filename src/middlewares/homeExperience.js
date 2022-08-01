@@ -7,7 +7,7 @@ import { ADD_EXPERIENCE, FETCH_EXPERIENCES_HOME, saveExperiencesHome } from '../
 
 const axiosInstance = axios.create({
   // on définit l'url de base
-  baseURL: 'http://romaingibet-server.eddi.cloud/api/',
+  baseURL: 'http://romain2518-server.eddi.cloud/api',
 });
 const homeExperienceMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -54,24 +54,33 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
         },
       } = store.getState();
       const { user: { login: { token, id } } } = store.getState();
+      const bodyFormData = new FormData();
+      bodyFormData.append('title', title);
+      bodyFormData.append('country', country);
+      bodyFormData.append('year', year);
+      bodyFormData.append('duration', duration);
+      bodyFormData.append('feedback', feedBack);
+      bodyFormData.append('participation_fee', participationFees);
+      bodyFormData.append('isHosted', accomodation);
+      bodyFormData.append('isFed', food);
+      bodyFormData.append('volunteeringType', typeOfVolunteering);
+      bodyFormData.append('receptionStructure', hostOrganization);
+      thematics.forEach((item) => {
+        bodyFormData.append('thematic[]', item);
+      });
+      if (image !== '') {
+        bodyFormData.append('pictureFile', image);
+      }
+      bodyFormData.append('language[]', spokenLanguageFirst);
+      if (spokenLanguageSecond !== '') {
+        bodyFormData.append('language[]', spokenLanguageSecond);
+      }
+
       axiosInstance.post(
-        '/experiences/',
-        {
-          title: title,
-          country: country,
-          year: year,
-          duration: duration,
-          feedback: feedBack,
-          participation_fee: parseInt(participationFees, 10),
-          isHosted: accomodation,
-          isFed: food,
-          volunteeringType: typeOfVolunteering,
-          receptionStructure: hostOrganization,
-          thematic: thematics,
-          language: [spokenLanguageFirst, spokenLanguageSecond],
-          picture: image,
-          user: id,
-        },
+        '/experiences',
+
+        bodyFormData,
+
         { headers: { Authorization: `Bearer ${token}` } },
       )
         .then((response) => {
@@ -81,22 +90,10 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
         .catch(
           (error) => {
             console.log(error);
-            console.log({
-              title: title,
-              country: country,
-              year: year,
-              duration: duration,
-              feedback: feedBack,
-              participation_fee: participationFees,
-              isHosted: accomodation,
-              isFed: food,
-              volunteeringType: typeOfVolunteering,
-              receptionStructure: hostOrganization,
-              thematic: thematics,
-              language: [spokenLanguageFirst, spokenLanguageSecond],
-              picture: image,
-              user: id,
-            });
+            console.log(token);
+            console.log(
+              bodyFormData.values(),
+            );
           },
         );
 

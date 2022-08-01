@@ -42,7 +42,7 @@ function ExperienceForm() {
   const handleImageChange = (event) => {
     // const output = document.getElementById('output');
     // output.src = URL.createObjectURL(event.target.files[0]);
-    dispatch(changeFieldValue(URL.createObjectURL(event.target.files[0]), 'image'));
+    dispatch(changeFieldValue((event.target.files[0]), 'image'));
   };
   const handleTitleChange = (event) => {
     dispatch(changeFieldValue(event.currentTarget.value, 'title'));
@@ -90,7 +90,7 @@ function ExperienceForm() {
       <h2 className="experience__form--title">Share your experience</h2>
       <div className="experience__form--content">
         <div className="experience__form--imgpreview">
-          <img src={image} alt="" />
+          <img src={(image !== '') ? URL.createObjectURL(image) : image} alt="" />
         </div>
         <div className="experience__form--fields">
           <Form onSubmit={handleSubmit} unstackable className="experience__form--main">

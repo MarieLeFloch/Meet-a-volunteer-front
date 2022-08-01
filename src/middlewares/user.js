@@ -6,7 +6,7 @@ import { isLogged, LOGIN, saveToken, saveUserID, saveUserPseudo } from '../actio
 
 const axiosInstance = axios.create({
   // par exemple, on peut définir une url de base !
-  baseURL: 'http://romaingibet-server.eddi.cloud/api/',
+  baseURL: 'http://romain2518-server.eddi.cloud/api',
 });
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
