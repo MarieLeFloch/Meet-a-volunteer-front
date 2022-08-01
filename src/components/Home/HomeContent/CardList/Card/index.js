@@ -4,11 +4,17 @@ import { Card, Image, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import ImageTest from '../../../../../assets/image/1.jpg';
 import UserImageDefault from '../../../../../assets/image/user-default.png';
+import { useDispatch } from 'react-redux';
+import { saveExperienceId } from '../../../../../actions/experience';
 
 function ExperienceCard({
   country, feedback, picture, title, user, createdAt, id, slugTitle,
 }) {
   const userPseudoSlug = user.pseudoSlug;
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(saveExperienceId(id));
+  }
   return (
     <Card className="experience__card">
       <Image src={`http://romain2518-server.eddi.cloud/images/experiencePicture/${picture}`} wrapped ui={false} />
@@ -28,7 +34,7 @@ function ExperienceCard({
         <Card.Description className="experience__preview">
           Soufflé cake chocolate oat cake powder icing pie brownie powder. Donut fruitcake jelly-o ...
         </Card.Description>
-        <Link to={`/experiences/${id}/${slugTitle}`}>
+        <Link onClick={handleClick} to={`/experiences/${id}/${slugTitle}`}>
           <Button
             className="button__experience__details"
           >

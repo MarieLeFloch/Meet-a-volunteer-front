@@ -1,15 +1,28 @@
 // == Imports
 import './style.scss';
 import { Button, Icon } from 'semantic-ui-react';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import Image from '../../../assets/image/5.jpg';
 import Avatar from '../../../assets/image/user-default.png';
-
+import { fetchExperienceById, saveExperienceId } from '../../../actions/experience';
 
 function Experience() {
+  // ----------------GatheredData--------------------
+  const { detailedExperience } = useSelector((state) => state.experiences);
+
+  //------------------------------------------------
+  // ----------------Functions--------------------
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchExperienceById());
+  }, []);
+  //---------------------------------------------
   return (
     <div className="experience">
       <div className="experience__title">
-        <h1>Experience</h1>
+        <h1>{detailedExperience.title}</h1>
       </div>
 
       <div className="experience__main">
@@ -17,13 +30,11 @@ function Experience() {
         <div className="experience__content">
 
           <div className="experience__image">
-            <img src={Image} alt="" />
+            <img src={detailedExperience.picture} alt="" />
           </div>
 
           <div className="experience__text">
-            <p>"
-              Lorem ipsum dolor sit amet. Eum mollitia quia et quasi laudantium non quis exercitationem sed quibusdam quos quo illum totam sit sint quam. Ut alias harum in numquam voluptates non similique maiores et alias galisum! Est quisquam reprehenderit sit nobis omnis et velit eaque in magni placeat sed corrupti iste ut possimus expedita? In nemo voluptate est voluptas quia ut sapiente voluptatem! Aut maiores commodi sed nobis illum quo voluptate voluptatem aut architecto temporibus et voluptatem modi. Vel nihil aperiam non distinctio iste et odit iure qui dolorem fuga et cumque maiores est soluta recusandae ut consequatur vitae? Et sint laudantium et recusandae eaque et officia architecto quo quos provident nam dignissimos cupiditate. Non optio praesentium est laudantium fugiat non maiores officiis. Et reprehenderit debitis qui exercitationem cupiditate ut autem quod.
-              Et reprehenderit debitis qui exercitationem cupiditate ut autem quod. Et reprehenderit debitis qui exercitationem cupiditate ut autem quod. Et reprehenderit debitis qui exercitationem cupiditate ut autem quod."
+            <p>"{detailedExperience.feedback}"
             </p>
           </div>
         </div>
@@ -36,8 +47,7 @@ function Experience() {
               </div>
               <div className="experience__profil--info" />
               <ul>
-                <li className="experience__profil--country">From : Country</li>
-                <li className="experience__profil--bio"><p>"Author bio"</p></li>
+                <li className="experience__profil--bio"><p>"{detailedExperience.user.pseudo}"</p></li>
                 <li className="experience__profil--contact"><Button className="footer__logo" circular icon="envelope" /></li>
               </ul>
             </div>
@@ -46,39 +56,39 @@ function Experience() {
               <div className="experience__item--list">
                 <ul>
                   <li>
-                    <div><Icon name="calendar" size='big' /></div>
+                    <div><Icon name="calendar" size="big" /></div>
                     <span>Mission Duration</span>
-                    <span>Info</span>
+                    <span>{detailedExperience.duration}</span>
                   </li>
                   <li>
-                    <div><Icon name="building" size='big' /></div>
+                    <div><Icon name="building" size="big" /></div>
                     <span>Volunteering Organization</span>
-                    <span>Info</span>
+                    <span>{detailedExperience.volunteeringType.name}</span>
                   </li>
                   <li>
-                    <div><Icon name="language" size='big' /></div>
+                    <div><Icon name="language" size="big" /></div>
                     <span>Language</span>
-                    <span>Info / Info</span>
+                    <span>{detailedExperience.language[0]} / Info</span>
                   </li>
                   <li>
-                    <div><Icon name="flag" size='big' /></div>
-                    <span>Mission Duration</span>
-                    <span>Info</span>
+                    <div><Icon name="flag" size="big" /></div>
+                    <span>Country</span>
+                    <span>{detailedExperience.country}</span>
                   </li>
                   <li>
-                    <div><Icon name="home" size='big' /></div>
+                    <div><Icon name="home" size="big" /></div>
                     <span>Accomodation</span>
-                    <span>Info</span>
+                    <span>{detailedExperience.isHosted}</span>
                   </li>
                   <li>
-                    <div><Icon name="food" size='big' /></div>
+                    <div><Icon name="food" size="big" /></div>
                     <span>Food</span>
-                    <span>Info</span>
+                    <span>{detailedExperience.isFed}</span>
                   </li>
                   <li>
-                    <div><Icon name="money" size='big' /></div>
+                    <div><Icon name="money" size="big" /></div>
                     <span>Participation fee</span>
-                    <span>Info</span>
+                    <span>{detailedExperience.participationFee}</span>
                   </li>
                 </ul>
               </div>

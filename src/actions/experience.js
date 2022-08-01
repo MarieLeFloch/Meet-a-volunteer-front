@@ -33,11 +33,36 @@ export function saveExperiencesHome(experienceList) {
   };
 }
 
-
 export const ADD_EXPERIENCE = 'ADD_EXPERIENCE';
 
 export function addExperience() {
   return {
     type: ADD_EXPERIENCE,
+  };
+}
+
+export const FETCH_EXPERIENCES_BY_ID = 'FETCH_EXPERIENCES_BY_ID';
+
+export function fetchExperienceById() {
+  return {
+    type: FETCH_EXPERIENCES_BY_ID,
+  };
+}
+
+export const SAVE_EXPERIENCE_ID = 'SAVE_EXPERIENCE_ID';
+
+export function saveExperienceId(value) {
+  return {
+    type: SAVE_EXPERIENCE_ID,
+    value: value,
+  };
+}
+
+export const SAVE_EXPERIENCE_DATA = 'SAVE_EXPERIENCE_DATA';
+
+export function saveExperienceData(value) {
+  return {
+    type: SAVE_EXPERIENCE_DATA,
+    value: value,
   };
 }
