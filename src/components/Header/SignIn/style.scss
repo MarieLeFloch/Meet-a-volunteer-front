@@ -47,3 +47,14 @@
 .signIn__form--display{
   display: block;
 }
+
+.passwordError{
+  color: red;
+  font-weight: bold;
+  display: none;
+  padding-bottom: 1em;
+
+  &--display{
+    display: block;
+  }
+}

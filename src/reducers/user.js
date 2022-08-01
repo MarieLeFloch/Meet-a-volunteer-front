@@ -20,6 +20,7 @@ export const initialState = {
     pseudo: '',
     country: '',
     email: '',
+    birthDate: '',
     password: '',
     confirmPassword: '',
   },

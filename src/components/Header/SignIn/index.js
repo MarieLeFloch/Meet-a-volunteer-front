@@ -8,11 +8,7 @@ import {
   Image, Button, Form, Select, Icon,
 } from 'semantic-ui-react';
 import logo from '../../../assets/image/logo-mini.png';
-import { toggleSettingSignin, toggleSettingLogin, changeSigninFieldValue } from '../../../actions/user';
-
-const options = [
-  { key: '1', text: 'France', value: 'France' },
-  { key: '2', text: 'Japan', value: 'Japan' }];
+import { toggleSettingSignin, toggleSettingLogin, changeSigninFieldValue, signIn } from '../../../actions/user';
 
 function SignIn() {
   // On récupère la propriété du store dans user settings
@@ -55,12 +51,32 @@ function SignIn() {
     dispatch(changeSigninFieldValue(event.currentTarget.value, 'email'));
   };
 
+  const handleBirthDateChange = (event) => {
+    dispatch(changeSigninFieldValue(event.currentTarget.value, 'birthDate'));
+  };
+
   const handlePasswordChange = (event) => {
     dispatch(changeSigninFieldValue(event.currentTarget.value, 'password'));
   };
 
   const handleConfirmPasswordChange = (event) => {
     dispatch(changeSigninFieldValue(event.currentTarget.value, 'confirmPassword'));
+  };
+
+  // CONNEXION
+
+  // Méthode pour gérer l'envoie de l'inscripion
+  //const error = false;
+  const handleFormSubmit = (evt) => {
+    evt.preventDefault();
+    if(password==confirmPassword){
+        dispatch(signIn());
+        dispatch(toggleSettingSignin());
+    }else{
+        console.log("probleme");
+        const errorMsg = document.querySelector('.passwordError');
+        errorMsg.classList.toggle('passwordError--display');
+        }
   };
 
   return (
@@ -71,12 +87,13 @@ function SignIn() {
       >
         Sign in
       </Button>
-      <Form className={(isSigninOpened) ? ' signIn__form--hidden signIn__form--display' : 'signIn__form--hidden'}>
+      <Form onSubmit={handleFormSubmit} className={(isSigninOpened) ? ' signIn__form--hidden signIn__form--display' : 'signIn__form--hidden'}>
         <Button
           onClick={handleToggleSignin}
           icon
           className="close__button"
           circular
+          type="button"
         ><Icon
           name="close"
         />
@@ -124,9 +141,12 @@ function SignIn() {
           />
         </Form.Field>
         <Form.Field>
-          <label>Picture</label>
-          <input type='file'
-            placeholder="Email"
+          <label>Date of birth</label>
+          <input 
+            placeholder="Date of birth"
+            onChange={handleBirthDateChange}
+            // value={birthDate}
+            type='date'
           />
         </Form.Field>
         <Form.Field>
@@ -147,6 +167,7 @@ function SignIn() {
             type="password"
           />
         </Form.Field>
+        <span className='passwordError'>The password doesn't match</span>
         <Button type="submit" className="signIn__form__button">Sign in</Button>
       </Form>
     </div>
