@@ -1,20 +1,19 @@
 // Imports
 import './style.scss';
 import { Card, Image, Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import ImageTest from '../../../../../assets/image/1.jpg';
 import UserImageDefault from '../../../../../assets/image/user-default.png';
-import { Link } from 'react-router-dom';
 
-function ExperienceCard({country, feedback, picture, title, user, createdAt, id, slugTitle}) {
-  // console.log(country );
+function ExperienceCard({
+  country, feedback, picture, title, user, createdAt, id, slugTitle,
+}) {
   const userPseudoSlug = user.pseudoSlug;
-
-function ExperienceCard({country, feedback, picture, title, user, createdAt}) {
   return (
     <Card className="experience__card">
       <Image src={`http://romaingibet-server.eddi.cloud/images/experiencePicture/${picture}`} wrapped ui={false} />
       <Link to={`/volunteers/${userPseudoSlug}`}>
-       <Image className="user__image" src={UserImageDefault} size="tiny" />
+        <Image className="user__image" src={UserImageDefault} size="tiny" />
       </Link>
       <Card.Content>
         <Card.Meta>
@@ -22,7 +21,7 @@ function ExperienceCard({country, feedback, picture, title, user, createdAt}) {
         </Card.Meta>
         <Card.Meta>
           <Link to={`/volunteers/${userPseudoSlug}`}>
-          <span className="author__name">{user.pseudo}</span>
+            <span className="author__name">{user.pseudo}</span>
           </Link>
         </Card.Meta>
         <Card.Header className="experience__title">{title}</Card.Header>

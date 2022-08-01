@@ -7,7 +7,7 @@ import { FETCH_VOLUNTEERS, saveVolunteers } from '../actions/volunteers';
 
 const axiosInstance = axios.create({
   // on définit l'url de base
-  baseURL: 'http://romaingibet-server.eddi.cloud/api/',
+  baseURL: 'http://romain2518-server.eddi.cloud/api',
 });
 const volunteersMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

@@ -28,12 +28,9 @@ const enhancers = composeEnhancers(
     thematicMiddleware,
     thematicExperienceMiddleware,
     homeExperienceMiddleware,
-<<<<<<< HEAD
-    categoriesMiddleware
-=======
+    categoriesMiddleware,
     messageMiddleware,
-    volunteersMiddleware
->>>>>>> ea1096c7fe0ccd7efda98e7b0baada24cbb6581c
+    volunteersMiddleware,
   ),
 );
 
