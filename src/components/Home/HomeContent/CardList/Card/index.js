@@ -4,16 +4,26 @@ import { Card, Image, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import ImageTest from '../../../../../assets/image/1.jpg';
 import UserImageDefault from '../../../../../assets/image/user-default.png';
+import { saveIdProfile } from '../../../../../actions/profile';
+import { useDispatch, useSelector } from 'react-redux';
 
 function ExperienceCard({
   country, feedback, picture, title, user, createdAt, id, slugTitle,
 }) {
   const userPseudoSlug = user.pseudoSlug;
+
+  const dispatch = useDispatch();
+
+  const handleClickProfile = () => {
+    console.log(id);
+    dispatch(saveIdProfile(id));
+  };
+
   return (
     <Card className="experience__card">
       <Image src={`http://romain2518-server.eddi.cloud/images/experiencePicture/${picture}`} wrapped ui={false} />
       <Link to={`/volunteers/${userPseudoSlug}`}>
-        <Image className="user__image" src={UserImageDefault} size="tiny" />
+        <Image onClick={handleClickProfile} className="user__image" src={UserImageDefault} size="tiny" />
       </Link>
       <Card.Content>
         <Card.Meta>
@@ -21,7 +31,7 @@ function ExperienceCard({
         </Card.Meta>
         <Card.Meta>
           <Link to={`/volunteers/${userPseudoSlug}`}>
-            <span className="author__name">{user.pseudo}</span>
+            <span onClick={handleClickProfile} className="author__name">{user.pseudo}</span>
           </Link>
         </Card.Meta>
         <Card.Header className="experience__title">{title}</Card.Header>
