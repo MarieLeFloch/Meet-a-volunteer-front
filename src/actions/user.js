@@ -103,3 +103,13 @@ export function saveUserID(value) {
     value: value,
   };
 }
+
+// Action Type => On l'utilise dans l'action creator ET dans le reducer
+export const SIGNIN = 'SIGNIN';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function signIn() {
+  return {
+    type: SIGNIN,
+  };
+}
