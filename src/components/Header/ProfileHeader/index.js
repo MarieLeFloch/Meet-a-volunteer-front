@@ -8,7 +8,7 @@ import { isLogged } from '../../../actions/user';
 import { saveIdProfile } from '../../../actions/profile';
 
 function ProfileHeader() {
-  const { pseudo, id } = useSelector((state) => state.user.login);
+  const { userPseudo, id } = useSelector((state) => state.user.login);
   console.log(id);
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -21,8 +21,8 @@ function ProfileHeader() {
 
   return (
     <div className="home__profile">
-      <Link to={`/volunteers/${pseudo}`}><Image src={Avatar} avatar size="mini" className="home__profile--avatar"  onClick={handleClickProfile}/></Link>
-      <span className="home__profile--pseudo"><Link to={`/volunteers/${pseudo}`}>{pseudo}</Link> </span>
+      <Link to={`/volunteers/${userPseudo}`}><Image src={Avatar} avatar size="mini" className="home__profile--avatar"  onClick={handleClickProfile}/></Link>
+      <span className="home__profile--pseudo"><Link to={`/volunteers/${userPseudo}`}>{userPseudo}</Link> </span>
       <Button className="home__profile--button" onClick={handleClick}>Logout</Button>
     </div>
   );

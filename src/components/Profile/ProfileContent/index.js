@@ -9,10 +9,6 @@ import { useEffect } from 'react';
 import { fetchProfileDetails } from '../../../actions/profile';
 
 function ProfileContent() {
-  // On récupère le pseudo du profil affiché via useParams & élément dynamique renseigné dans App
-  const {slug} = useParams();
-  // On récupère le pseudo de l'user connecté
-  const { email } = useSelector((state) => state.user.login);
 
   const dispatch = useDispatch();
   // Au chargement du composant, on récupère les infos du profile
@@ -29,11 +25,11 @@ function ProfileContent() {
   return (
     <div className='profile__content'>
       <div className='flex__topPart'>
-        <ProfileIntro profileToShow={slug} />
+        <ProfileIntro />
       </div>
       <div className='flex__bottomPart'>
-        <PersoInfos profileToShow={slug} />
-        <ExperienceList profileToShow={slug}  />
+        <PersoInfos />
+        <ExperienceList />
       </div>
     </div>
   );

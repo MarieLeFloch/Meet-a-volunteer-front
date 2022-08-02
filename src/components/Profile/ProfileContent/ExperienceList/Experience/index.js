@@ -2,8 +2,16 @@
 import './style.scss';
 import { Image, Button, Icon } from 'semantic-ui-react';
 import photo from '../../../../../assets/image/9.jpg';
+import { useSelector } from 'react-redux';
+
 
 function Experience( {id, title, picture,  } ) {
+  // Verif si profil personnel
+  const { pseudo } = useSelector((state) => state.profile.profileDetails);
+  const { userPseudo } = useSelector((state) => state.user.login);
+  let isOwnProfile = false;
+  if (pseudo==userPseudo) {isOwnProfile=true};
+  
   return (
     <div className='profile__experience'>
         <div className='profile__experience--image'>
@@ -14,9 +22,11 @@ function Experience( {id, title, picture,  } ) {
             <p>Lemon drops biscuit jelly beans croissant dessert tart tiramisu. Soufflé bear claw fruitcake cheesecake biscuit sweet candy. Biscuit chocolate bar pudding marshmallow brownie powder cupcake dragée. Jelly muffin chocolate cake fruitcake cookie sweet roll toffee brownie. Lemon drops biscuit jelly beans croissant dessert tart tiramisu. Soufflé bear claw fruitcake cheesecake biscuit sweet candy. Biscuit chocolate bar pudding marshmallow brownie powder cupcake dragée. Jelly muffin chocolate cake fruitcake cookie sweet roll toffee brownie.</p>
             <div><a>read more</a></div>
         </div>
+      {isOwnProfile &&       
         <Button icon className='profile__icon profile__experience--icon'>
         <Icon name='edit'/>
       </Button>
+      }
     </div>
   );
 }

@@ -4,8 +4,16 @@ import { Button, Icon } from 'semantic-ui-react';
 import { useSelector } from 'react-redux';
 
 function PersoInfos() {
-
+  // Recuperation des personnal informations dans le state
   const { pseudo, firstname, lastname, age, email, password, nativeCountry } = useSelector((state) => state.profile.profileDetails);
+
+  // Verif si profil personnel
+  // On récupère le pseudo de l'user connecté
+  const { userPseudo } = useSelector((state) => state.user.login);
+  // console.log(userPseudo);
+  let isOwnProfile = false;
+  if (pseudo==userPseudo) {isOwnProfile=true};
+  // console.log('is own profile : ', isOwnProfile);
 
   // Fonction pour récupérer l'age (stack over flow)
   function getAge(dateString) {
@@ -23,17 +31,21 @@ function PersoInfos() {
 
   return (
     <div className='profile__infos'>
-    <Button icon className='profile__icon profile__infos--icon'>
+
+    {isOwnProfile &&       
+      <Button icon className='profile__icon profile__infos--icon'>
         <Icon name='edit'/>
       </Button>
+    }
+
 
         <h4>Personnal informations</h4>
         <ul>
             <li>Pseudo : {pseudo}</li>
             <li>Firstname : {firstname}</li>
-            <li>Lastname : {lastname}</li>
+            {isOwnProfile &&  <li>Lastname : {lastname}</li>}
             <li>Age : {convertAge} ans</li>
-            <li>{email}</li>
+            {isOwnProfile && <li>{email}</li>}
             {/* <li>{password}</li> */}
             <li>From : {nativeCountry}</li>
 

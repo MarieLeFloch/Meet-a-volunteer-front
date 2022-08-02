@@ -26,10 +26,11 @@ export const initialState = {
   },
 
   login: {
+    //! modif car termes communs avec autres propriétés
     email: '',
     password: '',
     token: '',
-    pseudo: '',
+    userPseudo: '',
     id: '',
   },
 };
@@ -94,7 +95,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         login: {
           ...state.login,
-          pseudo: action.value,
+          userPseudo: action.value,
         },
       };
     case SAVE_USER_ID:

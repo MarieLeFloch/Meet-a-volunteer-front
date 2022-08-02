@@ -3,9 +3,7 @@ import './style.scss';
 import Experience from './Experience';
 import { useSelector } from 'react-redux';
 
-
 function ExperienceList() {
-
    const { experiences } = useSelector((state) => state.profile.profileDetails);
    console.log(experiences);
    // const nbExp = experiences.length; // Uncaught TypeError: Cannot read property 'length' of undefined
