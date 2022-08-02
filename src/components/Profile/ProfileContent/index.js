@@ -21,6 +21,7 @@ function ProfileContent() {
 
   // const { profileDetails } = useSelector((state) => state.profile);
   // console.log(profileDetails);
+  // const { experiences } = useSelector((state) => state.profile.profileDetails);
 
   return (
     <div className='profile__content'>

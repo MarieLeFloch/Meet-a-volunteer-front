@@ -2,6 +2,7 @@
 import './style.scss';
 import { Button, Icon } from 'semantic-ui-react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function PersoInfos() {
   // Recuperation des personnal informations dans le state
@@ -33,12 +34,12 @@ function PersoInfos() {
     <div className='profile__infos'>
 
     {isOwnProfile &&       
+    <Link to={`/volunteers/${pseudo}/update`}>       
       <Button icon className='profile__icon profile__infos--icon'>
         <Icon name='edit'/>
       </Button>
+    </Link>
     }
-
-
         <h4>Personnal informations</h4>
         <ul>
             <li>Pseudo : {pseudo}</li>

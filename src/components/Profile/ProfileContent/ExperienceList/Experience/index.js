@@ -3,6 +3,8 @@ import './style.scss';
 import { Image, Button, Icon } from 'semantic-ui-react';
 import photo from '../../../../../assets/image/9.jpg';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 
 
 function Experience( {id, title, picture,  } ) {
@@ -23,9 +25,11 @@ function Experience( {id, title, picture,  } ) {
             <div><a>read more</a></div>
         </div>
       {isOwnProfile &&       
+      <Link to={`/experiences/${id}/update`}>
         <Button icon className='profile__icon profile__experience--icon'>
-        <Icon name='edit'/>
-      </Button>
+          <Icon name='edit'/>
+        </Button>
+      </Link>
       }
     </div>
   );
