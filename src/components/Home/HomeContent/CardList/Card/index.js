@@ -38,7 +38,7 @@ function ExperienceCard({
       </Card.Content>
       <Card.Content extra>
         <Card.Meta>
-          <span className="uploaded__date">Uploaded the {createdAt}</span>
+          <span className="uploaded__date">Uploaded the {new Date(createdAt).toDateString()}</span>
         </Card.Meta>
       </Card.Content>
     </Card>
