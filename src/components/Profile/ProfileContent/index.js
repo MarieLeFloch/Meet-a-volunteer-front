@@ -18,7 +18,9 @@ function ProfileContent() {
   // Au chargement du composant, on récupère les infos du profile
   useEffect(() => {
     // console.log("chargement du profile"); //ok
-    dispatch(fetchProfileDetails())
+    dispatch(fetchProfileDetails());
+    // const { experiences } = useSelector((state) => state.profile.profileDetails);
+    // console.log(experiences);
   }, []);
 
   // const { profileDetails } = useSelector((state) => state.profile);
