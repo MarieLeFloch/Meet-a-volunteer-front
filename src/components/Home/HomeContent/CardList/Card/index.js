@@ -13,21 +13,17 @@ function ExperienceCard({
     <Card className="experience__card">
       <Image src={`http://romain2518-server.eddi.cloud/images/experiencePicture/${picture}`} wrapped ui={false} />
       <Link to={`/volunteers/${userPseudoSlug}`}>
-        <Image className="user__image" src={UserImageDefault} size="tiny" />
+        <Image className="user__image" src={`http://romain2518-server.eddi.cloud/images/pp/${user.profilePicture}`} size="tiny" />
       </Link>
       <Card.Content>
         <Card.Meta>
           <span className="experience__country">{country}</span>
-        </Card.Meta>
-        <Card.Meta>
           <Link to={`/volunteers/${userPseudoSlug}`}>
-            <span className="author__name">{user.pseudo}</span>
+            - <span className="author__name">{user.pseudo}</span>
           </Link>
         </Card.Meta>
-        <Card.Header className="experience__title">{title}</Card.Header>
-        <Card.Description className="experience__preview">
-          Soufflé cake chocolate oat cake powder icing pie brownie powder. Donut fruitcake jelly-o ...
-        </Card.Description>
+        <Card.Header className="experience__title--card" title={title}>{title.length > 50 ? `${title.slice(0, 50)}...` : title}</Card.Header>
+        <Card.Description className="experience__preview">{feedback.slice(0, 147)}...</Card.Description>
         <Link to={`/experiences/${id}/${slugTitle}`}>
           <Button
             className="button__experience__details"
