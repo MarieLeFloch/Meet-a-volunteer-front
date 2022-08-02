@@ -13,7 +13,7 @@ function ExperienceList() {
   // Si le volontaire à au moins une expérience
   // if (experiences.length>0) { //ERREUR : undefined
   // if (experiences[0]) { // undefined
-   if (experiences.length>0) {
+   if (experiences) {
    return (
      <div className='profile__experienceList'>
          {

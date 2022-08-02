@@ -20,6 +20,7 @@ import Conversation from '../Conversation';
 import ExperienceAdd from '../ExperienceAdd';
 import ThematicExperience from '../ThematicExperience';
 import { fetchExperiencesHome } from '../../actions/experience';
+import ProfileUpdate from '../ProfileUpdate';
 
 
 // == Composant
@@ -46,7 +47,7 @@ function App() {
         <Route path="/experiences/thematics/:slug" element={<ThematicExperience />} />
         <Route path="/volunteers" element={<Volunteers />} />
         <Route path="/volunteers/:slug" element={<Profile />} />
-        <Route path="/volunteers/:slug/update" element={<Profile />} />
+        <Route path="/volunteers/:slug/update" element={<ProfileUpdate />} />
         <Route path="/legal-mentions" element={<LegalMentions />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/about" element={<About />} />

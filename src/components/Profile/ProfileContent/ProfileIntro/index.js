@@ -17,26 +17,20 @@ function ProfileIntro() {
   let isOwnProfile = false;
   if (pseudo==userPseudo) {isOwnProfile=true};
 
-  const handleImageChange = (event) => {
-    // const output = document.getElementById('output');
-    // output.src = URL.createObjectURL(event.target.files[0]);
-    dispatch(changeFieldValue((event.target.files[0]), 'image'));
-  };
-
 
   return (
       <div className='profile__intro'>
           <div className='profile__intro--image'>
-          <Input onChange={handleImageChange} type="file" label="Select an image" accept="image/png" className="experience__form--main__input" />
 
           {isOwnProfile &&
+          <div className='profile__edit'>
+            <h2>Update profile</h2>
             <Link to={`/volunteers/${pseudo}/update`}>
-                <Input onChange={handleImageChange} type="file" label="Select an image" accept="image/png" className="experience__form--main__input" >
                     <Button icon className='profile__icon profile__intro__img--icon'>
                         <Icon name='edit'/>
                     </Button>
-                </Input>
             </Link>
+          </div>
           }
 
               <Image src={Avatar} avatar size="small" />
@@ -46,13 +40,6 @@ function ProfileIntro() {
           </div>
 
           <div className='profile__intro--bio'>
-          {isOwnProfile &&  
-            <Link to={`/volunteers/${pseudo}/update`}>       
-                <Button icon className='profile__icon profile__intro__bio--icon'>
-                    <Icon name='edit'/>
-                </Button>
-            </Link>
-            }
               <p> {biography}  </p>
           </div>
       </div>

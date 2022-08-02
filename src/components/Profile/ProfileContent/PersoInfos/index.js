@@ -33,13 +33,13 @@ function PersoInfos() {
   return (
     <div className='profile__infos'>
 
-    {isOwnProfile &&       
+    {/* {isOwnProfile &&       
     <Link to={`/volunteers/${pseudo}/update`}>       
       <Button icon className='profile__icon profile__infos--icon'>
         <Icon name='edit'/>
       </Button>
     </Link>
-    }
+    } */}
         <h4>Personnal informations</h4>
         <ul>
             <li>Pseudo : {pseudo}</li>
