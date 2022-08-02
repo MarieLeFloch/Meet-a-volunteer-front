@@ -8,10 +8,11 @@ import Image from '../../../assets/image/5.jpg';
 import Avatar from '../../../assets/image/user-default.png';
 import { fetchExperienceById, saveExperienceId } from '../../../actions/experience';
 
-function Experience() {
+function Experience({user}) {
   // ----------------GatheredData--------------------
   const { detailedExperience } = useSelector((state) => state.experiences);
-
+  console.log(detailedExperience);
+  console.log(user)
   //------------------------------------------------
   // ----------------Functions--------------------
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ function Experience() {
         <div className="experience__content">
 
           <div className="experience__image">
-            <img src={detailedExperience.picture} alt="" />
+            <img src={`http://romain2518-server.eddi.cloud/images/experiencePicture/${detailedExperience.picture}`} alt="" />
           </div>
 
           <div className="experience__text">
@@ -47,7 +48,7 @@ function Experience() {
               </div>
               <div className="experience__profil--info" />
               <ul>
-                <li className="experience__profil--bio"><p>"{detailedExperience.user.pseudo}"</p></li>
+                <li className="experience__profil--bio"><p>Oui</p></li>
                 <li className="experience__profil--contact"><Button className="footer__logo" circular icon="envelope" /></li>
               </ul>
             </div>
@@ -63,12 +64,12 @@ function Experience() {
                   <li>
                     <div><Icon name="building" size="big" /></div>
                     <span>Volunteering Organization</span>
-                    <span>{detailedExperience.volunteeringType.name}</span>
+                    <span>oui</span>
                   </li>
                   <li>
                     <div><Icon name="language" size="big" /></div>
                     <span>Language</span>
-                    <span>{detailedExperience.language[0]} / Info</span>
+                    <span>{detailedExperience.language} / Info</span>
                   </li>
                   <li>
                     <div><Icon name="flag" size="big" /></div>
