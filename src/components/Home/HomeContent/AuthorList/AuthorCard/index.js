@@ -10,11 +10,12 @@ function AuthorCard() {
         <div className="prolific__user--item">
           <div className="prolific__user--circle">
             <Link to={`/volunteers/id/pseudo`}>
-                <Image src={Avatar} avatar size="tiny" />
+                <Image src={Avatar} avatar size="small" />
             </Link>
             <Link to={`/volunteers/id/pseudo`}>
                 <span className="prolific__user--pseudo">Pseudo</span>
             </Link>
+            <span classname = "prolific__user--country">Country</span>
           </div>
         </div>
       </div>
