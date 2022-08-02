@@ -7,7 +7,7 @@
   position: relative;
   margin-bottom: 5rem;
   &__title {
-    margin-top: 1rem;
+    margin-top: 5rem;
     margin-bottom: 1rem;
     color: vars.$color-dark2;
     text-transform : uppercase;
@@ -88,6 +88,9 @@
   &--contact {
     margin-top: 200%;
   }
+  &--message {
+    
+  }
 }
 
 .experience__profil--avatar img {
@@ -123,4 +126,13 @@
 .experience__item--list li { 
   margin-bottom: 2rem;
   display: flex;
+  & :nth-child(2){
+   margin-left: 1rem;
+  }
+}
+
+.experience__item--span {
+  color: vars.$color-dark1;
+  font-weight: 700;
+  margin-left: auto;
 }

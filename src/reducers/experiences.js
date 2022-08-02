@@ -1,5 +1,5 @@
 import {
-  CHANGE_FIELD_VALUE, SAVE_EXPERIENCES_HOME, SAVE_EXPERIENCE_DATA, SAVE_EXPERIENCE_ID,
+  CHANGE_FIELD_VALUE, SAVE_EXPERIENCES_HOME, SAVE_EXPERIENCE_DATA, SAVE_EXPERIENCE_ID, SAVE_EXPERIENCE_STRUCTURE, SAVE_EXPERIENCE_THEMATICS, SAVE_EXPERIENCE_USER, SAVE_EXPERIENCE_VOLUNTEERING,
 } from '../actions/experience';
 
 export const initialState = {
@@ -23,6 +23,10 @@ export const initialState = {
   homeExperiences: [],
   experienceId: '',
   detailedExperience: [],
+  detailedExperienceUser: [],
+  detailedExperienceThematics: [],
+  detailedExperienceStructure: [],
+  detailedExperienceVolunteering: [],
   loading: true,
 };
 
@@ -50,6 +54,26 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         detailedExperience: action.value,
+      };
+    case SAVE_EXPERIENCE_THEMATICS:
+      return {
+        ...state,
+        detailedExperienceThematics: action.value,
+      };
+    case SAVE_EXPERIENCE_USER:
+      return {
+        ...state,
+        detailedExperienceUser: action.value,
+      };
+    case SAVE_EXPERIENCE_STRUCTURE:
+      return {
+        ...state,
+        detailedExperienceStructure: action.value,
+      };
+    case SAVE_EXPERIENCE_VOLUNTEERING:
+      return {
+        ...state,
+        detailedExperienceVolunteering: action.value,
       };
     default:
       return state;

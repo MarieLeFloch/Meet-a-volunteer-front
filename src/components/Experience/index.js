@@ -5,14 +5,10 @@ import './style.scss';
 import { useSelector } from 'react-redux';
 
 function ExperiencePage() {
-  const detailedExperienceList = useSelector((state) => state.experience.detailedExperience)
-  console.log(detailedExperienceList)
-  const { user } = useSelector((state) => state.experiences.detailedExperience);
-  console.log(user);
   return (
     <>
       <PageHeader />
-      <Experience user={user}/>
+      <Experience />
       <Footer />
     </>
   );

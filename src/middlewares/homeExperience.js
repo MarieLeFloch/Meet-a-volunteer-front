@@ -4,7 +4,7 @@
 // Import d'axios pour les requêtes API
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { ADD_EXPERIENCE, FETCH_EXPERIENCES_BY_ID, FETCH_EXPERIENCES_HOME, saveExperienceData, saveExperiencesHome } from '../actions/experience';
+import { ADD_EXPERIENCE, FETCH_EXPERIENCES_BY_ID, FETCH_EXPERIENCES_HOME, saveExperienceData, saveExperiencesHome, saveExperienceStructure, saveExperienceThematics, saveExperienceUser, saveExperienceVolunteering } from '../actions/experience';
 
 const axiosInstance = axios.create({
   // on définit l'url de base
@@ -112,12 +112,16 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           console.log(response);
           store.dispatch(saveExperienceData(response.data));
+          store.dispatch(saveExperienceThematics(response.data.thematic));
+          store.dispatch(saveExperienceUser(response.data.user));
+          store.dispatch(saveExperienceStructure(response.data.receptionStructure));
+          store.dispatch(saveExperienceVolunteering(response.data.volunteeringType));
         })
       // On catche la potentielle erreur
         .catch(
           (error) => {
             console.log(error);
-            console.log(experienceId)
+            console.log(experienceId);
           },
         );
 

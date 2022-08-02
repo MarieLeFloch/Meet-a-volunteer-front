@@ -66,3 +66,39 @@ export function saveExperienceData(value) {
     value: value,
   };
 }
+
+export const SAVE_EXPERIENCE_THEMATICS = 'SAVE_EXPERIENCE_THEMATICS';
+
+export function saveExperienceThematics(value) {
+  return {
+    type: SAVE_EXPERIENCE_THEMATICS,
+    value: value,
+  };
+}
+
+export const SAVE_EXPERIENCE_USER = 'SAVE_EXPERIENCE_USER';
+
+export function saveExperienceUser(value) {
+  return {
+    type: SAVE_EXPERIENCE_USER,
+    value: value,
+  };
+}
+
+export const SAVE_EXPERIENCE_STRUCTURE = 'SAVE_EXPERIENCE_STRUCTURE';
+
+export function saveExperienceStructure(value) {
+  return {
+    type: SAVE_EXPERIENCE_STRUCTURE,
+    value: value,
+  };
+}
+
+export const SAVE_EXPERIENCE_VOLUNTEERING = 'SAVE_EXPERIENCE_VOLUNTEERING';
+
+export function saveExperienceVolunteering(value) {
+  return {
+    type: SAVE_EXPERIENCE_VOLUNTEERING,
+    value: value,
+  };
+}
