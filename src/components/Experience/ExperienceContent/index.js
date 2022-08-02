@@ -48,7 +48,7 @@ function Experience({user}) {
               </div>
               <div className="experience__profil--info" />
               <ul>
-                <li className="experience__profil--bio"><p>Oui</p></li>
+                <li className="experience__profil--bio"><p>{user}</p></li>
                 <li className="experience__profil--contact"><Button className="footer__logo" circular icon="envelope" /></li>
               </ul>
             </div>
