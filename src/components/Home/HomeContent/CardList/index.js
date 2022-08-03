@@ -6,7 +6,6 @@ import ExperienceCard from './Card';
 
 function CardList() {
   const randomExperiencesList = useSelector((state) => state.experiences.homeExperiences);
-  // console.log(randomExperiencesList);
 
   return (
     <div className="experience__list">

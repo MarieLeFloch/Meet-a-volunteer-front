@@ -6,6 +6,7 @@ import ImageTest from '../../../../../assets/image/1.jpg';
 import UserImageDefault from '../../../../../assets/image/user-default.png';
 import { saveIdProfile } from '../../../../../actions/profile';
 import { useDispatch, useSelector } from 'react-redux';
+import { saveExperienceId } from '../../../../../actions/experience';
 
 function ExperienceCard({
   country, feedback, picture, title, user, createdAt, id, slugTitle,
@@ -19,6 +20,9 @@ function ExperienceCard({
     dispatch(saveIdProfile(id));
   };
 
+  const handleClick = () => {
+    dispatch(saveExperienceId(id));
+  }
   return (
     <Card className="experience__card">
       <Image src={`http://romain2518-server.eddi.cloud/images/experiencePicture/${picture}`} wrapped ui={false} />
@@ -34,7 +38,7 @@ function ExperienceCard({
         </Card.Meta>
         <Card.Header className="experience__title--card" title={title}>{title.length > 50 ? `${title.slice(0, 50)}...` : title}</Card.Header>
         <Card.Description className="experience__preview">{feedback.slice(0, 147)}...</Card.Description>
-        <Link to={`/experiences/${id}/${slugTitle}`}>
+        <Link onClick={handleClick} to={`/experiences/${id}/${slugTitle}`}>
           <Button
             className="button__experience__details"
           >
