@@ -26,6 +26,7 @@ function AuthorCard({ pseudoSlug, pseudo, profilePicture, id }) {
             <Link to={`/volunteers/${pseudoSlug}`}>
                 <span  onClick={handleClickProfile} className="prolific__user--pseudo">{pseudo}</span>
             </Link>
+            <span classname = "prolific__user--country">Country</span>
           </div>
         </div>
       </div>
