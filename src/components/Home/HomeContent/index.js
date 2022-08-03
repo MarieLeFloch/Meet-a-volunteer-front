@@ -13,7 +13,6 @@ function HomeContent() {
       <CardList />
       <AuthorList />
       <CardList />
-      <CardList />
     </div>
   );
 }
