@@ -26,7 +26,7 @@ function Experience() {
 
   const handleClick = () => {
     dispatch(toggleNewMessageSettings());
-  }
+  };
   //---------------------------------------------
   return (
     <div className="experience">
@@ -64,7 +64,7 @@ function Experience() {
                 <li className="experience__profil--bio"><p>{detailedExperienceUser.pseudo}</p></li>
                 <li className="experience__profil--contact"><Button onClick={handleClick} className="footer__logo" circular icon="envelope" /></li>
               </ul>
-              {(isNewMessageOpened) && <div className="experience__profil--message"> <NewMessage width ='100' /> </div> }
+              {(isNewMessageOpened) && <div className="experience__profil--message"> <NewMessage widths={150} /> </div> }
             </div>
             <div className="experience__item">
               <h3>Useful informations</h3>
