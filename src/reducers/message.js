@@ -4,6 +4,11 @@ import {
   SAVE_RECEIVED_MESSAGE,
   SET_NEW_MESSAGE,
   CHANGE_NEW_MESSAGE_CONTENT,
+  SET_NEW_EXP_MESSAGE,
+  TOGGLE_NEW_EXP_MESSAGE,
+  CHANGE_NEW_MESSAGE_EXP_CONTENT,
+  TOGGLE_SUCCESS_EXP_MESSAGE,
+  SET_RECEIVER_ID,
 
 } from '../actions/message';
 
@@ -13,7 +18,9 @@ export const initialState = {
   // Emplacement pour l'ouverture/fermeture de l'encart d'envoi d'un nouveau message
   settings: {
     isNewMessageOpened: false,
+    isNewExpMessageOpened: false,
     hasANewMessageBeenSent: false,
+    hasANewExpMessageSent: false,
   },
   receivedMessageList: [],
   newMessage: {
@@ -21,6 +28,13 @@ export const initialState = {
     receiverPseudo: '',
     messageContent: '',
   },
+  newExperienceMessage: {
+    receiverExpId: '',
+    receiverExpPseudo: '',
+    messageExpContent: '',
+    receiverId: '',
+  },
+
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -77,7 +91,61 @@ const reducer = (state = initialState, action = {}) => {
           messageContent: action.content,
         },
       };
-
+      // ? ----------------Experience Message------------------------
+    case TOGGLE_NEW_EXP_MESSAGE:
+      return {
+        // retourne l'ensemble du state courant
+        ...state,
+        // mais dans settings
+        settings: {
+          ...state.settings,
+          // inverse la valeur de isNewMessageOpened
+          isNewExpMessageOpened: !state.settings.isNewExpMessageOpened,
+        },
+      };
+    case TOGGLE_SUCCESS_EXP_MESSAGE:
+      return {
+        // retourne l'ensemble du state courant
+        ...state,
+        // mais dans settings
+        settings: {
+          ...state.settings,
+          // inverse la valeur de hasANewMessageBeenSent
+          hasANewExpMessageSent: !state.settings.hasANewExpMessageSent,
+        },
+      };
+    case SET_NEW_EXP_MESSAGE:
+      return {
+        // retourne l'ensemble du state courant
+        ...state,
+        // mais dans newMessage
+        newExperienceMessage: {
+          ...state.newExperienceMessage,
+          // inverse la valeur de hasANewMessageBeenSent
+          receiverId: action.id,
+          receiverPseudo: action.pseudo,
+        },
+      };
+    case CHANGE_NEW_MESSAGE_EXP_CONTENT:
+      return {
+        // retourne l'ensemble du state courant
+        ...state,
+        // mais dans newMessage
+        newExperienceMessage: {
+          ...state.newExperienceMessage,
+          // inverse la valeur de hasANewMessageBeenSent
+          messageExpContent: action.content,
+        },
+      };
+    case SET_RECEIVER_ID:
+      return {
+        ...state,
+        newExperienceMessage: {
+          ...state.newExperienceMessage,
+          // inverse la valeur de hasANewMessageBeenSent
+          receiverId: action.id,
+        },
+      };
     default:
       return state;
   }

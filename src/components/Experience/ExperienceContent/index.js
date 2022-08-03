@@ -4,8 +4,8 @@ import { Button, Icon } from 'semantic-ui-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchExperienceById } from '../../../actions/experience';
-import NewMessage from '../../Conversation/ConversationContent/NewMessage';
-import { toggleNewMessageSettings } from '../../../actions/message';
+import NewExperienceMessage from './NewMessage';
+import { setReceiverId, toggleNewExpMessage } from '../../../actions/message';
 
 function Experience() {
   // ----------------GatheredData--------------------
@@ -14,9 +14,7 @@ function Experience() {
     detailedExperienceThematics,
     detailedExperienceUser, detailedExperienceStructure, detailedExperienceVolunteering,
   } = useSelector((state) => state.experiences);
-  const { isNewMessageOpened, hasANewMessageBeenSent } = useSelector((state) => state.message.settings);
-  console.log(detailedExperience, detailedExperienceThematics, detailedExperienceUser);
-
+  const { logged } = useSelector((state) => state.user);
   //------------------------------------------------
   // ----------------Functions--------------------
   const dispatch = useDispatch();
@@ -25,7 +23,8 @@ function Experience() {
   }, []);
 
   const handleClick = () => {
-    dispatch(toggleNewMessageSettings());
+    dispatch(toggleNewExpMessage());
+    dispatch(setReceiverId(detailedExperienceUser.id));
   };
   //---------------------------------------------
   return (
@@ -62,9 +61,13 @@ function Experience() {
               <div className="experience__profil--info" />
               <ul>
                 <li className="experience__profil--bio"><p>{detailedExperienceUser.pseudo}</p></li>
-                <li className="experience__profil--contact"><Button onClick={handleClick} className="footer__logo" circular icon="envelope" /></li>
+                {logged && <li className="experience__profil--contact"><Button onClick={handleClick} className="footer__logo" circular icon="envelope" /></li> }
               </ul>
-              {(isNewMessageOpened) && <div className="experience__profil--message"> <NewMessage widths={150} /> </div> }
+              <div><NewExperienceMessage
+                pseudo={detailedExperienceUser.pseudo}
+                id={detailedExperienceUser.id}
+              />
+              </div>
             </div>
             <div className="experience__item">
               <h3>Useful informations</h3>

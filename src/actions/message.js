@@ -38,7 +38,7 @@ export function saveReceivedMessage(messagesList) {
 export const SET_NEW_MESSAGE = 'SET_NEW_MESSAGE';
 
 // Action creator => On l'utilise au moment du dispatch()
-export function setNewMessage (receiverId, receiverPseudo) {
+export function setNewMessage(receiverId, receiverPseudo) {
   return {
     type: SET_NEW_MESSAGE,
     id: receiverId,
@@ -59,9 +59,66 @@ export function changeNewMessageContent (content) {
 export const SAVE_NEW_MESSAGE = 'SAVE_NEW_MESSAGE';
 
 // Action creator => On l'utilise au moment du dispatch()
-export function saveNewMessage () {
+export function saveNewMessage() {
   return {
     type: SAVE_NEW_MESSAGE,
   };
 }
 
+// ? ------------------ExperienceMessage--------------------------
+
+export const SET_NEW_EXP_MESSAGE = 'SET_NEW_EXP_MESSAGE';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function setNewExpMessage(receiverId, receiverPseudo) {
+  return {
+    type: SET_NEW_EXP_MESSAGE,
+    id: receiverId,
+    pseudo: receiverPseudo,
+  };
+}
+
+export const CHANGE_NEW_MESSAGE_EXP_CONTENT = 'CHANGE_NEW_MESSAGE_EXP_CONTENT';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function changeNewMessageExpContent(content) {
+  return {
+    type: CHANGE_NEW_MESSAGE_EXP_CONTENT,
+    content: content,
+  };
+}
+export const TOGGLE_SUCCESS_EXP_MESSAGE = 'TOGGLE_SUCCESS_EXPMESSAGE';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function toggleExpSuccessMessage() {
+  return {
+    type: TOGGLE_SUCCESS_EXP_MESSAGE,
+  };
+}
+
+export const SAVE_NEW_EXP_MESSAGE = 'SAVE_NEW_EXP_MESSAGE';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function saveNewExpMessage() {
+  return {
+    type: SAVE_NEW_EXP_MESSAGE,
+  };
+}
+
+export const TOGGLE_NEW_EXP_MESSAGE = 'TOGGLE_NEW_EXP_MESSAGE';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function toggleNewExpMessage() {
+  return {
+    type: TOGGLE_NEW_EXP_MESSAGE,
+  };
+}
+
+export const SET_RECEIVER_ID = 'SET_RECEIVER_ID';
+
+export function setReceiverId(value) {
+  return {
+    type: SET_RECEIVER_ID,
+    id: value,
+  };
+}

@@ -1,0 +1,53 @@
+@use 'src/styles/vars';
+
+.new__message--experience{
+    display: none;
+
+    &--display {
+        display: block;
+        margin: 1em auto;
+        margin-top: 4em; 
+    }
+}
+
+.new__message--container__experience {
+    margin:auto;
+    margin-bottom: 2em;
+    padding: 1em;
+    border : 1px solid rgb(209, 209, 209);
+    border-radius: 3px;
+
+    @media screen and (min-width: 1025px) {
+        width: 100%;
+    }
+}
+
+.new__message--experience__form {
+
+    & .send__button--experience {
+        background-color: vars.$color-main;
+        color : vars.$color-light2;
+    }
+}
+
+.new__message--experience__hidden{
+    display: none;
+}
+
+.new__message__success {
+    display: none;
+
+    &--display{
+        display: block;
+        margin-top: 1.5em !important;
+    }
+}
+
+.message__close--button__experience{
+    //float: right;
+    margin-left: 90%!important;
+
+    @media screen and (min-width: 1025px) {
+        margin-left: 92%!important;
+    }
+}
