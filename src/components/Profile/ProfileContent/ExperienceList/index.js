@@ -4,8 +4,12 @@ import Experience from './Experience';
 import { useSelector } from 'react-redux';
 
 function ExperienceList() {
-   const { experiences } = useSelector((state) => state.profile.profileDetails);
-   console.log(experiences);
+  const experiences  = useSelector((state) => state.profile.profileDetails);
+  console.log(experiences);
+  // const experiences = profileDetails.experiences;
+  // console.log(experiences);
+  // console.log(experiences.length);
+
   // const expTab = experiences.length;
    // console.log(expTab);
    // const nbExp = experiences.length; // Uncaught TypeError: Cannot read property 'length' of undefined
@@ -13,7 +17,7 @@ function ExperienceList() {
   // Si le volontaire à au moins une expérience
   // if (experiences.length>0) { //ERREUR : undefined
   // if (experiences[0]) { // undefined
-   if (experiences) {
+   if (experiences.length>0) {
    return (
      <div className='profile__experienceList'>
          {
