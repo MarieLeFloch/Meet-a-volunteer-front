@@ -23,21 +23,17 @@ function ExperienceCard({
     <Card className="experience__card">
       <Image src={`http://romain2518-server.eddi.cloud/images/experiencePicture/${picture}`} wrapped ui={false} />
       <Link to={`/volunteers/${userPseudoSlug}`}>
-        <Image onClick={handleClickProfile} className="user__image" src={UserImageDefault} size="tiny" />
+        <Image onClick={handleClickProfile} className="user__image" src={`http://romain2518-server.eddi.cloud/images/pp/${user.profilePicture}`} size="tiny" />
       </Link>
       <Card.Content>
         <Card.Meta>
           <span className="experience__country">{country}</span>
-        </Card.Meta>
-        <Card.Meta>
           <Link to={`/volunteers/${userPseudoSlug}`}>
-            <span onClick={handleClickProfile} className="author__name">{user.pseudo}</span>
+            - <span onClick={handleClickProfile} className="author__name">{user.pseudo}</span>
           </Link>
         </Card.Meta>
-        <Card.Header className="experience__title">{title}</Card.Header>
-        <Card.Description className="experience__preview">
-          Soufflé cake chocolate oat cake powder icing pie brownie powder. Donut fruitcake jelly-o ...
-        </Card.Description>
+        <Card.Header className="experience__title--card" title={title}>{title.length > 50 ? `${title.slice(0, 50)}...` : title}</Card.Header>
+        <Card.Description className="experience__preview">{feedback.slice(0, 147)}...</Card.Description>
         <Link to={`/experiences/${id}/${slugTitle}`}>
           <Button
             className="button__experience__details"
@@ -48,7 +44,7 @@ function ExperienceCard({
       </Card.Content>
       <Card.Content extra>
         <Card.Meta>
-          <span className="uploaded__date">Uploaded the {createdAt}</span>
+          <span className="uploaded__date">Uploaded the {new Date(createdAt).toDateString()}</span>
         </Card.Meta>
       </Card.Content>
     </Card>
