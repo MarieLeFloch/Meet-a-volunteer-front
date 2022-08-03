@@ -37,6 +37,7 @@ function ExperienceForm() {
   const dispatch = useDispatch();
   const handleSubmit = () => {
     dispatch(addExperience());
+    console.log(image)
   };
   // ----------- HANDLES ON CHANGE ------------
   const handleImageChange = (event) => {
