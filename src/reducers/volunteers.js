@@ -1,7 +1,8 @@
-import { SAVE_VOLUNTEERS } from '../actions/volunteers';
+import { SAVE_VOLUNTEERS, SAVE_PROLIFICS_VOLUNTEERS } from '../actions/volunteers';
 
 export const initialState = {
   volunteersList: [],
+  volunteersProlificsList: []
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -11,6 +12,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         volunteersList: action.list,
       };
+    case SAVE_PROLIFICS_VOLUNTEERS:
+      return {
+        ...state,
+        volunteersProlificsList: action.list,
+      };
+  
     default:
       return state;
   }

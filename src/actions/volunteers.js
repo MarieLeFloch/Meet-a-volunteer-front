@@ -17,3 +17,22 @@ export function saveVolunteers(volunteersList) {
     list: volunteersList,
   };
 }
+
+export const FETCH_PROLIFICS_VOLUNTEERS = 'FETCH_PROLIFICS_VOLUNTEERS';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function fetchProlificsVolunteers() {
+  return {
+    type: FETCH_PROLIFICS_VOLUNTEERS,
+  };
+}
+
+export const SAVE_PROLIFICS_VOLUNTEERS = 'SAVE_PROLIFICS_VOLUNTEERS';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function saveProlificsVolunteers(prolificsVolunteersList) {
+  return {
+    type: SAVE_PROLIFICS_VOLUNTEERS,
+    list: prolificsVolunteersList,
+  };
+}

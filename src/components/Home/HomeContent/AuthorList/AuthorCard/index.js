@@ -7,7 +7,7 @@ import { saveIdProfile } from '../../../../../actions/profile';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-function AuthorCard({ pseudoSlug, pseudo, profilePicture, id }) {
+function AuthorCard({ pseudoSlug, pseudo, profilePicture, id, nativeCountry, expCounter }) {
 
   const dispatch = useDispatch();
 
@@ -26,7 +26,8 @@ function AuthorCard({ pseudoSlug, pseudo, profilePicture, id }) {
             <Link to={`/volunteers/${pseudoSlug}`}>
                 <span  onClick={handleClickProfile} className="prolific__user--pseudo">{pseudo}</span>
             </Link>
-            <span classname = "prolific__user--country">Country</span>
+            <span className = "prolific__user--country">From {nativeCountry}</span>
+            {(expCounter) && <span className = "prolific__user--nbExp">{expCounter} experiences shared</span>}
           </div>
         </div>
       </div>
