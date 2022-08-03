@@ -44,3 +44,11 @@ export function changeFieldValue(value, field) {
     field: field,
   };
 }
+
+export const SUBMIT_PROFILE = 'SUBMIT_PROFILE';
+
+export function submitProfile() {
+  return {
+    type: SUBMIT_PROFILE,
+  };
+}

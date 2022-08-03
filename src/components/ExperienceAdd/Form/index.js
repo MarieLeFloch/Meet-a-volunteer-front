@@ -42,7 +42,9 @@ function ExperienceForm() {
   const handleImageChange = (event) => {
     // const output = document.getElementById('output');
     // output.src = URL.createObjectURL(event.target.files[0]);
+    console.log(image);
     dispatch(changeFieldValue((event.target.files[0]), 'image'));
+    console.log(image);
   };
   const handleTitleChange = (event) => {
     dispatch(changeFieldValue(event.currentTarget.value, 'title'));

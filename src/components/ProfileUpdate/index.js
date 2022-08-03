@@ -1,7 +1,7 @@
 // Imports
 import Footer from '../Footer';
 import PageHeader from '../Header/PageHeader';
-import ProfileUpdateContent from './ProfileUpdateContent';
+import ProfileUpdateForm from './ProfileUpdateForm';
 
 import './style.scss';
 
@@ -10,7 +10,7 @@ function ProfileUpdate() {
   return (
     <>
       <PageHeader />
-      <ProfileUpdateContent />
+      <ProfileUpdateForm/>
       <Footer />
     </>
   );

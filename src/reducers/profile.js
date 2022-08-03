@@ -32,6 +32,15 @@ const reducer = (state = initialState, action = {}) => {
         profileDetails: action.infos,
       };
 
+    case CHANGE_FIELD_VALUE:
+      return {
+        ...state,
+        profileDetails: {
+          ...state.profileDetails,
+          [action.field]: action.value,
+        },
+      };
+  
     default:
     return state;
   }
