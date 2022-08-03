@@ -46,12 +46,14 @@
     list-style: none;
     border: none;
     background: none;
-    width: 200px;
     top: -2em;
-    left: 30em;
-    
+    left: calc(50vw - 3em - 175px); // middle of the page - 3em (position assigned to nav.nav__bar) - 175px (half the width of the nav bar)
+    width: 350px;
+      &__container {
+        display: flex;
+        justify-content: space-between;
+      }
       &-item {
-        margin-right : 25%;
         display: inline;
         font-size: larger;
       }
