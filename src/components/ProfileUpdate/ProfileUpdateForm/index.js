@@ -30,12 +30,7 @@ function ProfileUpdateForm() {
     // const output = document.getElementById('output');
     // output.src = URL.createObjectURL(event.target.files[0]);
     console.log(event.target.files[0]);
-    console.log(event);
-    console.log(profilePicture);
-
     dispatch(changeFieldValue((event.target.files[0]), 'profilePicture'));
-    console.log(profilePicture);
-
   };
 
   const handlePseudoChange = (event) => {
