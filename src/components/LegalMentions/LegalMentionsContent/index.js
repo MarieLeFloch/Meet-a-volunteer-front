@@ -5,7 +5,7 @@ function LegalMentionsContent () {
   return (
   <div className="legalMentions">
 
-   <h1 className="legalMentions__title">Legal Mentions</h1>
+   <h1 className="legalMentions__title main__title">Legal Mentions</h1>
 
 
     <div className="legalMentions__content">

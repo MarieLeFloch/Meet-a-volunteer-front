@@ -1,17 +1,18 @@
 @use 'src/styles/vars';
 
-.contact__container {
-
-  margin-top: 5rem;
+// .contact__container {
+//   margin: auto;
+//   margin-top: 5rem;
+//   margin-bottom: 2em;
   
-}
+// }
 
 .bloc__contact {
 
-  width: 90%;
+  // width: 90%;
   // height: 100vh;
   
-  margin:11em auto 0; 
+  margin:11em auto 4em; 
 
 
   .page__title {
@@ -28,7 +29,7 @@
   .item__container {
 
     // background-color: vars.$color-light1;
-    max-width: 100%;
+    width: 90%;
     // height: 100%;
     margin:auto;
     
@@ -45,10 +46,14 @@
   }
 
 
-  .contact__text {
+  .contact-text {
 
-    margin-bottom: 35px;
+    margin-bottom: 4em;
     text-align: justify;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+      
     
 
     @media screen and (min-width: 1025px) {
@@ -58,7 +63,7 @@
       width: 80%;
       margin: auto;
       margin-top: 20px;
-      margin-bottom: 40px;
+      margin-bottom: 100px;
       
 
 
@@ -70,7 +75,7 @@
 
     display: flex;
     // width: 60%;
-    width: 320px;
+    // width: 320px;
     justify-content: space-between;
 
     @media screen and (min-width: 1025px) {

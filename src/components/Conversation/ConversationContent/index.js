@@ -9,7 +9,7 @@ function ConversationContent() {
 
   return (
     <div className="Conversation__content">
-      <h1>Messages</h1>
+      <h1 className='main__title'>Messages</h1>
       <NewMessage />
       <MessageList />
     </div>

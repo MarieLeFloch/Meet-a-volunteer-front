@@ -9,7 +9,7 @@ function ContactContent() {
 
     <div className="bloc__contact">
 
-      <h1>Contact Us</h1>
+      <h1 className='main__title'>Contact Us</h1>
 
       <div className="contact-text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec aliquam ligula, convallis pulvinar turpis. Cras mattis quam at nunc vehicula, ac tincidunt purus volutpat. Morbi pellentesque vehicula pulvinar. Ut efficitur lorem a porta tincidunt. Cras pharetra risus sit amet neque fermentum, id ultricies sapien tristique. Cras ut posuere elit. Donec nec velit mauris. Cras quis rutrum ante, at consequat est. Aenean non blandit felis, non faucibus urna. In sem quam, tristique id aliquet lobortis, tristique id erat. Fusce quis metus at arcu vehicula consectetur. Quisque finibus iaculis eu.

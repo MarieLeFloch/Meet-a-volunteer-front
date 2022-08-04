@@ -15,7 +15,7 @@ function AboutContent() {
   return (
     <div className="about">
 
-<h1 className="page__title__about">About</h1>
+<h1 className="main__title">About</h1>
 
       <div className='about__content'>
 
