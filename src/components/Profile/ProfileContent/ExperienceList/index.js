@@ -4,40 +4,51 @@ import { useSelector } from 'react-redux';
 import Experience from './Experience';
 
 function ExperienceList() {
-  const experiences = useSelector((state) => state.profile.profileDetails);
+  const { experiences } = useSelector((state) => state.profile.profileDetails);
+  console.log(typeof experiences); // object => array
   console.log(experiences);
-  // const experiences = profileDetails.experiences;
-  // console.log(experiences);
-  // console.log(experiences.length);
 
-  // const expTab = experiences.length;
-  // console.log(expTab);
-  // const nbExp = experiences.length; // Uncaught TypeError: Cannot read property 'length' of undefined
-
-  // Si le volontaire à au moins une expérience
-  // if (experiences.length>0) { //ERREUR : undefined
-  // if (experiences[0]) { // undefined
-  if (experiences.length > 0) {
+  if (experiences) {
     return (
       <div className="profile__experienceList">
         {
-           experiences.map((experience) => (
-             <Experience
-               key={experience.id}
-               {...experience}
-             />
-           ))
-         }
+            experiences.map((experience) => (
+              <Experience
+                key={experience.id}
+                {...experience}
+              />
+            ))
+          }
       </div>
     );
-    // Ne passe jamais par là car experiences est toujours défini même vide
-    // Si aucune expérience
   }
-  return (
-    <div className="profile__experienceList profile__experienceList--null">
-      No experiences yet
-    </div>
-  );
+  // {experiences &&
+  //     <div className='profile__experienceList'>
+  //       {console.log(experiences)}
+  //         {
+  //           experiences.map((experience) => (
+  //             <Experience
+  //               key={experience.id} {...experience}/>
+  //             )
+  //           )
+  //         }
+  //     </div>
+  //   ;}
+  //   {
+  //     !experiences &&
+  //       <div className='profile__experienceList profile__experienceList--null'>
+  //         No experiences yet
+  //       </div>
+
+  //   }
+
+  // Ne passe jamais par là car experiences est toujours défini même vide
+  // Si aucune expérience
+  // return(
+  //   <div className='profile__experienceList profile__experienceList--null'>
+  //     No experiences yet
+  //   </div>
+  // )
 }
 
 export default ExperienceList;

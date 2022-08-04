@@ -2,8 +2,7 @@
 import './style.scss';
 import { Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import Avatar from '../../../../../assets/image/user-default.png';
+import { useDispatch } from 'react-redux';
 import { saveIdProfile } from '../../../../../actions/profile';
 
 function AuthorCard({

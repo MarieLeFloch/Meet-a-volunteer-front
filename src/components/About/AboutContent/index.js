@@ -2,6 +2,13 @@
 import './style.scss';
 import { Image } from 'semantic-ui-react';
 import avatar_m from '../../../assets/image/avatar_m.png';
+import avatar_l from '../../../assets/image/avatar_l.png';
+import avatar_rg from '../../../assets/image/avatar_rg.png';
+import avatar_rl from '../../../assets/image/avatar_rl.png';
+import avatar_a from '../../../assets/image/avatar_a.png';
+
+
+
 
 
 function AboutContent() {
@@ -23,7 +30,7 @@ function AboutContent() {
       <h2>Meet the team</h2>
         <div className='team__cards'>
           <div className='team__card'>
-            <Image src={avatar_m} avatar size="tiny" />
+            <Image src={avatar_a} avatar size="tiny" />
             <div>
               <span className="team__name">Arslane</span><br/>
               <span className="team__role1">Web Developer / Front-end</span><br/>
@@ -31,7 +38,7 @@ function AboutContent() {
             </div>
           </div>
           <div className='team__card'>
-            <Image src={avatar_m} avatar size="tiny" />
+            <Image src={avatar_l} avatar size="tiny" />
             <div>
               <span className="team__name">Lukas</span><br/>
               <span className="team__role1">Web Developer / Back-end</span><br/>
@@ -47,7 +54,7 @@ function AboutContent() {
             </div>
           </div>
           <div className='team__card'>
-            <Image src={avatar_m} avatar size="tiny" />
+            <Image src={avatar_rg} avatar size="tiny" />
             <div>
               <span className="team__name">Romain.G</span><br/>
               <span className="team__role1">Web Developer / Back-end</span><br/>
@@ -55,7 +62,7 @@ function AboutContent() {
             </div>
           </div>
           <div className='team__card'>
-            <Image src={avatar_m} avatar size="tiny" />
+            <Image src={avatar_rl} avatar size="tiny" />
             <div>
               <span className="team__name">Romain.L</span><br/>
               <span className="team__role1">Web Developer / Back-end</span><br/>
