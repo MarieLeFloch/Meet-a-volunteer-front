@@ -28,20 +28,6 @@ function ThematicList() {
   });
 
   return (
-<<<<<<< HEAD
-    <div>
-
-      <ul className="thematic__list">
-        {
-          thematicList.map((thematic) => (
-            <ThematicButton
-              key={thematic.id}
-              {...thematic}
-            />
-          ))
-        }
-      </ul>
-=======
     <div
       onMouseEnter={disableScroll}
       onMouseLeave={[enableScroll, dragStop]}
@@ -68,7 +54,6 @@ function ThematicList() {
         ))}
       </ScrollMenu>
 
->>>>>>> HorizontalScroll
     </div>
   );
 }
