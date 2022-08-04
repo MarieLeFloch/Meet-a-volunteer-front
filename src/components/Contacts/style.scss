@@ -1,18 +1,35 @@
 @use 'src/styles/vars';
 
+.contact__container {
+
+  margin-top: 5rem;
+  
+}
+
 .bloc__contact {
 
   width: 90%;
-  margin: auto;
-  height: 30vh;
-  margin-top: 4em;
+  // height: 100vh;
+  
+  margin:11em auto 0; 
+
+
+  .page__title {
+
+    color: vars.$color-dark2;
+    text-transform : uppercase;
+    letter-spacing : 0.3em;
+    margin-bottom: 5rem;
+    
+  }
+  
   
 
   .item__container {
 
     // background-color: vars.$color-light1;
     max-width: 100%;
-    height: 100%;
+    // height: 100%;
     margin:auto;
     
     display:block;
@@ -27,9 +44,12 @@
     }
   }
 
-  .contact-text {
+
+  .contact__text {
 
     margin-bottom: 35px;
+    text-align: justify;
+    
 
     @media screen and (min-width: 1025px) {
     
@@ -39,64 +59,65 @@
       margin: auto;
       margin-top: 20px;
       margin-bottom: 40px;
+      
 
 
     }
   }
 
 
-    .phone__bloc, .mail__bloc, .sn__bloc {
+  .phone__bloc, .mail__bloc, .sn__bloc {
 
+    display: flex;
+    // width: 60%;
+    width: 320px;
+    justify-content: space-between;
+
+    @media screen and (min-width: 1025px) {
+    
+          
       display: flex;
-      // width: 60%;
-      width: 320px;
-      justify-content: space-between;
+        
+       width: 340px;
+  
+  
+     }
 
+
+    .phone__picto, .mail__picto, .sn__picto {
+
+      width: 20%;
+        
+        
       @media screen and (min-width: 1025px) {
     
           
-        display: flex;
-        
-        width: 340px;
-  
-  
+          
+        width: 35%;
+          
+          
+    
+    
       }
 
+        .phone__img, .mail__img, .sn__img {
 
-      .phone__picto, .mail__picto, .sn__picto {
-
-        width: 20%;
-        
-        
-        @media screen and (min-width: 1025px) {
-    
-          
-          
-          width: 35%;
-          
-          
-    
-    
-        }
-
-          .phone__img, .mail__img, .sn__img {
-
-            width:90px;
+          width:90px;
             
             
             
             
-            @media screen and (min-width: 1025px) {
+          @media screen and (min-width: 1025px) {
     
           
           
-              width: 120px;
+            width: 120px;
               
         
         
-            }
           }
-      }
+        }
+    }
     
 
       .phone__number, .mail__adress, .sn__adress {
@@ -117,6 +138,7 @@
         h1 {
           font-size: 1.5em;
           text-align: left;
+          
         }
 
         @media screen and (min-width: 1025px) {

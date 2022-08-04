@@ -22,6 +22,7 @@
   }
 }
 
+
 .about__content--presentation, .about__content--team {
   margin: 1.5em 0em;
   @media screen and (min-width: 1025px) {
@@ -41,6 +42,15 @@
   }
 }
 
+.page__title__about {
+
+  color: vars.$color-dark2;
+  text-transform : uppercase;
+  letter-spacing : 0.3em;
+  padding-top: 3rem;
+  margin-bottom: 5rem;
+  
+}
 
 .team__name {
   color: vars.$color-main;

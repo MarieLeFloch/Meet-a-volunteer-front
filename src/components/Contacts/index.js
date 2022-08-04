@@ -1,22 +1,23 @@
 // == Import
 import './style.scss';
-import HomeHeader from '../Header/HomeHeader';
+import PageHeader from '../Header/PageHeader';
 import phoneIcon from '../../assets/image/phone-solid.png';
 import mailIcon from '../../assets/image/mail-solid.png';
 import snIcon from '../../assets/image/sn-solid.png';
+import Footer from './../Footer';
 
 function Contacts() {
   return (
     <div className="contact__container">
-      <div className="caroussel">
-        <HomeHeader />
-      </div>
+      
+        <PageHeader />
+      
 
       <div className="bloc__contact">
         
-        <h1>Contact Us</h1>
+        <h1 className="page__title">Contact Us</h1>
 
-        <div className="contact-text">
+        <div className="contact__text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec aliquam ligula, convallis pulvinar turpis. Cras mattis quam at nunc vehicula, ac tincidunt purus volutpat. Morbi pellentesque vehicula pulvinar. Ut efficitur lorem a porta tincidunt. Cras pharetra risus sit amet neque fermentum, id ultricies sapien tristique. Cras ut posuere elit. Donec nec velit mauris. Cras quis rutrum ante, at consequat est. Aenean non blandit felis, non faucibus urna. In sem quam, tristique id aliquet lobortis, tristique id erat. Fusce quis metus at arcu vehicula consectetur. Quisque finibus iaculis eu.
         </div>
 
@@ -74,6 +75,8 @@ function Contacts() {
 
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
