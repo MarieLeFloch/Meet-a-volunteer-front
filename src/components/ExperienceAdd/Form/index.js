@@ -57,7 +57,7 @@ function ExperienceForm() {
       window.scrollTo(0, 0);
       setTimeout(() => {
         navigate(`/volunteers/${userPseudo}`);
-      }, 2500);
+      }, 4000);
     }
   };
   // ----------- HANDLES ON CHANGE ------------
