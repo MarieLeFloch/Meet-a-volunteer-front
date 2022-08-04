@@ -122,3 +122,20 @@ export function setReceiverId(value) {
     id: value,
   };
 }
+
+export const GET_ID_MESSAGE_READ = 'GET_ID_MESSAGE_READ';
+
+export function getIdMessageRead(value) {
+  return {
+    type: GET_ID_MESSAGE_READ,
+    id: value,
+  };
+}
+
+export const SAVE_MESSAGE_AS_READ = 'SAVE_MESSAGE_AS_READ';
+
+export function saveMessageAsRead() {
+  return {
+    type: SAVE_MESSAGE_AS_READ,
+  };
+}
