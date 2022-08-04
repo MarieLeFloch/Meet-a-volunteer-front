@@ -7,7 +7,8 @@ import { isLogged,
           saveToken, 
           saveUserID, 
           saveUserPseudo,
-          SIGNIN } from '../actions/user';
+          SIGNIN, } from '../actions/user';
+import { fetchReceivedMessage } from '../actions/message';
 
 const axiosInstance = axios.create({
   // par exemple, on peut définir une url de base !
@@ -35,6 +36,7 @@ const userMiddleware = (store) => (next) => (action) => {
           const decodedToken = jwt_decode(response.data.token);
           store.dispatch(saveUserID(decodedToken.id));
           store.dispatch(saveUserPseudo(decodedToken.username));
+          store.dispatch(fetchReceivedMessage());
           return next(action);
         })
         .catch((error) => {

@@ -25,7 +25,7 @@ const messageMiddleware = (store) => (next) => (action) => {
 
       // On traite la réponse
         .then((response) => {
-          // console.log(response);
+          console.log(response);
           store.dispatch(saveReceivedMessage(response.data));
         })
       // On catche la potentielle erreur

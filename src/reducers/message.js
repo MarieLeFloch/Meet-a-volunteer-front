@@ -54,7 +54,7 @@ const reducer = (state = initialState, action = {}) => {
         newMessage: {
           ...state.newMessage,
           // inverse la valeur de hasANewMessageBeenSent
-          messageContent: ' ',
+          messageContent: '',
         },
         
       };
