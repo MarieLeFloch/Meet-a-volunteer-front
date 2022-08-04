@@ -1,7 +1,7 @@
 // Imports
 import './style.scss';
-import ThematicButton from './ThematicButton';
-import { useDispatch, useSelector } from 'react-redux';
+
+
 
 function ThematicList() {
 
@@ -23,5 +23,7 @@ function ThematicList() {
     </div>
   );
 }
+
+
 
 export default ThematicList;
