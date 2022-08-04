@@ -6,7 +6,7 @@ import Avatar from '../../../../../assets/image/user-default.png';
 import { toggleNewMessageSettings, setNewMessage, toggleSuccessMessage } from '../../../../../actions/message';
 
 function Message({
-  id, message, userSender, createdAt,
+  id, message, userSender, createdAt, isRead
 }) {
   const { isNewMessageOpened, hasANewMessageBeenSent } = useSelector((state) => state.message.settings);
 
@@ -37,7 +37,7 @@ function Message({
   // }
 
   return (
-    <div className="received__message">
+    <div className={(isRead) ? "received__message" : "received__message received__message--unRead"}>
 
       <div className="received__message__topBar">
         <div className="received__message__topBar--left">
@@ -53,7 +53,7 @@ function Message({
         </div>
       </div>
 
-      <div className="received__message__content">
+      <div className={(isRead) ? "received__message__content" : "received__message__content received__message__content--unRead"}>
         <p className="preview" onClick={showEntireMessage}>{message}</p>
       </div>
 
