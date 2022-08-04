@@ -3,12 +3,17 @@ import './style.scss';
 import { Image, Icon } from 'semantic-ui-react';
 import { useDispatch, useSelector } from 'react-redux';
 import Avatar from '../../../../../assets/image/user-default.png';
-import { toggleNewMessageSettings, setNewMessage } from '../../../../../actions/message';
+import { toggleNewMessageSettings,
+   setNewMessage, 
+   toggleSuccessMessage,
+   getIdMessageRead,
+   saveMessageAsRead,
+  } from '../../../../../actions/message';
 
 function Message({
-  id, message, userSender, createdAt,
+  id, message, userSender, createdAt, isRead
 }) {
-  const { isNewMessageOpened } = useSelector((state) => state.message.settings);
+  const { isNewMessageOpened, hasANewMessageBeenSent } = useSelector((state) => state.message.settings);
 
   const pseudoSender = userSender.pseudo;
   const idSender = userSender.id;
@@ -20,21 +25,20 @@ function Message({
     dispatch(toggleNewMessageSettings());
     const newMessage = document.querySelector('.new__message');
     newMessage.classList.toggle('new__message--display');
+    if(hasANewMessageBeenSent){
+      dispatch(toggleSuccessMessage());
+    }
   };
 
   function showEntireMessage(event) {
     const p = event.currentTarget;
     p.classList.toggle('preview');
+    dispatch(getIdMessageRead(id));
+    dispatch(saveMessageAsRead());
   }
-  // function handleNewMessage (event) {
-  //    console.log("ça marche");
-  //    setIsNewMessageOpened(!isNewMessageOpened);
-  //    const newMessage = document.querySelector('.new__message');
-  //     newMessage.classList.toggle('new__message--display')
-  // }
 
   return (
-    <div className="received__message">
+    <div className={(isRead) ? "received__message" : "received__message received__message--unRead"}>
 
       <div className="received__message__topBar">
         <div className="received__message__topBar--left">
@@ -50,7 +54,7 @@ function Message({
         </div>
       </div>
 
-      <div className="received__message__content">
+      <div className={(isRead) ? "received__message__content" : "received__message__content received__message__content--unRead"}>
         <p className="preview" onClick={showEntireMessage}>{message}</p>
       </div>
 

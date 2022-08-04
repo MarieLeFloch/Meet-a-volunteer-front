@@ -11,6 +11,7 @@ import {
   saveUserPseudo,
   SIGNIN,
 } from '../actions/user';
+import { fetchReceivedMessage } from '../actions/message';
 
 const axiosInstance = axios.create({
   // par exemple, on peut définir une url de base !
@@ -40,6 +41,7 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(saveUserPseudo(decodedToken.username));
           store.dispatch(saveUserPicture(decodedToken.profilePicture));
           console.log(decodedToken);
+          store.dispatch(fetchReceivedMessage());
           return next(action);
         })
         .catch((error) => {
