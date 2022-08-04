@@ -2,10 +2,11 @@
     padding-top: 8em;
     width: 90%;
     margin: auto;
-    margin-bottom: 10em;
+
 
     @media screen and (min-width: 1025px) {
         width: 80%;
+        min-height: 100%;
     }
 
     & h1{

@@ -4,7 +4,7 @@
 // Import d'axios pour les requêtes API
 import axios from 'axios';
 import {
-  ADD_EXPERIENCE, FETCH_EXPERIENCES_BY_ID, FETCH_EXPERIENCES_HOME, saveExperienceData, saveExperiencesHome, saveExperienceStructure, saveExperienceThematics, saveExperienceUser, saveExperienceVolunteering,
+  ADD_EXPERIENCE, FETCH_EXPERIENCES_BY_ID, FETCH_EXPERIENCES_HOME, saveAddedExpId, saveAddedExpSlug, saveExperienceData, saveExperiencesHome, saveExperienceStructure, saveExperienceThematics, saveExperienceUser, saveExperienceVolunteering, toggleFormError, toggleFormSuccess,
 } from '../actions/experience';
 
 const axiosInstance = axios.create({
@@ -52,6 +52,7 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
             food,
             feedBack,
             image,
+            formError,
           },
         },
       } = store.getState();
@@ -87,6 +88,10 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
+          store.dispatch(toggleFormSuccess());
+          if (formError) {
+            store.dispatch(toggleFormError());
+          }
         })
       // On catche la potentielle erreur
         .catch(

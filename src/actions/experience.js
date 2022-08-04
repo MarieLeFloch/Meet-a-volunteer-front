@@ -102,3 +102,19 @@ export function saveExperienceVolunteering(value) {
     value: value,
   };
 }
+
+export const TOGGLE_FORM_ERROR = 'TOGGLE_FORM_ERROR';
+
+export function toggleFormError() {
+  return {
+    type: TOGGLE_FORM_ERROR,
+  };
+}
+
+export const TOGGLE_FORM_SUCCESS = 'TOGGLE_FORM_SUCCESS';
+
+export function toggleFormSuccess() {
+  return {
+    type: TOGGLE_FORM_SUCCESS,
+  };
+}

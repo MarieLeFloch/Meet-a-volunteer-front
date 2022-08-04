@@ -20,7 +20,7 @@ function MessageList() {
 
   // Récupération de la liste des messages dans le state
   const messageList = useSelector((state) => state.message.receivedMessageList);
-
+    console.log(messageList);
   return (
     <div className="message__list">
 
