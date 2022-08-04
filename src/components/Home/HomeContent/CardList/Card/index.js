@@ -2,10 +2,8 @@
 import './style.scss';
 import { Card, Image, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import ImageTest from '../../../../../assets/image/1.jpg';
-import UserImageDefault from '../../../../../assets/image/user-default.png';
-import { saveIdProfile } from '../../../../../actions/profile';
 import { useDispatch, useSelector } from 'react-redux';
+import { saveIdProfile } from '../../../../../actions/profile';
 import { saveExperienceId } from '../../../../../actions/experience';
 
 function ExperienceCard({
@@ -22,7 +20,7 @@ function ExperienceCard({
 
   const handleClick = () => {
     dispatch(saveExperienceId(id));
-  }
+  };
   return (
     <Card className="experience__card">
       <Image src={`http://romain2518-server.eddi.cloud/images/experiencePicture/${picture}`} wrapped ui={false} />

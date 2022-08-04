@@ -1,15 +1,14 @@
 // Imports
 import './style.scss';
-import ProfileIntro from './ProfileIntro';
-import ExperienceList from './ExperienceList';
-import PersoInfos from './PersoInfos';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import ProfileIntro from './ProfileIntro';
+import ExperienceList from './ExperienceList';
+import PersoInfos from './PersoInfos';
 import { fetchProfileDetails } from '../../../actions/profile';
 
 function ProfileContent() {
-
   const dispatch = useDispatch();
   // Au chargement du composant, on récupère les infos du profile
   useEffect(() => {
@@ -24,11 +23,11 @@ function ProfileContent() {
   // const { experiences } = useSelector((state) => state.profile.profileDetails);
 
   return (
-    <div className='profile__content'>
-      <div className='flex__topPart'>
+    <div className="profile__content">
+      <div className="flex__topPart">
         <ProfileIntro />
       </div>
-      <div className='flex__bottomPart'>
+      <div className="flex__bottomPart">
         <PersoInfos />
         <ExperienceList />
       </div>

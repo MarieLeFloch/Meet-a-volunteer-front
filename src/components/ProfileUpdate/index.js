@@ -6,11 +6,10 @@ import ProfileUpdateForm from './ProfileUpdateForm';
 import './style.scss';
 
 function ProfileUpdate() {
-
   return (
     <>
       <PageHeader />
-      <ProfileUpdateForm/>
+      <ProfileUpdateForm />
       <Footer />
     </>
   );

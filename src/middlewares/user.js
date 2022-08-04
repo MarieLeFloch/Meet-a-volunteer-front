@@ -2,12 +2,14 @@
 
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
-import { isLogged, 
-          LOGIN, 
-          saveToken, 
-          saveUserID, 
-          saveUserPseudo,
-          SIGNIN } from '../actions/user';
+import {
+  isLogged,
+  LOGIN,
+  saveToken,
+  saveUserID,
+  saveUserPseudo,
+  SIGNIN,
+} from '../actions/user';
 
 const axiosInstance = axios.create({
   // par exemple, on peut définir une url de base !
@@ -47,24 +49,30 @@ const userMiddleware = (store) => (next) => (action) => {
     // GESTION DE L'INSCRIPTION
     case SIGNIN: {
       // On récupère les infos du store contenue dans user / signin
-      const { user: { signin: { firstname, lastname, pseudo, country, email, birthDate, password, confirmPassword } } } = store.getState();
+      const {
+        user: {
+          signin: {
+            firstname, lastname, pseudo, country, email, birthDate, password, confirmPassword,
+          },
+        },
+      } = store.getState();
 
       axiosInstance.post(
         '/user',
         {
           pseudo: pseudo,
           firstname: firstname,
-          password : password,
-          lastname: lastname, 
-          age: birthDate ,
+          password: password,
+          lastname: lastname,
+          age: birthDate,
           email: email,
-          nativeCountry : country,
+          nativeCountry: country,
 
         },
       )
         .then((response) => {
           console.log(response);
-          window.alert("Registration validated. Please identify yourself.");
+          window.alert('Registration validated. Please identify yourself.');
           return next(action);
         })
         .catch((error) => {

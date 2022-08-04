@@ -1,21 +1,24 @@
 // Imports
 import './style.scss';
 import { Image, Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { isLogged } from '../../../actions/user';
-import { saveIdProfile } from '../../../actions/profile';
+import { fetchProfileDetails, saveIdProfile } from '../../../actions/profile';
 
 function ProfileHeader() {
   // Récupération du pseudo et de l'id du profile
   const { userPseudo, id } = useSelector((state) => state.user.login);
+  const navigate = useNavigate();
   console.log(id);
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(isLogged());
+    navigate('/');
   };
   const handleClickProfile = () => {
     dispatch(saveIdProfile(id));
+    dispatch(fetchProfileDetails());
   };
 
   // Récupération de la photo de profil
