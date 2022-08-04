@@ -3,7 +3,12 @@ import './style.scss';
 import { Image, Icon } from 'semantic-ui-react';
 import { useDispatch, useSelector } from 'react-redux';
 import Avatar from '../../../../../assets/image/user-default.png';
-import { toggleNewMessageSettings, setNewMessage, toggleSuccessMessage } from '../../../../../actions/message';
+import { toggleNewMessageSettings,
+   setNewMessage, 
+   toggleSuccessMessage,
+   getIdMessageRead,
+   saveMessageAsRead,
+  } from '../../../../../actions/message';
 
 function Message({
   id, message, userSender, createdAt, isRead
@@ -28,13 +33,9 @@ function Message({
   function showEntireMessage(event) {
     const p = event.currentTarget;
     p.classList.toggle('preview');
+    dispatch(getIdMessageRead(id));
+    dispatch(saveMessageAsRead());
   }
-  // function handleNewMessage (event) {
-  //    console.log("ça marche");
-  //    setIsNewMessageOpened(!isNewMessageOpened);
-  //    const newMessage = document.querySelector('.new__message');
-  //     newMessage.classList.toggle('new__message--display')
-  // }
 
   return (
     <div className={(isRead) ? "received__message" : "received__message received__message--unRead"}>

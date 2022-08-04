@@ -9,6 +9,7 @@ import {
   CHANGE_NEW_MESSAGE_EXP_CONTENT,
   TOGGLE_SUCCESS_EXP_MESSAGE,
   SET_RECEIVER_ID,
+  GET_ID_MESSAGE_READ,
 
 } from '../actions/message';
 
@@ -21,6 +22,7 @@ export const initialState = {
     isNewExpMessageOpened: false,
     hasANewMessageBeenSent: false,
     hasANewExpMessageSent: false,
+    hasBeenRead: '',
   },
   receivedMessageList: [],
   newMessage: {
@@ -154,6 +156,16 @@ const reducer = (state = initialState, action = {}) => {
           receiverId: action.id,
         },
       };
+    case GET_ID_MESSAGE_READ:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          // enregistre l'id du message qui vient d'être ouvert
+          hasBeenRead: action.id,
+        },
+      };
+  
     default:
       return state;
   }

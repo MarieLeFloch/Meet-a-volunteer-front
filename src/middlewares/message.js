@@ -1,7 +1,13 @@
 //= = Imports
 // Import d'axios pour les requêtes API
 import axios from 'axios';
-import { changeNewMessageExpContent, FETCH_RECEIVED_MESSAGE, saveReceivedMessage, SAVE_NEW_EXP_MESSAGE, SAVE_NEW_MESSAGE } from '../actions/message';
+import { changeNewMessageExpContent, 
+  FETCH_RECEIVED_MESSAGE, 
+  saveReceivedMessage, 
+  SAVE_NEW_EXP_MESSAGE, 
+  SAVE_NEW_MESSAGE,
+  SAVE_MESSAGE_AS_READ,
+ } from '../actions/message';
 
 const axiosInstance = axios.create({
   // on définit l'url de base
@@ -114,6 +120,33 @@ const messageMiddleware = (store) => (next) => (action) => {
 
       return next(action);
     }
+
+    case SAVE_MESSAGE_AS_READ: {
+
+      const state = store.getState();
+      // Récupération de l'id du message qui vient d'être ouvert
+      const { hasBeenRead } = state.message.settings;
+      const { token } = state.user.login;
+
+      axiosInstance.get(
+        `/message/${hasBeenRead}/setRead`,
+        { headers: { Authorization: `Bearer ${token}` } },
+      )
+      
+      // On traite la réponse
+        .then((response) => {
+          console.log(response); 
+        })
+      // On catche la potentielle erreur
+        .catch(
+          (error) => {
+            console.log(error); 
+          },
+        );
+         
+      return next(action);
+    }
+
     default:
       next(action);
   }
