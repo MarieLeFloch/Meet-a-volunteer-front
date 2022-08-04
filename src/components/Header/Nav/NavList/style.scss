@@ -53,6 +53,12 @@
       &-item {
         display: inline;
         font-size: larger;
+        &:hover {
+          color: vars.$color-main;
+          transition: 0.3s;
+
+
+        }
       }
 
       &__close--button {
@@ -66,13 +72,7 @@
 
   }
 
-  .list :hover {
-
-    color: vars.$color-main;
-    transition: 0.3s;
-    
-        
-  }
+  
 
 
 }
