@@ -17,7 +17,7 @@
       padding: 10% 0% 10% 0%;
       box-sizing: border-box;
       color: black;
-        font-weight: 600;
+      font-weight: 600;
       
       & a {
 
@@ -32,6 +32,28 @@
         color: vars.$color-dark1;
         transition: 0.5s;
       }
+
+
+    &-mobil {
+      padding: 10% 0% 10% 0%;
+      box-sizing: border-box;
+      color: black;
+      font-weight: 600;
+
+        // & li {
+
+        //   color: black;
+        //   font-weight: 600;
+        //   cursor: pointer;
+            
+        //   }
+    }
+
+    &-mobil li:hover {
+      color: vars.$color-dark1;
+      transition: 0.5s;
+      font-size: large;
+    }
       
 }
 
@@ -60,6 +82,11 @@
 
       &__close--button {
         display: none;
+      }
+
+      &-mobil {
+        display: none;
+        
       }
 
   }

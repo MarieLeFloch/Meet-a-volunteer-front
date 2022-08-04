@@ -63,7 +63,8 @@ function Contacts() {
             <div className="sn__adress">
               <h1>FOLLOW US</h1>
               <p> <strong>Facebook: </strong>meetavolunteer </p>
-              <p> <strong>Instagram: </strong>@meetavolunteer </p>
+              <p> <strong>Instagram: </strong>#meetavolunteer </p>
+              <p> <strong>Twitter: </strong>@meetavolunteer </p>
 
             </div>
 
