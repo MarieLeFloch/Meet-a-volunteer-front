@@ -26,11 +26,15 @@ function ThematicList() {
       scrollContainer.current.scrollLeft += posDiff;
     }
   });
+  const handleMouseLeave = function () {
+    enableScroll();
+    dragStop();
+  };
 
   return (
     <div
       onMouseEnter={disableScroll}
-      onMouseLeave={[enableScroll, dragStop]}
+      onMouseLeave={handleMouseLeave}
     >
       <ScrollMenu
         className="thematic__list"
