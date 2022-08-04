@@ -18,7 +18,7 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
       // const { filtredThematicId } = state.thematic;
       // console.log(filtredThematicId);
 
-      axiosInstance.get('/experiences/random/9/0')
+      axiosInstance.get('/experiences/random/8/0')
 
       // On traite la réponse
         .then((response) => {

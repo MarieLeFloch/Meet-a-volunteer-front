@@ -7,7 +7,7 @@ import Avatar from '../../../../../assets/image/user-default.png';
 import { saveIdProfile } from '../../../../../actions/profile';
 
 function AuthorCard({
-  pseudoSlug, pseudo, profilePicture, id,
+  pseudoSlug, pseudo, profilePicture, id, nativeCountry, expCounter,
 }) {
   const dispatch = useDispatch();
 
@@ -21,12 +21,13 @@ function AuthorCard({
       <div className="prolific__user--item">
         <div className="prolific__user--circle">
           <Link to={`/volunteers/${pseudoSlug}`}>
-            <Image onClick={handleClickProfile} src={Avatar} avatar size="tiny" />
+            <Image onClick={handleClickProfile} src={`http://romain2518-server.eddi.cloud/images/pp/${profilePicture}`} avatar size="tiny" />
           </Link>
           <Link to={`/volunteers/${pseudoSlug}`}>
             <span onClick={handleClickProfile} className="prolific__user--pseudo">{pseudo}</span>
           </Link>
-          <span className="prolific__user--country">Country</span>
+          <span className="prolific__user--country">From {nativeCountry}</span>
+          {(expCounter) && <span className="prolific__user--nbExp">{expCounter} experiences shared</span>}
         </div>
       </div>
     </div>

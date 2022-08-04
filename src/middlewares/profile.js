@@ -14,7 +14,7 @@ const profileMiddleware = (store) => (next) => (action) => {
     case FETCH_PROFILE_DETAILS: {
       const state = store.getState();
       const { profileId } = state.profile;
-      console.log(profileId);
+      // console.log(profileId);
 
       // On renseigne le end point contenant l'id du profil à afficher
       axiosInstance.get(`/user/${profileId}`)
@@ -62,7 +62,7 @@ const profileMiddleware = (store) => (next) => (action) => {
       bodyFormData.append('nativeCountry', nativeCountry);
       // en Back : pictureFile est le fichier à envoyer, profilePicture est le chemin
       bodyFormData.append('pictureFile', profilePicture);
-      console.log(bodyFormData);
+      // console.log(bodyFormData);
       // On renseigne le end point contenant l'id du profil à afficher
       axiosInstance.post(
         `/user/${id}`,
@@ -72,7 +72,7 @@ const profileMiddleware = (store) => (next) => (action) => {
 
       // On traite la réponse
         .then((response) => {
-          console.log(bodyFormData);
+          // console.log(bodyFormData);
           console.log(response);
           store.dispatch(saveProfileDetails(response.data));
         })

@@ -33,7 +33,7 @@ function ProfileIntro() {
           </div>
           }
 
-              <Image src={Avatar} avatar size="small" />
+              <Image src={`http://romain2518-server.eddi.cloud/images/pp/${profilePicture}`} avatar size="small" />
           </div>
           <div className='profile__intro--pseudo'>
               <h2> {pseudo} </h2>
