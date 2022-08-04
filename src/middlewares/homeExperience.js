@@ -3,8 +3,10 @@
 //= = Imports
 // Import d'axios pour les requêtes API
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import { ADD_EXPERIENCE, FETCH_EXPERIENCES_BY_ID, FETCH_EXPERIENCES_HOME, saveExperienceData, saveExperiencesHome, saveExperienceStructure, saveExperienceThematics, saveExperienceUser, saveExperienceVolunteering } from '../actions/experience';
+import {
+  ADD_EXPERIENCE, FETCH_EXPERIENCES_BY_ID, FETCH_EXPERIENCES_HOME, saveExperienceData, saveExperiencesHome, saveExperienceStructure, saveExperienceThematics, saveExperienceUser, saveExperienceVolunteering,
+} from '../actions/experience';
+
 const axiosInstance = axios.create({
   // on définit l'url de base
   baseURL: 'http://romain2518-server.eddi.cloud/api',
@@ -53,7 +55,7 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
           },
         },
       } = store.getState();
-      const { user: { login: { token } } } = store.getState();     
+      const { user: { login: { token } } } = store.getState();
       const bodyFormData = new FormData();
       bodyFormData.append('title', title);
       bodyFormData.append('country', country);

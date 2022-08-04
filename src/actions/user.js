@@ -93,6 +93,15 @@ export function saveUserPseudo(value) {
     value: value,
   };
 }
+export const SAVE_USER_PICTURE = 'SAVE_USER_PICTURE';
+
+// Action creator => On l'utilise au moment du dispatch()
+export function saveUserPicture(value) {
+  return {
+    type: SAVE_USER_PICTURE,
+    value: value,
+  };
+}
 
 export const SAVE_USER_ID = 'SAVE_USER_ID';
 

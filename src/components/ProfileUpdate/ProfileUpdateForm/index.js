@@ -68,7 +68,7 @@ function ProfileUpdateForm() {
         <h2 className="profile__form--title">Profile</h2>
         <div className="profile__form--content">
           <div className="profile__form--imgpreview">
-            <img src={`http://romain2518-server.eddi.cloud/images/pp/${profilePicture}`} />
+            <img src={`http://romain2518-server.eddi.cloud/images/pp/${profilePicture}`} alt="" />
             {/* <img src={(profilePicture !== '') ? URL.createObjectURL(`http://romain2518-server.eddi.cloud/images/pp/${profilePicture}`) : profilePicture} alt="" /> */}
           </div>
           <div className="profile__form--fields">

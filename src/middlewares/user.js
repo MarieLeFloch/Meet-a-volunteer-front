@@ -7,6 +7,7 @@ import {
   LOGIN,
   saveToken,
   saveUserID,
+  saveUserPicture,
   saveUserPseudo,
   SIGNIN,
 } from '../actions/user';
@@ -37,6 +38,8 @@ const userMiddleware = (store) => (next) => (action) => {
           const decodedToken = jwt_decode(response.data.token);
           store.dispatch(saveUserID(decodedToken.id));
           store.dispatch(saveUserPseudo(decodedToken.username));
+          store.dispatch(saveUserPicture(decodedToken.profilePicture));
+          console.log(decodedToken);
           return next(action);
         })
         .catch((error) => {
