@@ -17,7 +17,7 @@ function ExperienceCard({
 
   const handleClickProfile = () => {
     console.log(id);
-    dispatch(saveIdProfile(id));
+    dispatch(saveIdProfile(user.id));
   };
 
   const handleClick = () => {
