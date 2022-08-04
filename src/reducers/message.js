@@ -9,6 +9,7 @@ import {
   CHANGE_NEW_MESSAGE_EXP_CONTENT,
   TOGGLE_SUCCESS_EXP_MESSAGE,
   SET_RECEIVER_ID,
+  GET_ID_MESSAGE_READ,
 
 } from '../actions/message';
 
@@ -21,6 +22,7 @@ export const initialState = {
     isNewExpMessageOpened: false,
     hasANewMessageBeenSent: false,
     hasANewExpMessageSent: false,
+    hasBeenRead: '',
   },
   receivedMessageList: [],
   newMessage: {
@@ -39,6 +41,7 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    // Au clic sur l'icone write a new message
     case TOGGLE_NEW_MESSAGE_SETTINGS:
       return {
         // retourne l'ensemble du state courant
@@ -46,9 +49,16 @@ const reducer = (state = initialState, action = {}) => {
         // mais dans settings
         settings: {
           ...state.settings,
-          // inverse la valeur de isNewMessageOpened
+          // inverse la valeur de isNewMessageOpened, afin d'afficher l'encart de saisie d'un nouveau message
           isNewMessageOpened: !state.settings.isNewMessageOpened,
         },
+        // et on remet le contenu à 0 si a déjà été modifié
+        newMessage: {
+          ...state.newMessage,
+          // inverse la valeur de hasANewMessageBeenSent
+          messageContent: '',
+        },
+        
       };
     case TOGGLE_SUCCESS_MESSAGE:
       return {
@@ -59,7 +69,7 @@ const reducer = (state = initialState, action = {}) => {
           ...state.settings,
           // inverse la valeur de hasANewMessageBeenSent
           hasANewMessageBeenSent: !state.settings.hasANewMessageBeenSent,
-        },
+        },        
       };
     case SAVE_RECEIVED_MESSAGE:
       return {
@@ -75,7 +85,7 @@ const reducer = (state = initialState, action = {}) => {
         // mais dans newMessage
         newMessage: {
           ...state.newMessage,
-          // inverse la valeur de hasANewMessageBeenSent
+          // recupere l'id et le pseudo du profil cliqué
           receiverId: action.id,
           receiverPseudo: action.pseudo,
         },
@@ -87,7 +97,7 @@ const reducer = (state = initialState, action = {}) => {
         // mais dans newMessage
         newMessage: {
           ...state.newMessage,
-          // inverse la valeur de hasANewMessageBeenSent
+          // enregistre le message saisi
           messageContent: action.content,
         },
       };
@@ -146,6 +156,16 @@ const reducer = (state = initialState, action = {}) => {
           receiverId: action.id,
         },
       };
+    case GET_ID_MESSAGE_READ:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          // enregistre l'id du message qui vient d'être ouvert
+          hasBeenRead: action.id,
+        },
+      };
+  
     default:
       return state;
   }
