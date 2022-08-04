@@ -16,21 +16,14 @@
     &-item {
       padding: 10% 0% 10% 0%;
       box-sizing: border-box;
-      color: black;
+      color: rgb(0, 0, 0);
       font-weight: 600;
-      
-      & a {
-
-        color: black;
-        font-weight: 600;
-        cursor: pointer;
-        
-      }
     } 
 
-      &-item a:hover {
+      &-item li:hover {
         color: vars.$color-dark1;
         transition: 0.5s;
+        background-color: red;
       }
 
 
@@ -40,19 +33,13 @@
       color: black;
       font-weight: 600;
 
-        // & li {
-
-        //   color: black;
-        //   font-weight: 600;
-        //   cursor: pointer;
-            
-        //   }
+        
     }
 
     &-mobil li:hover {
       color: vars.$color-dark1;
       transition: 0.5s;
-      font-size: large;
+      font-weight: bolder;
     }
       
 }
