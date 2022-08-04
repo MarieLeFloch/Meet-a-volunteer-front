@@ -21,6 +21,13 @@
     }
   }
 
+  &__date {
+    display: inline-block;
+    font-style: italic;
+    color: darkgrey;
+    margin-top: 0.2em;
+  }
+
   &__main {
     display: block;
     @media (min-width: 1025px) {

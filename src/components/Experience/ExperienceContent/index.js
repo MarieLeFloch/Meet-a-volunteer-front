@@ -50,6 +50,7 @@ function Experience() {
             <p>"{detailedExperience.feedback}"
             </p>
           </div>
+          <span className="experience__date">{new Date(detailedExperience.createdAt).toDateString()}</span>
         </div>
 
         <div>
@@ -91,7 +92,7 @@ function Experience() {
                   <li>
                     <div><Icon name="language" size="big" /></div>
                     <span>Language</span>
-                    <span className="experience__item--span">{detailedExperience.language} / Info</span>
+                    <span className="experience__item--span">{[detailedExperience.language].join()}</span>
                   </li>
                   <li>
                     <div><Icon name="flag" size="big" /></div>
