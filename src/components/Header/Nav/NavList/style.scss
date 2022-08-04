@@ -10,7 +10,7 @@
   color: vars.$color-dark1;
   text-transform : uppercase;
   letter-spacing : 0.1em;
-  text-shadow: vars.$color-light2 0.1em 0.1em 0.2em;
+  text-shadow: vars.$color-light1 0.1em 0.1em 0.2em;
   position: absolute;
   z-index: 100;
     &-item {
@@ -20,12 +20,6 @@
       font-weight: 600;
     } 
 
-      &-item li:hover {
-        color: vars.$color-dark1;
-        transition: 0.5s;
-        background-color: red;
-      }
-
 
     &-mobil {
       padding: 10% 0% 10% 0%;
@@ -34,12 +28,6 @@
       font-weight: 600;
 
         
-    }
-
-    &-mobil li:hover {
-      color: vars.$color-dark1;
-      transition: 0.5s;
-      font-weight: bolder;
     }
       
 }
@@ -76,6 +64,14 @@
         
       }
 
+  }
+
+  .list :hover {
+
+    color: vars.$color-main;
+    transition: 0.3s;
+    
+        
   }
 
 
