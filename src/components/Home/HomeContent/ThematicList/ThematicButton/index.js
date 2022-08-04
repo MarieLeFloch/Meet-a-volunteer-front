@@ -24,7 +24,7 @@ function ThematicButton({ id, name, slugName }) {
   return (
     <li> 
       <Link to={`/experiences/thematics/${slugName}`}>
-        <Button 
+        <Button
           onClick={updateFiltredThematic}
           basic circular 
           className='thematic__button'>{name}

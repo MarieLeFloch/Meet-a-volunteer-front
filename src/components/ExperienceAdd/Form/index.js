@@ -2,25 +2,29 @@
 
 import './style.scss';
 import {
-  Form, Select, Dropdown, Button, Input,
+  Form, Select, Dropdown, Button, Input, Message,
 } from 'semantic-ui-react';
-
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addExperience, changeFieldValue } from '../../../actions/experience';
+import { useEffect } from 'react';
+import {
+  addExperience, changeFieldValue, toggleFormError, toggleFormSuccess,
+} from '../../../actions/experience';
 import {
   chosenOptions, yearsOptions, languageOptions, durationOptions,
 } from '../../../data/formOptions';
-
+import { saveIdProfile } from '../../../actions/profile';
 function ExperienceForm() {
   // -----------------RECUPERATION DES DONNEES DU STATE------------------
   const {
-    title, participationFees, feedBack, image, 
+    title, participationFees, feedBack, image, typeOfVolunteering, hostOrganization,
+    thematics, country, year, duration, spokenLanguageFirst, spokenLanguageSecond, accomodation, food,
+    formError, formSuccess,
   } = useSelector((state) => state.experiences.addExperience);
-
+  const { userPseudo, id } = useSelector((state) => state.user.login);
   const { thematicList } = useSelector((state) => state.thematic);
   const { volunteeringType, receptionStructure } = useSelector((state) => state.categories);
   const countryList = useSelector((state) => state.country.countryList);
-  const experienceState = useSelector((state) => state.experiences.addExperience);
   //---------------------------------------------------------------------
   // ------------------ Create Thematic Options -------------------------
   const thematicOptions = [];
@@ -33,11 +37,28 @@ function ExperienceForm() {
     });
   });
   // --------------------------------------------------------------------
-
   const dispatch = useDispatch();
-  const handleSubmit = () => {
-    dispatch(addExperience());
-    console.log(image)
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (formSuccess) {
+      dispatch(toggleFormSuccess());
+    }
+  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (title === '' || participationFees === '' || feedBack === '' || image === '' || typeOfVolunteering === '' || hostOrganization === ''
+    || thematics === [] || country === '' || year === '' || duration === '' || spokenLanguageFirst === '' || accomodation === '' || food === '' || spokenLanguageFirst === spokenLanguageSecond) {
+      dispatch(toggleFormError());
+      window.scrollTo(0, 0);
+    }
+    else {
+      dispatch(addExperience());
+      dispatch(saveIdProfile(id));
+      window.scrollTo(0, 0);
+      setTimeout(() => {
+        navigate(`/volunteers/${userPseudo}`);
+      }, 2500);
+    }
   };
   // ----------- HANDLES ON CHANGE ------------
   const handleImageChange = (event) => {
@@ -91,21 +112,33 @@ function ExperienceForm() {
   return (
     <div className="experience__form">
       <h2 className="experience__form--title">Share your experience</h2>
+      {formError && !formSuccess && (
+      <Message negative>
+        <Message.Header>Something went wrong !</Message.Header>
+        <p>Please fill out every required fields or select a different spoken language </p>
+      </Message>
+      )}
+      {formSuccess && (
+      <Message positive>
+        <Message.Header>You have successfuly uploaded your experience ! </Message.Header>
+        <p>Thank you for sharing your story, you'll be shortly redirected to your beautiful experience page</p>
+      </Message>
+      ) }
       <div className="experience__form--content">
         <div className="experience__form--imgpreview">
           <img src={(image !== '') ? URL.createObjectURL(image) : image} alt="" />
         </div>
         <div className="experience__form--fields">
           <Form onSubmit={handleSubmit} unstackable className="experience__form--main">
-            <Input onChange={handleImageChange} type="file" label="Select an image" accept="image/png" className="experience__form--main__input" />
-            <Form.Field>
+            <Input required onChange={handleImageChange} type="file" label="Select an image" accept="image/png" className="experience__form--main__input" />
+            <Form.Field required>
               <label>Title</label>
               <input value={title} onChange={handleTitleChange} />
             </Form.Field>
             <Form.Field control={Select} onChange={handleVolunteeringChange} label="Volunteering Type" options={volunteeringType} required />
             <Form.Field control={Select} onChange={handleOrganizationChange} label="Type of Host Organization" options={receptionStructure} required />
-            <Dropdown onChange={handleThematicsChange} placeholder="Thematics" fluid multiple selection options={thematicOptions} />
-            <Form.Field control={Select} onChange={handleCountryChange} label="Country" options={countryList} required />
+            <Dropdown label="Thematics" onChange={handleThematicsChange} placeholder="Thematics" fluid multiple selection options={thematicOptions} />
+            <Form.Field search control={Select} onChange={handleCountryChange} label="Country" options={countryList} required />
             <Form.Field onChange={handleYearChange} control={Select} label="Year" options={yearsOptions} required />
             <Form.Field onChange={handleDurationChange} control={Select} label="Duration" options={durationOptions} required />
             <Form.Field onChange={handleFirstLangChange} control={Select} label="Spoken Languages" options={languageOptions} required />

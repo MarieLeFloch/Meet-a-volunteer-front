@@ -1,5 +1,7 @@
 import {
-  CHANGE_FIELD_VALUE, SAVE_EXPERIENCES_HOME, SAVE_EXPERIENCE_DATA, SAVE_EXPERIENCE_ID, SAVE_EXPERIENCE_STRUCTURE, SAVE_EXPERIENCE_THEMATICS, SAVE_EXPERIENCE_USER, SAVE_EXPERIENCE_VOLUNTEERING,
+  ADDED_EXP_ID,
+  ADDED_EXP_SLUG,
+  CHANGE_FIELD_VALUE, SAVE_EXPERIENCES_HOME, SAVE_EXPERIENCE_DATA, SAVE_EXPERIENCE_ID, SAVE_EXPERIENCE_STRUCTURE, SAVE_EXPERIENCE_THEMATICS, SAVE_EXPERIENCE_USER, SAVE_EXPERIENCE_VOLUNTEERING, TOGGLE_FORM_ERROR, TOGGLE_FORM_SUCCESS,
 } from '../actions/experience';
 
 export const initialState = {
@@ -18,6 +20,8 @@ export const initialState = {
     accomodation: '',
     food: '',
     feedBack: '',
+    formError: false,
+    formSuccess: false,
   },
 
   homeExperiences: [],
@@ -74,6 +78,22 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         detailedExperienceVolunteering: action.value,
+      };
+    case TOGGLE_FORM_ERROR:
+      return {
+        ...state,
+        addExperience: {
+          ...state.addExperience,
+          formError: !state.formError,
+        },
+      };
+    case TOGGLE_FORM_SUCCESS:
+      return {
+        ...state,
+        addExperience: {
+          ...state.addExperience,
+          formSuccess: !state.formSuccess,
+        },
       };
     default:
       return state;

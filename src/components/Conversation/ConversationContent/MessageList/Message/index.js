@@ -6,12 +6,13 @@ import Avatar from '../../../../../assets/image/user-default.png';
 import { toggleNewMessageSettings, setNewMessage } from '../../../../../actions/message';
 
 function Message({
-  id, message, userSender, createdAt,
+  id, message, userSender, createdAt
 }) {
   const { isNewMessageOpened } = useSelector((state) => state.message.settings);
 
   const pseudoSender = userSender.pseudo;
   const idSender = userSender.id;
+  const pictureSender = userSender.profilePicture;
 
   const dispatch = useDispatch();
 
@@ -38,7 +39,7 @@ function Message({
 
       <div className="received__message__topBar">
         <div className="received__message__topBar--left">
-          <Image src={Avatar} avatar size="mini" />
+          <Image src={`http://romain2518-server.eddi.cloud/images/pp/${pictureSender}`} avatar size="mini" />
           <span className="pseudo">{pseudoSender}</span>
         </div>
         <div className="received__message__topBar--right">
