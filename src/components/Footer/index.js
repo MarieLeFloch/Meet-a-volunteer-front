@@ -21,9 +21,14 @@ function Footer() {
       <Link to={`/legal-mentions`}>
         <span className='footer__link'>Legal mentions</span>
       </Link>
+      
+      <a href="http://romain2518-server.eddi.cloud/back/main">
+        <span className='footer__link'>Back office</span>
+      </a>
       </div>
     </div>
   );
 }
 
 export default Footer;
+
