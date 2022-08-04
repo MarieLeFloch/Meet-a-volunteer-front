@@ -3,12 +3,12 @@ import './style.scss';
 import { Image, Icon } from 'semantic-ui-react';
 import { useDispatch, useSelector } from 'react-redux';
 import Avatar from '../../../../../assets/image/user-default.png';
-import { toggleNewMessageSettings, setNewMessage } from '../../../../../actions/message';
+import { toggleNewMessageSettings, setNewMessage, toggleSuccessMessage } from '../../../../../actions/message';
 
 function Message({
   id, message, userSender, createdAt,
 }) {
-  const { isNewMessageOpened } = useSelector((state) => state.message.settings);
+  const { isNewMessageOpened, hasANewMessageBeenSent } = useSelector((state) => state.message.settings);
 
   const pseudoSender = userSender.pseudo;
   const idSender = userSender.id;
@@ -20,6 +20,9 @@ function Message({
     dispatch(toggleNewMessageSettings());
     const newMessage = document.querySelector('.new__message');
     newMessage.classList.toggle('new__message--display');
+    if(hasANewMessageBeenSent){
+      dispatch(toggleSuccessMessage());
+    }
   };
 
   function showEntireMessage(event) {

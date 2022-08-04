@@ -12,7 +12,7 @@ function NewMessage() {
   // On récupère la propriété du store dans message settings
   const { isNewMessageOpened, hasANewMessageBeenSent } = useSelector((state) => state.message.settings);
   // On récupère les infos du destinataire du nouveau message
-  const { receiverPseudo } = useSelector((state) => state.message.newMessage);
+  const { receiverPseudo, messageContent } = useSelector((state) => state.message.newMessage);
 
   const dispatch = useDispatch();
 
@@ -27,7 +27,6 @@ function NewMessage() {
   const handleToggleSuccessMessage = () => {
     dispatch(toggleSuccessMessage());
     dispatch(saveNewMessage());
-    console.log('SAVE NEW MESSAGE');
   };
 
   const handleNewMessageContent = (event) => {
@@ -35,7 +34,6 @@ function NewMessage() {
   };
 
   const submitNewMessage = () => {
-    console.log('SAVE NEW MESSAGE');
     dispatch(saveNewMessage());
   };
 
@@ -64,6 +62,7 @@ function NewMessage() {
             label="Your message"
             onChange={handleNewMessageContent}
             placeholder="Hi ! I wanted to ask you ..."
+            value={messageContent}
           />
           <Button
             className="send__button"
