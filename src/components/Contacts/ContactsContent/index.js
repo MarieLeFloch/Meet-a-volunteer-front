@@ -1,13 +1,13 @@
 // == Import
 import './style.scss';
+import phoneIcon from '../../../assets/image/phone-solid.png';
+import mailIcon from '../../../assets/image/mail-solid.png';
+import snIcon from '../../../assets/image/sn-solid.png';
 
 function ContactsContent() {
   return (
     <div className="contact__container">
       
-        <PageHeader />
-      
-
       <div className="bloc__contact">
         
         <h1 className="page__title">Contact Us</h1>
@@ -70,10 +70,8 @@ function ContactsContent() {
 
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }
 
-export default Contacts;
+export default ContactsContent;
