@@ -1,6 +1,7 @@
 @use 'src/styles/vars';
 
 .thematic__button {
+  list-style: none;
   color: vars.$color-dark1 !important;
   border-color: vars.$color-dark1 !important;
 }

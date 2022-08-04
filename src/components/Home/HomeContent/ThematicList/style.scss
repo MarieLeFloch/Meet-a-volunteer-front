@@ -1,19 +1,34 @@
 @use 'src/styles/vars';
 
-.thematic__list{
-  padding-bottom: 3px;
-  display: flex;
-  align-items: center;
-  //overflow-x: hidden;
-  overflow-x: scroll;
-
-  // &:hover{
-  //   overflow-x: scroll;
-  // }
+.react-horizontal-scrolling-menu--scroll-container {
+  list-style: none;
 }
 
-.thematic__list::-webkit-scrollbar {
-  height: 7px !important;
+.react-horizontal-scrolling-menu--item {
+  display: flex;
+}
+
+.react-horizontal-scrolling-menu--item li {
+  margin: auto 0;
+}
+
+.arrow {
+  background: unset;
+  height: fit-content;
   border: none;
-  background-color: vars.$color-main ;
+  font-size: 150%;
+  padding: 6px 10px;
+  margin: auto 0;
+  border-radius: 50%;
+}
+
+//? Hidden scrollbar
+/* chrome and chromium based */
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
