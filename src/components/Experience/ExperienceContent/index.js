@@ -50,6 +50,7 @@ function Experience() {
             <p>"{detailedExperience.feedback}"
             </p>
           </div>
+          <span className="experience__date">{new Date(detailedExperience.createdAt).toDateString()}</span>
         </div>
 
         <div>
