@@ -53,14 +53,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Error />} />
         {(logged) ? <Route path="/experience/add" element={<ExperienceAdd />} /> : <Route path="*" element={<Error />} />}
-        <Route path="/conversation" element={<Conversation />} />
+        {(logged) ? <Route path="/conversation" element={<Conversation />} /> : <Route path="*" element={<Error />} />}
       </Routes>
     </div>
   );
 }
-
-      //{(logged) ? <Route path="/conversation" element={<Conversation />} /> : <Route path="*" element={<Error />} />}
-
 
 // == Export
 export default App;
