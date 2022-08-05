@@ -29,6 +29,7 @@ function App() {
   // console.log(logged);
 
   const dispatch = useDispatch();
+  const location = useLocation();
   // On récupère dès le chargement de notre application la liste des pays pour le formulaire d'inscription
   useEffect(
     () => {
@@ -37,6 +38,13 @@ function App() {
       dispatch(fetchExperiencesHome());
     },
     [],
+  );
+
+  useEffect(
+    () => {
+      window.scrollTo(0, 0);
+    },
+    [location],
   );
   
   return (

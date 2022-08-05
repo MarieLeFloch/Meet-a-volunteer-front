@@ -4,6 +4,7 @@
 // Import d'axios pour les requêtes API
 import axios from 'axios';
 import { FETCH_PROFILE_DETAILS, saveProfileDetails, SUBMIT_PROFILE } from '../actions/profile';
+import { saveUserPicture } from '../actions/user';
 
 const axiosInstance = axios.create({
   // on définit l'url de base
@@ -75,6 +76,7 @@ const profileMiddleware = (store) => (next) => (action) => {
           // console.log(bodyFormData);
           console.log(response);
           store.dispatch(saveProfileDetails(response.data));
+          store.dispatch(saveUserPicture(response.data.profilePicture));
         })
       // On catche la potentielle erreur
         .catch(
