@@ -15,6 +15,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 1em;
  
 
     @media (min-width: 1025px) {
@@ -22,23 +23,11 @@
     }
 
     & .label{
-        background-color: vars.$color-light1;
-        color: vars.$color-dark1;
-    }
-
-    & input {
-        border : none;
-        background-color: white !important;
-        color: vars.$color-dark1;
+        background-color: white;
+        color: black;
     }
 }
 
 .ui.labeled.input:not([class*="corner labeled"]) .label:first-child+input{
-    // border : none;
-    
-
-}
-
-input#file-upload-button{
-    background-color: vars.$color-light1;
+     border : none;
 }

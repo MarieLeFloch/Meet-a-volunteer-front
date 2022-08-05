@@ -49,6 +49,13 @@
   text-transform : uppercase;
   letter-spacing : 0.2em;
   margin-bottom: 1.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px rgb(175, 175, 175) solid;
+  @media screen and (min-width: 1025px) {
+    width:60%;
+    margin: auto;
+  }
+
 }
 
 .subtitle {
@@ -57,7 +64,8 @@
 
 .home__content__title{
   padding-top: 1.5em;
-  padding-bottom: 1em;
+  border: none;
+  // padding-bottom: 1em;
 }
 
 
