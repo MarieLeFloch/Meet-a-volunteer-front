@@ -34,7 +34,7 @@ function AboutContent() {
             <div>
               <span className="team__name">Arslane</span><br/>
               <span className="team__role1">Web Developer / Front-end</span><br/>
-              <span className="team__role2">Leach Tech Front</span>
+              <span className="team__role2">Lead Tech Front</span>
             </div>
           </div>
           <div className='team__card'>
@@ -42,7 +42,7 @@ function AboutContent() {
             <div>
               <span className="team__name">Lukas</span><br/>
               <span className="team__role1">Web Developer / Back-end</span><br/>
-              <span className="team__role2">Scrum master</span>
+              <span className="team__role2">Scrum Master</span>
             </div>
           </div>
           <div className='team__card'>
@@ -66,7 +66,7 @@ function AboutContent() {
             <div>
               <span className="team__name">Romain.L</span><br/>
               <span className="team__role1">Web Developer / Back-end</span><br/>
-              <span className="team__role2">Lead Teach Back</span>
+              <span className="team__role2">Lead Tech Back</span>
             </div>
           </div>
         </div>
