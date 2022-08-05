@@ -2,8 +2,12 @@
 import './style.scss';
 import { Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Footer() {
+
+  const { logged } = useSelector((state) => state.user);
+
   return (
     <div className="footer">
       <div className='footer__logos'>
@@ -21,10 +25,12 @@ function Footer() {
       <Link to={`/legal-mentions`}>
         <span className='footer__link'>Legal mentions</span>
       </Link>
+
       
-      <a href="http://romain2518-server.eddi.cloud/back/main">
+      { logged && <a href="http://romain2518-server.eddi.cloud/back/main">
         <span className='footer__link'>Back office</span>
-      </a>
+      </a>}
+      
       </div>
     </div>
   );
