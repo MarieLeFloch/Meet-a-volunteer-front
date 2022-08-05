@@ -76,42 +76,42 @@ function Experience() {
                 <ul>
                   <li>
                     <div><Icon name="calendar" size="big" /></div>
-                    <span>Mission Duration</span>
+                    <span className="experience__item__title--span">Mission Duration</span>
                     <span className="experience__item--span">{detailedExperience.duration}</span>
                   </li>
                   <li>
                     <div><Icon name="building" size="big" /></div>
-                    <span>Volunteering Organization</span>
+                    <span className="experience__item__title--span">Volunteering Organization</span>
                     <span className="experience__item--span">{detailedExperienceVolunteering.name}</span>
                   </li>
                   <li>
                     <div><Icon name="building" size="big" /></div>
-                    <span>Reception Structure</span>
+                    <span className="experience__item__title--span">Reception Structure</span>
                     <span className="experience__item--span">{detailedExperienceStructure.name}</span>
                   </li>
                   <li>
                     <div><Icon name="language" size="big" /></div>
-                    <span>Language</span>
+                    <span className="experience__item__title--span">Language</span>
                     <span className="experience__item--span">{[detailedExperience.language].join()}</span>
                   </li>
                   <li>
                     <div><Icon name="flag" size="big" /></div>
-                    <span>Country</span>
+                    <span className="experience__item__title--span">Country</span>
                     <span className="experience__item--span">{detailedExperience.country}</span>
                   </li>
                   <li>
                     <div><Icon name="home" size="big" /></div>
-                    <span>Accomodation</span>
+                    <span className="experience__item__title--span">Accomodation</span>
                     <span className="experience__item--span">{detailedExperience.isHosted}</span>
                   </li>
                   <li>
                     <div><Icon name="food" size="big" /></div>
-                    <span>Food</span>
+                    <span className="experience__item__title--span">Food</span>
                     <span className="experience__item--span">{detailedExperience.isFed}</span>
                   </li>
                   <li>
                     <div><Icon name="money" size="big" /></div>
-                    <span>Participation fee</span>
+                    <span className="experience__item__title--span">Participation fee</span>
                     <span className="experience__item--span">{detailedExperience.participationFee} $</span>
                   </li>
                 </ul>
