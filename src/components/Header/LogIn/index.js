@@ -71,7 +71,7 @@ function LogIn() {
         <Form.Field>
           <label>Pseudo</label>
           <input
-            placeholder="Email"
+            placeholder="Pseudo"
             onChange={handleEmailChange}
             value={email}
           />
