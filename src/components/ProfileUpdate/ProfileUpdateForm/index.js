@@ -73,7 +73,7 @@ function ProfileUpdateForm() {
           </div>
           <div className="profile__form--fields">
             <Form onSubmit={handleSubmit} unstackable className="profile__form--main">
-              <Input onChange={handleImageChange} type="file" label="Select an image" accept="image/png" className="profile__form--main__input" />
+              <Input onChange={handleImageChange}  type="file" label="Select an image" accept="image/png" className="profile__form--main__input" />
               <Form.Field>
                 <label>Pseudo</label>
                 <input value={pseudo} onChange={handlePseudoChange} />
