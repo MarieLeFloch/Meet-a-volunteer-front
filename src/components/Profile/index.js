@@ -8,11 +8,13 @@ import './style.scss';
 function Profile() {
 
   return (
-    <>
-      <PageHeader />
-      <ProfileContent />
-      <Footer />
-    </>
+    <div className="container__page__all">
+      <div className="container__page__others">
+        <PageHeader />
+        <ProfileContent />
+        <Footer />
+      </div>
+    </div>
   );
 }
 

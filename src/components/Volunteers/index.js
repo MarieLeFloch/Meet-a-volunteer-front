@@ -7,12 +7,13 @@ import './style.scss';
 
 function Volunteers() {
   return (
-    <>
-      
-      <HomeHeader />
-      <VolunteersContent />
-      <Footer />
-    </>
+    <div className="container__page__all">
+      <div className="container__page__home">      
+        <HomeHeader />
+        <VolunteersContent />
+        <Footer />
+      </div>
+    </div>
   );
 }
 

@@ -81,7 +81,7 @@ function SignIn() {
     <div className="signIn">
       <Button
         onClick={handleToggleSignin}
-        className="signIn__button"
+        className="button signIn__button"
       >
         Sign in
       </Button>
@@ -166,7 +166,7 @@ function SignIn() {
           />
         </Form.Field>
         <span className='passwordError'>The password doesn't match</span>
-        <Button type="submit" className="signIn__form__button">Sign in</Button>
+        <Button type="submit" className="button signIn__form__button">Sign in</Button>
       </Form>
     </div>
   );

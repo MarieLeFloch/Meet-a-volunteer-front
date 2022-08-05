@@ -7,11 +7,13 @@ import './style.scss';
 
 function ProfileUpdate() {
   return (
-    <>
-      <PageHeader />
-      <ProfileUpdateForm />
-      <Footer />
-    </>
+    <div className="container__page__all">
+      <div className="container__page__others">
+        <PageHeader />
+        <ProfileUpdateForm />
+        <Footer />
+      </div>
+    </div>
   );
 }
 

@@ -24,7 +24,7 @@ function ProfileIntro() {
 
           {isOwnProfile &&
           <div className='profile__edit'>
-            <h2 className='main__title'>Update profile</h2>
+            <h2 className='main__title'>Profile</h2>
             <Link to={`/volunteers/${pseudo}/update`}>
                     <Button icon className='profile__icon profile__intro__img--icon'>
                         <Icon name='edit'/>

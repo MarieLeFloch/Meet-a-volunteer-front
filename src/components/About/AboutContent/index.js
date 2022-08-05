@@ -13,21 +13,21 @@ import avatar_a from '../../../assets/image/avatar_a.png';
 
 function AboutContent() {
   return (
-    <div className="about">
+    <div className="content__page__all content__page__others">
 
-<h1 className="main__title">About</h1>
+      <h1 className="main__title">About</h1>
 
       <div className='about__content'>
 
       <div className='about__content--presentation'>
-      <h2>Why Meet a volunteer ?</h2>
+      <h2 className='subtitle'>Why Meet a volunteer ?</h2>
         <p>
         Pastry cake topping bonbon lemon drops lemon drops. Sweet sweet roll toffee cotton candy jujubes toffee pie. Jelly beans cotton candy cake fruitcake gummies croissant jujubes icing. Sesame snaps donut lemon drops muffin croissant. Jelly-o candy tiramisu sugar plum powder donut tiramisu. Fruitcake chupa chups gummies cake candy canes. Marzipan chocolate bar danish toffee cupcake cotton candy. Macaroon cookie muffin sweet roll shortbread soufflé gummies tootsie roll jelly-o. Carrot cake sweet lemon drops wafer lollipop pie oat cake soufflé. Danish lemon drops pastry carrot cake jelly-o tiramisu.
         </p>
       </div>
 
       <div className='about__content--team'>
-      <h2>Meet the team</h2>
+      <h2 className='subtitle'>Meet the team</h2>
         <div className='team__cards'>
           <div className='team__card'>
             <Image src={avatar_a} avatar size="tiny" />

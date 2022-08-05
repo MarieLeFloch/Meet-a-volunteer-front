@@ -28,7 +28,7 @@ function Experience() {
   };
   //---------------------------------------------
   return (
-    <div className="experience">
+    <div className="content__page__all content__page__others experience">
       <div className="experience__title">
         <h1>{detailedExperience.title}</h1>
         <span>

@@ -1,11 +1,6 @@
 @use 'src/styles/vars';
 
 .profile__content {
-    padding-top: 8em;
-    width: 85%;
-    margin: auto;
-    padding-bottom : 2em;
-
     @media screen and (min-width: 1025px) {
         display: flex;
         flex-direction: column;

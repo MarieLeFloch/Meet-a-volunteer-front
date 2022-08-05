@@ -6,9 +6,9 @@ import './style.scss';
 
 function HomeContent() {
   return (
-    <div className="home__content">
+    <div className="content__page__all content__page__home">
       <div />
-      <h1 className="experiences__content--title">Volunteer's feedbacks</h1>
+      <h1 className="home__content__title main__title">Volunteer's feedbacks</h1>
       <ThematicList />
       <CardList />
       <AuthorList />

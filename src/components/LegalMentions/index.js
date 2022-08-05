@@ -6,11 +6,13 @@ import Footer from '../Footer';
 
 function LegalMentions () {
   return (
-  <>
-    <PageHeader />
-    <LegalMentionsContent />
-    <Footer />
-  </>
+    <div className="container__page__all">
+      <div className="container__page__others">
+          <PageHeader />
+          <LegalMentionsContent />
+          <Footer />
+      </div>
+    </div>
   )
 }
 

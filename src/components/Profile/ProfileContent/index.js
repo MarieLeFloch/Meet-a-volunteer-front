@@ -23,7 +23,7 @@ function ProfileContent() {
   // const { experiences } = useSelector((state) => state.profile.profileDetails);
 
   return (
-    <div className="profile__content">
+    <div className="content__page__all content__page__others profile__content">
       <div className="flex__topPart">
         <ProfileIntro />
       </div>

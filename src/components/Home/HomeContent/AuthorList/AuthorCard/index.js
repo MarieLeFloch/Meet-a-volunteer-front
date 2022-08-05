@@ -23,10 +23,10 @@ function AuthorCard({
             <Image onClick={handleClickProfile} src={`http://romain2518-server.eddi.cloud/images/pp/${profilePicture}`} avatar size="tiny" />
           </Link>
           <Link to={`/volunteers/${pseudoSlug}`}>
-            <span onClick={handleClickProfile} className="prolific__user--pseudo">{pseudo}</span>
+            <span onClick={handleClickProfile} className="user__pseudo">{pseudo}</span>
           </Link>
-          <span className="prolific__user--country">From {nativeCountry}</span>
-          {(expCounter) && <span className="prolific__user--nbExp">{expCounter} experiences shared</span>}
+          <span className="prolific__user--country">From <strong>{nativeCountry}</strong></span>
+          {(expCounter) && <span className="prolific__user--nbExp">Experiences shared: {expCounter}</span>}
         </div>
       </div>
     </div>

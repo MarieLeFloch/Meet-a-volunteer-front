@@ -1,24 +1,14 @@
 .experience__form {
-    margin: 15rem auto;
-    border-top: 1px solid gray;
-    width: 90%;
+
     @media (min-width: 1025px) {
         width: 60%;
     }
     
-    &--title {
-        padding-top: 2rem;
-        text-transform : uppercase;
-        letter-spacing : 0.3em;
-    }
     &--content {
          display: flex;
          flex-direction: column;
          justify-content: center;
     }
-    // &--field {
-    //     width: 100%;
-    // }
 }
 
 .experience__form--imgpreview img{

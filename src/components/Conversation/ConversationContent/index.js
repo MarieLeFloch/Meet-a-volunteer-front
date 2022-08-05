@@ -8,7 +8,7 @@ function ConversationContent() {
   // const { receiverId } = useSelector((state)=>state.message.newMessage);
 
   return (
-    <div className="Conversation__content">
+    <div className="content__page__all content__page__others Conversation__content">
       <h1 className='main__title'>Messages</h1>
       <NewMessage />
       <MessageList />

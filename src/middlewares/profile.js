@@ -8,7 +8,7 @@ import { saveUserPicture } from '../actions/user';
 
 const axiosInstance = axios.create({
   // on définit l'url de base
-  baseURL: 'http://romain2518-server.eddi.cloud/api',
+  baseURL: 'http://marielefloch-server.eddi.cloud/api',
 });
 const profileMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

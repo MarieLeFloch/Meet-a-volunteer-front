@@ -7,16 +7,18 @@
   margin: auto;
   border-radius: 5px;
   border: 1px solid vars.$color-dark1;
-  color: vars.$color-dark1;
   text-transform : uppercase;
   letter-spacing : 0.1em;
-  text-shadow: vars.$color-light1 0.1em 0.1em 0.2em;
   position: absolute;
   z-index: 100;
     &-item {
       padding: 10% 0% 10% 0%;
       box-sizing: border-box;
-      color: rgb(0, 0, 0);
+      // color: vars.$color-light2;
+      // text-shadow: vars.$color-dark2 0.1em 0.1em 0.2em;
+      color: vars.$color-dark2;
+      text-shadow: vars.$color-light2 0.1em 0.1em 0.2em;
+
       font-weight: 600;
     } 
 
@@ -53,6 +55,7 @@
       &-item {
         display: inline;
         font-size: larger;
+
         &:hover {
           color: vars.$color-main;
           transition: 0.3s;

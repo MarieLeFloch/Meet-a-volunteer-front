@@ -7,7 +7,7 @@ import snIcon from '../../../assets/image/sn-solid.png';
 function ContactContent() {
   return (
 
-    <div className="bloc__contact">
+    <div className="content__page__all content__page__others bloc__contact">
 
       <h1 className='main__title'>Contact Us</h1>
 

@@ -2,18 +2,6 @@
 
 // Cette page est organisée en PC first
 
-.legalMentions__title{
-  font-size: 2rem;
-  margin: 5rem;
-  color: vars.$color-dark2;
-  text-transform : uppercase;
-  letter-spacing : 0.3em;
-}
-
-.legalMentions{
-  background-color: vars.$color-light2;
-}
-
 .legalMentions__content{
   display: flex;
 }

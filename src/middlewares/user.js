@@ -15,7 +15,7 @@ import { fetchReceivedMessage } from '../actions/message';
 
 const axiosInstance = axios.create({
   // par exemple, on peut définir une url de base !
-  baseURL: 'http://romain2518-server.eddi.cloud/api',
+  baseURL: 'http://marielefloch-server.eddi.cloud/api',
 });
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

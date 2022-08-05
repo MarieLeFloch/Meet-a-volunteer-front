@@ -6,10 +6,12 @@ import './style.scss';
 
 function Home() {
   return (
-    <div className="home__container">
-      <HomeHeader />
-      <HomeContent />
-      <Footer />
+    <div className="container__page__all">
+      <div className="container__page__home">
+        <HomeHeader />
+        <HomeContent />
+        <Footer />
+      </div>
     </div>
   );
 }

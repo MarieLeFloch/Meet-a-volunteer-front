@@ -6,11 +6,13 @@ import './style.scss';
 
 function Conversation() {
   return (
-    <>
-      <PageHeader />
-      <ConversationContent />
-      <Footer />
-    </>
+    <div className="container__page__all">
+      <div className="container__page__others">
+        <PageHeader />
+        <ConversationContent />
+        <Footer />
+      </div>
+    </div>
   );
 }
 

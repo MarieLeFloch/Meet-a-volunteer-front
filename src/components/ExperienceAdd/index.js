@@ -14,11 +14,13 @@ function ExperienceAdd() {
     dispatch(fetchVolunteeringType());
   }, []);
   return (
-    <>
-      <PageHeader />
-      <ExperienceForm />
-      <Footer />
-    </>
+    <div className="container__page__all">
+      <div className="container__page__others">
+        <PageHeader />
+        <ExperienceForm />
+        <Footer />
+      </div>
+    </div>
   );
 }
 

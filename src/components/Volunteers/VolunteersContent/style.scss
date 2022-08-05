@@ -1,22 +1,10 @@
 @use 'src/styles/vars';
 
 .volunteers__content{
-    width: 95%;
-    margin: auto;
-    padding-top: 8em;
+
     @media screen and (min-width: 1025px) {
       width:75%;
-      margin:auto;
     }
-
-    &--title{
-        color: vars.$color-dark2;
-        padding-bottom: 1em;
-        text-transform : uppercase;
-        letter-spacing : 0.3em;
-        //font-size: 0.9rem;
-        }
-
   }
 
   

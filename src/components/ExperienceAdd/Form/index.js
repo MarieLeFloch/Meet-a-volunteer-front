@@ -110,8 +110,8 @@ function ExperienceForm() {
   };
   // --------------------------------------------
   return (
-    <div className="experience__form">
-      <h2 className="experience__form--title">Share your experience</h2>
+    <div className="content__page__all content__page__others experience__form">
+      <h2 className="main__title">Share your experience</h2>
       {formError && !formSuccess && (
       <Message negative>
         <Message.Header>Something went wrong !</Message.Header>

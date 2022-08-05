@@ -65,7 +65,7 @@ function NewMessage() {
             value={messageContent}
           />
           <Button
-            className="send__button"
+            className="send__button button"
             onClick={submitNewMessage, handleToggleSuccessMessage}
           >
             Send

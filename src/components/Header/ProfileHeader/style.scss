@@ -24,8 +24,7 @@
     }
 
     &--pseudo {
-        color: vars.$color-dark2;
-        text-shadow: vars.$color-light2 0.1em 0.1em 0.2em;
+       font-weight: bold;
     }
 
     &--button {

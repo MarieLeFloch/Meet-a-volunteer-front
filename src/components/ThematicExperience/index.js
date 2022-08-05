@@ -7,10 +7,12 @@ import './style.scss';
 function ThematicExperience() {
   
   return (
-    <div className="home__container">
-      <HomeHeader />
-      <ThematicExperienceContent />
-      <Footer />
+    <div className="container__page__all">
+      <div className="container__page__home">
+        <HomeHeader />
+        <ThematicExperienceContent />
+        <Footer />
+      </div>
     </div>
   );
 }

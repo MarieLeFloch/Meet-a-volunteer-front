@@ -31,14 +31,14 @@ function ExperienceCard({
         <Card.Meta>
           <span className="experience__country">{country}</span>
           <Link to={`/volunteers/${userPseudoSlug}`}>
-            - <span onClick={handleClickProfile} className="author__name">{user.pseudo}</span>
+            - <span onClick={handleClickProfile} className="user__pseudo">{user.pseudo}</span>
           </Link>
         </Card.Meta>
         <Card.Header className="experience__title--card" title={title}>{title.length > 50 ? `${title.slice(0, 50)}...` : title}</Card.Header>
         <Card.Description className="experience__preview">{feedback.slice(0, 147)}...</Card.Description>
         <Link onClick={handleClick} to={`/experiences/${id}/${slugTitle}`}>
           <Button
-            className="button__experience__details"
+            className="button button__experience__details"
           >
             See more
           </Button>

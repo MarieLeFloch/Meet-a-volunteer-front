@@ -1,23 +1,14 @@
 @use 'src/styles/vars';
 
-.about{
-  padding-top: 7em;
-}
 
 .about__content {
-  width: 90%;
-  margin: auto;
-
-  & h2{
-    color: vars.$color-main;
-  }
 
   & p{
     text-align: justify ;
   }
 
   @media screen and (min-width: 1025px) {
-    width: 85%;
+    // width: 85%;
     display: flex;
   }
 }
@@ -42,15 +33,6 @@
   }
 }
 
-.page__title__about {
-
-  color: vars.$color-dark2;
-  text-transform : uppercase;
-  letter-spacing : 0.3em;
-  padding-top: 3rem;
-  margin-bottom: 5rem;
-  
-}
 
 .team__name {
   color: vars.$color-main;

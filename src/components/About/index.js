@@ -6,11 +6,13 @@ import Footer from '../Footer';
 
 function About() {
   return (
-  <>
-    <PageHeader />
-    <AboutContent />
-    <Footer />
-  </>
+    <div className="container__page__all">
+      <div className="container__page__others">
+        <PageHeader />
+        <AboutContent />
+        <Footer />
+      </div>
+  </div>
   )
 }
 

@@ -4,14 +4,15 @@ import ContactsContent from '../Contacts/ContactContent';
 import Footer from './../Footer';
 
 function Contacts() {
-
-    return (
-        <>
-          <PageHeader />
-          <ContactsContent />
-          <Footer />
-        </>
-    )
+  return (
+    <div className="container__page__all">
+      <div className="container__page__others">
+        <PageHeader />
+        <ContactsContent />
+        <Footer />
+      </div>
+  </div>
+  )
 }
       
-      export default Contacts;
+export default Contacts;

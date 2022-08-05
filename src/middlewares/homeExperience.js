@@ -9,7 +9,7 @@ import {
 
 const axiosInstance = axios.create({
   // on définit l'url de base
-  baseURL: 'http://romain2518-server.eddi.cloud/api',
+  baseURL: 'http://marielefloch-server.eddi.cloud/api',
 });
 const homeExperienceMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

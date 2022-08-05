@@ -24,11 +24,6 @@
 
 .new__message__form {
 
-    & .send__button {
-        background-color: vars.$color-main;
-        color : vars.$color-light2;
-    }
-
     &--hidden{
         display: none;
     }

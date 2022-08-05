@@ -6,11 +6,13 @@ import { useSelector } from 'react-redux';
 
 function ExperiencePage() {
   return (
-    <>
-      <PageHeader />
-      <Experience />
-      <Footer />
-    </>
+    <div className="container__page__all">
+      <div className="container__page__others">
+        <PageHeader />
+        <Experience />
+        <Footer />
+      </div>
+    </div>
   );
 }
 

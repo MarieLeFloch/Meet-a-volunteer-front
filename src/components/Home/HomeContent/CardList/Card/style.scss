@@ -11,8 +11,6 @@
 }
 
 .button__experience__details{
-  background-color: vars.$color-main !important;
-  color : vars.$color-light2 !important;
   margin-top: 1em !important;
 }
 .experience__preview {
@@ -34,9 +32,4 @@
   right: 9em;
   background:none !important;
   border-radius: 50%;
-}
-
-.author__name{
-  // text-align: right !important;
-  color:vars.$color-dark1;
 }

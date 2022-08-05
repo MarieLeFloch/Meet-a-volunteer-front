@@ -53,7 +53,7 @@ function LogIn() {
     <div className="logIn">
       <Button
         onClick={handleToggleLogin}
-        className="logIn__button"
+        className="button logIn__button"
       >
         Login
       </Button>
@@ -88,7 +88,7 @@ function LogIn() {
         <Form.Field>
           <Checkbox label="Stay connected" />
         </Form.Field>
-        <Button type="submit" className="logIn__form__button">Login</Button>
+        <Button type="submit" className="button logIn__form__button">Login</Button>
       </Form>
     </div>
   );
