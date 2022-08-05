@@ -37,13 +37,13 @@
   }
   
   &__text {
-    margin-top: 1rem;
+    margin: 3rem 0;
     display: flex;
     justify-content: center;
     & p {
       @media (min-width: 1025px){
         width: 60%;
-        text-align: center;
+        text-align: justify;
         font-size: 150%;
       }
     }
@@ -113,6 +113,11 @@
   }
 }
 
+.experience__item__title--span {
+
+  margin-right:0.6em;
+}
+
 
 .experience__item {
   border-top: 1px solid vars.$color-dark2;
@@ -122,6 +127,7 @@
 
   & h3 {
     margin-top: 2rem;
+    margin-bottom: 3rem;
     text-transform : uppercase;
     letter-spacing : 0.3em;
     @media (min-width: 1025px) {
@@ -142,6 +148,7 @@
   color: vars.$color-dark1;
   font-weight: 700;
   margin-left: auto;
+  
 }
 
 .experience__profil--conversation{
