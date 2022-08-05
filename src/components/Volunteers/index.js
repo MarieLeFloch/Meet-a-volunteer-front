@@ -8,7 +8,7 @@ import './style.scss';
 function Volunteers() {
   return (
     <>
-      <PageHeader />
+      
       <HomeHeader />
       <VolunteersContent />
       <Footer />
