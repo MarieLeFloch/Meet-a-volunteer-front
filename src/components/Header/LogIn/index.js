@@ -20,17 +20,21 @@ function LogIn() {
   // va récupérer la prop isOpen dans le reducer user, prop settings
   const { isSigninOpened, isLoginOpened } = useSelector((state) => state.user.settings);
   const { email, password, } = useSelector((state) => state.user.login);
+
   // dispatch, fonction du store redux, permet d'émettre une intention
   // intention = action qu'on passe en argument
   // cette action est traduite dans le reducer user
   const dispatch = useDispatch();
 
+  // Fonction qui gère l'ouverture fermeture de l'encart de connexion
+  // Si l'utilisateur ouvre l'encart d'inscription, on ferme l'encart de connexion
   const handleToggleLogin = () => {
     dispatch(toggleSettingLogin());
     if (isSigninOpened) {
       dispatch(toggleSettingSignin());
     }
   };
+
   // CHAMPS CONTROLES
   // On récupère la méthode pour changer la valeur des champs (controle en lecture)
   const handleEmailChange = (event) => {

@@ -18,12 +18,11 @@ function MessageList() {
     [],
   );
 
-  // Récupération de la liste des messages dans le state
+  // Récupération de la liste des messages dans le state afin de mapper dessus
   const messageList = useSelector((state) => state.message.receivedMessageList);
-    console.log(messageList);
+    
   return (
     <div className="message__list">
-
       {messageList.map((message) => (
         <Message key={message.id} {...message} />
       ))}

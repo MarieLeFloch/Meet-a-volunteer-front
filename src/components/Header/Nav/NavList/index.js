@@ -1,24 +1,25 @@
 // == Import
 import './style.scss';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 
 function NavList({ isOpen }) {
 
+  // Gestion de la notification du nombre de messages non lu
+  // On récupère la liste de message reçu, on crée un compteur qui boucle sur le statut "isRead" des messages
+  // Doit être optimisé car ainsi ne se met à jour que lorsqu'on ouvre la messagerie
   const { receivedMessageList } = useSelector((state)=>state.message);
-  console.log(receivedMessageList);
   let nbUnreadMessages = 0;
 
   if (receivedMessageList){
     receivedMessageList.forEach(message => {
       if(!message.isRead){
         nbUnreadMessages ++;
-        console.log(nbUnreadMessages)
       }
     })
   }
 
+  // Si le nb de message non lu est de 0 ou lorsqu'aucun message n'a encore été chargé, on n'affiche pas la notif
   return (
     <div className={(isOpen) ? 'list' : 'list__off'}>
 

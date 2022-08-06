@@ -1,9 +1,10 @@
 // Imports
 import './style.scss';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import ExperienceCard from '../../../Home/HomeContent/CardList/Card';
 
 function CardList() {
+  // Récupération dans le state de la liste d'expériences correspondant à la thématique cliquée
   const filtredExperiencesList = useSelector((state) => state.thematic.experiencesFiltredThematic);
 
   return (

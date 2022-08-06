@@ -1,12 +1,11 @@
 // Imports
 import './style.scss';
-import { useParams } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import ProfileIntro from './ProfileIntro';
 import ExperienceList from './ExperienceList';
 import PersoInfos from './PersoInfos';
 import { fetchProfileDetails } from '../../../actions/profile';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Icon } from 'semantic-ui-react';
 
@@ -18,7 +17,8 @@ function ProfileContent() {
     dispatch(fetchProfileDetails());
   }, []);
 
-  // Verif si profil personnel
+  // On vérifie si le profil constulé est celui de l'utilisateur connecté ou non
+  // S'il s'agit de son profil perso, on affiche les boutons de modification
   const { pseudo } = useSelector((state) => state.profile.profileDetails);
   const { userPseudo } = useSelector((state) => state.user.login);
   let isOwnProfile = false;

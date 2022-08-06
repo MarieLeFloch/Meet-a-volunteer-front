@@ -1,5 +1,4 @@
 // == Imports
-
 import './style.scss';
 import {
   Form, Select, Dropdown, Button, Input, Message,
@@ -8,12 +7,13 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import {
-  addExperience, changeFieldValue, toggleFormError, toggleFormSuccess,
-} from '../../../actions/experience';
-import {
   chosenOptions, yearsOptions, languageOptions, durationOptions,
 } from '../../../data/formOptions';
 import { saveIdProfile } from '../../../actions/profile';
+import {
+  addExperience, changeFieldValue, toggleFormError, toggleFormSuccess,
+} from '../../../actions/experience';
+
 function ExperienceForm() {
   // -----------------RECUPERATION DES DONNEES DU STATE------------------
   const {
@@ -21,10 +21,15 @@ function ExperienceForm() {
     thematics, country, year, duration, spokenLanguageFirst, spokenLanguageSecond, accomodation, food,
     formError, formSuccess,
   } = useSelector((state) => state.experiences.addExperience);
+
   const { userPseudo, id } = useSelector((state) => state.user.login);
+
   const { thematicList } = useSelector((state) => state.thematic);
+
   const { volunteeringType, receptionStructure } = useSelector((state) => state.categories);
+  
   const countryList = useSelector((state) => state.country.countryList);
+
   //---------------------------------------------------------------------
   // ------------------ Create Thematic Options -------------------------
   const thematicOptions = [];
@@ -36,6 +41,7 @@ function ExperienceForm() {
       value: item.id,
     });
   });
+
   // --------------------------------------------------------------------
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -60,13 +66,10 @@ function ExperienceForm() {
       }, 4000);
     }
   };
+
   // ----------- HANDLES ON CHANGE ------------
   const handleImageChange = (event) => {
-    // const output = document.getElementById('output');
-    // output.src = URL.createObjectURL(event.target.files[0]);
-    console.log(image);
     dispatch(changeFieldValue((event.target.files[0]), 'image'));
-    console.log(image);
   };
   const handleTitleChange = (event) => {
     dispatch(changeFieldValue(event.currentTarget.value, 'title'));
@@ -108,6 +111,7 @@ function ExperienceForm() {
   const handleFeedBackChange = (event) => {
     dispatch(changeFieldValue(event.currentTarget.value, 'feedBack'));
   };
+
   // --------------------------------------------
   return (
     <div className="content__page__all content__page__others experience__form">

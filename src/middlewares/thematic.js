@@ -12,15 +12,11 @@ const axiosInstance = axios.create({
 const thematicMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_THEMATICS: {
-      const state = store.getState();
-      // const { thematicList } = state.thematic.settings;
-
       // On renseigne le end point
       axiosInstance.get('thematic/50/0')
 
       // On traite la réponse
         .then((response) => {
-          // console.log(response.data);
           store.dispatch(saveThematics(response.data));
         })
       // On catche la potentielle erreur

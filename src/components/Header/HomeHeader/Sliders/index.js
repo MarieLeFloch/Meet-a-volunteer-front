@@ -1,15 +1,15 @@
-// Composant qui gère l'affichage du slider
-// Spécifique à la page Home
 // == Import
-import { Carousel } from 'react-responsive-carousel';
 import './style.scss';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 import image1 from '../../../../assets/image/1.jpg';
 import image2 from '../../../../assets/image/2.jpg';
 import image3 from '../../../../assets/image/3.jpg';
 import image4 from '../../../../assets/image/4.jpg';
 import image5 from '../../../../assets/image/5.jpg';
 
+// Composant qui gère l'affichage du slider
+// Spécifique à la page Home & Volunteers
 function Sliders() {
   return (
     <div className="Sliders">

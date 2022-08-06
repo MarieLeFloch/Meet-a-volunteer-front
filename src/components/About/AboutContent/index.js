@@ -7,10 +7,6 @@ import avatar_rg from '../../../assets/image/avatar_rg.png';
 import avatar_rl from '../../../assets/image/avatar_rl.png';
 import avatar_a from '../../../assets/image/avatar_a.png';
 
-
-
-
-
 function AboutContent() {
   return (
     <div className="content__page__all content__page__others">

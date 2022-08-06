@@ -1,5 +1,4 @@
 //= = Imports
-
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import {
@@ -33,17 +32,16 @@ const userMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          // console.log(response);
           store.dispatch(saveToken(response.data.token));
           store.dispatch(isLogged());
           const decodedToken = jwt_decode(response.data.token);
           store.dispatch(saveUserID(decodedToken.id));
           store.dispatch(saveUserPseudo(decodedToken.username));
           store.dispatch(saveUserPicture(decodedToken.profilePicture));
-          console.log(decodedToken);
           store.dispatch(fetchReceivedMessage());
           return next(action);
         })
+        
         .catch((error) => {
           console.log(error);
           return next(action);

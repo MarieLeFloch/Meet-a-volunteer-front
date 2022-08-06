@@ -17,10 +17,8 @@ function AuthorList() {
     [],
   );
 
-  // Récupération de l'objet du state contenant la liste des volontaires
+  // Puis récupération de l'objet du state contenant la liste des volontaires
   const volunteersProlificsList = useSelector((state) => state.volunteers.volunteersProlificsList);
-  console.log(volunteersProlificsList);
-  
 
   return (
     <div className="prolific__container">

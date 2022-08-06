@@ -19,7 +19,6 @@ function VolunteersList() {
 
   // Récupération de l'objet du state contenant la liste des volontaires
   const volunteersList = useSelector((state) => state.volunteers.volunteersList);
-  // console.log(volunteersList);
 
     return (
     <div className='volunteers__list'>

@@ -1,5 +1,12 @@
 import {
-  TOGGLE_SETTINGS_LOGIN, TOGGLE_SETTINGS_SIGNIN, CHANGE_LOGIN_FIELD_VALUE, CHANGE_SIGNIN_FIELD_VALUE, IS_LOGGED, SAVE_TOKEN, SAVE_USER_PSEUDO, SAVE_USER_ID, SAVE_USER_PICTURE,
+  TOGGLE_SETTINGS_LOGIN, 
+  TOGGLE_SETTINGS_SIGNIN, 
+  CHANGE_LOGIN_FIELD_VALUE, 
+  CHANGE_SIGNIN_FIELD_VALUE, 
+  IS_LOGGED, SAVE_TOKEN, 
+  SAVE_USER_PSEUDO, 
+  SAVE_USER_ID, 
+  SAVE_USER_PICTURE,
 } from '../actions/user';
 
 // On crée un emplacement dans le state correspondant au user : la connexion et l'inscription
@@ -26,7 +33,6 @@ export const initialState = {
   },
 
   login: {
-    //! modif car termes communs avec autres propriétés
     email: '',
     password: '',
     token: '',

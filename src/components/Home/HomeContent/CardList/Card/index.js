@@ -2,25 +2,30 @@
 import './style.scss';
 import { Card, Image, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { saveIdProfile } from '../../../../../actions/profile';
 import { saveExperienceId } from '../../../../../actions/experience';
 
+// Récupération via destructuring les propriétés passées en props dans CardList via map
 function ExperienceCard({
   country, feedback, picture, title, user, createdAt, id, slugTitle,
 }) {
+
+  // On récupère le slug du volontaire afin de rediriger au click vers sa page de profil
   const userPseudoSlug = user.pseudoSlug;
 
   const dispatch = useDispatch();
 
+  // Enregistrement de l'id du profil cliqué pour lancer la récupération de ses infos
   const handleClickProfile = () => {
-    console.log(id);
     dispatch(saveIdProfile(user.id));
   };
 
+  // Enregistrement de l'id de l'expérience cliquée pour lancer la récupération de ses infos
   const handleClick = () => {
     dispatch(saveExperienceId(id));
   };
+
   return (
     <Card className="experience__card">
       <Image className="experience__card--image" src={`http://romain2518-server.eddi.cloud/images/experiencePicture/${picture}`} wrapped ui={false} />

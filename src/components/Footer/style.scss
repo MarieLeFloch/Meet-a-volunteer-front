@@ -3,12 +3,6 @@
 .footer{
   background-color: vars.$color-dark2;
   height: 10em;
-  // @media (min-width: 1025px) {
-  //   position: fixed;
-  //   bottom: 0;
-  //   left: 0;
-  //   right: 0;
-  // }
 }
 
 .footer__logos{
@@ -22,6 +16,7 @@
   background-color: vars.$color-main !important;
   color: vars.$color-light2 !important;
   margin: 0em 0.5em !important;
+
   &:hover{
     background-color: vars.$color-dark1 !important;
   }
@@ -34,6 +29,7 @@
 .footer__link{
   color: vars.$color-light2 ;
   padding: 0.8em 0.6em;
+  
   &:hover{
     color: vars.$color-main !important;
     cursor: pointer;

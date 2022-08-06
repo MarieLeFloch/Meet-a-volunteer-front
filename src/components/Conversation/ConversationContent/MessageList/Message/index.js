@@ -2,7 +2,6 @@
 import './style.scss';
 import { Image, Icon } from 'semantic-ui-react';
 import { useDispatch, useSelector } from 'react-redux';
-import Avatar from '../../../../../assets/image/user-default.png';
 import {
   toggleNewMessageSettings,
   setNewMessage,
@@ -11,30 +10,40 @@ import {
   saveMessageAsRead,
 } from '../../../../../actions/message';
 
+// Composant de la messagerie
 function Message({
   id, message, userSender, createdAt, isRead,
 }) {
-  const { isNewMessageOpened, hasANewMessageBeenSent } = useSelector((state) => state.message.settings);
 
+  // On récupère le booléen enregistré dans le state qui est à true lorsqu'un message vient d'être envoyé
+  const { hasANewMessageBeenSent } = useSelector((state) => state.message.settings);
+  // On récupère les infos de la personne qui a envoyé le message pour les afficher
   const pseudoSender = userSender.pseudo;
   const idSender = userSender.id;
   const pictureSender = userSender.profilePicture;
 
   const dispatch = useDispatch();
 
+  // Méthode de gestion de l'envoie d'un nouveau message
   const handleToggleNewMessage = () => {
+    // enregistrement des infos du destinataire à qui on souhaite répondre
     dispatch(setNewMessage(idSender, pseudoSender));
+    // ouverture de l'encart
     dispatch(toggleNewMessageSettings());
     const newMessage = document.querySelector('.new__message');
     newMessage.classList.toggle('new__message--display');
+    // affichage ou suppression du message de succès d'envoi
     if (hasANewMessageBeenSent) {
       dispatch(toggleSuccessMessage());
     }
   };
 
+  // Méthode gérant le click sur un message reçu
   function showEntireMessage(event) {
+    // on montre l'entiereté du message
     const p = event.currentTarget;
     p.classList.toggle('preview');
+    // On enregistre le message comme lu (pour la notification de la nav)
     dispatch(getIdMessageRead(id));
     dispatch(saveMessageAsRead());
   }

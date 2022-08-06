@@ -1,21 +1,8 @@
 import { SAVE_ID_PROFILE, SAVE_PROFILE_DETAILS, CHANGE_FIELD_VALUE } from '../actions/profile';
 
 export const initialState = {
-  //! recup infos update ici
   profileDetails: [],
   profileId: '',
-  // profilePseudo: '',
-  // isOwnProfile : false,
-//   updateProfile : {
-//     image: '',
-//     biography: '',
-//     pseudo: '',
-//     firstname: '',
-//     lastname: '',
-//     birthDate: '',
-//     email: '',
-//     nativeCountry: '',
-//   }
 };
 
 const reducer = (state = initialState, action = {}) => {

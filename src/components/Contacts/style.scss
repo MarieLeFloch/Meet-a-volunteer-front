@@ -1,139 +1,78 @@
 @use 'src/styles/vars';
 
 
-
 .bloc__contact {
 
-
   .item__container {
-
-    // background-color: vars.$color-light1;
     width: 90%;
-    // height: 100%;
     margin:auto;
-    
     display:block;
     
     @media screen and (min-width: 1025px) {
-    
       display:flex;
       justify-content: space-evenly;
-      
-
-
     }
   }
 
-
   .contact-text {
-
     margin-bottom: 4em;
     text-align: justify;
     width: 90%;
     margin: auto;
     margin-bottom: 50px;
       
-    
-
     @media screen and (min-width: 1025px) {
-    
-          
-      
       width: 80%;
       margin: auto;
       margin-top: 20px;
       margin-bottom: 100px;
-      
-
-
     }
   }
 
-
   .phone__bloc, .mail__bloc, .sn__bloc {
-
     display: flex;
-    // width: 60%;
-    // width: 320px;
     justify-content: space-between;
 
     @media screen and (min-width: 1025px) {
-    
-          
       display: flex;
-        
        width: 340px;
-  
-  
      }
 
-
     .phone__picto, .mail__picto, .sn__picto {
-
       width: 20%;
         
-        
       @media screen and (min-width: 1025px) {
-    
-          
-          
         width: 35%;
-          
-          
-    
-    
       }
 
         .phone__img, .mail__img, .sn__img {
-
           width:90px;
-            
-            
-            
-            
+
           @media screen and (min-width: 1025px) {
-    
-          
-          
             width: 120px;
-              
-        
-        
           }
         }
     }
     
-
       .phone__number, .mail__adress, .sn__adress {
-
         width: 60%;
         text-align: left;
         box-sizing: border-box;
         padding-top: 2em;
-        
-        
 
         p {
           line-height: 1em;
-          
         }
-
 
         h1 {
           font-size: 1.5em;
           text-align: left;
-          
         }
 
         @media screen and (min-width: 1025px) {
-          
           margin-left: 20px;
-          
           p {
             line-height: 1em;
-            
-
-  
           }
     
     

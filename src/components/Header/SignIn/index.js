@@ -1,19 +1,20 @@
 // Composant qui gère l'affichage du formulaire de connexion
 // Commun à toutes les pages - Lorsque l'utilisateur n'est pas connecté
 // == Import
-import { useDispatch, useSelector } from 'react-redux';
 import './style.scss';
-import { useEffect } from 'react';
 import {
   Image, Button, Form, Select, Icon,
 } from 'semantic-ui-react';
 import logo from '../../../assets/image/logo-mini.png';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleSettingSignin, toggleSettingLogin, changeSigninFieldValue, signIn } from '../../../actions/user';
 
 function SignIn() {
-  // On récupère la propriété du store dans user settings
+  // On récupère les infos du store dans user settings
   const { isSigninOpened, isLoginOpened } = useSelector((state) => state.user.settings);
 
+  // Et on instaure les champs contrôlés 
+  // enregistrement de la saisie dans le store et affichage dans les champs correspondants
   const {
     firstname, lastname, pseudo, country, email, password, confirmPassword,
   } = useSelector((state) => state.user.signin);
@@ -29,7 +30,7 @@ function SignIn() {
   };
 
   // CHAMPS CONTROLES
-  // On récupère la méthode pour changer la valeur des champs (controle en lecture)
+  // On récupère la méthode pour changer la valeur des champs (controle en lecture/écriture)
   const handleFirstnameChange = (event) => {
     dispatch(changeSigninFieldValue(event.currentTarget.value, 'firstname'));
   };

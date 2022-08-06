@@ -18,8 +18,6 @@ const volunteersMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_VOLUNTEERS: {
       const state = store.getState();
-      // const { thematicList } = state.thematic.settings;
-
       // On renseigne le end point
       axiosInstance.get('user/50/0')
 
@@ -39,14 +37,11 @@ const volunteersMiddleware = (store) => (next) => (action) => {
 
     case FETCH_PROLIFICS_VOLUNTEERS: {
       const state = store.getState();
-      // const { thematicList } = state.thematic.settings;
-
       // On renseigne le end point
       axiosInstance.get('user/mostExperienced/12/0')
 
       // On traite la réponse
         .then((response) => {
-          // console.log(response);
           store.dispatch(saveProlificsVolunteers(response.data));
         })
       // On catche la potentielle erreur

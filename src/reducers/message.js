@@ -13,7 +13,7 @@ import {
 
 } from '../actions/message';
 
-// On crée les emplacements dans le state lié aux messages
+// On crée les emplacements dans le state liés aux messages
 
 export const initialState = {
   // Emplacement pour l'ouverture/fermeture de l'encart d'envoi d'un nouveau message
@@ -55,7 +55,7 @@ const reducer = (state = initialState, action = {}) => {
         // et on remet le contenu à 0 si a déjà été modifié
         newMessage: {
           ...state.newMessage,
-          // inverse la valeur de hasANewMessageBeenSent
+          // vide le champ du message
           messageContent: '',
         },
         
@@ -120,7 +120,7 @@ const reducer = (state = initialState, action = {}) => {
         // mais dans settings
         settings: {
           ...state.settings,
-          // inverse la valeur de hasANewMessageBeenSent
+          // inverse la valeur de hasANewExpMessageSent
           hasANewExpMessageSent: !state.settings.hasANewExpMessageSent,
         },
       };
@@ -131,7 +131,6 @@ const reducer = (state = initialState, action = {}) => {
         // mais dans newMessage
         newExperienceMessage: {
           ...state.newExperienceMessage,
-          // inverse la valeur de hasANewMessageBeenSent
           receiverId: action.id,
           receiverPseudo: action.pseudo,
         },
@@ -143,7 +142,6 @@ const reducer = (state = initialState, action = {}) => {
         // mais dans newMessage
         newExperienceMessage: {
           ...state.newExperienceMessage,
-          // inverse la valeur de hasANewMessageBeenSent
           messageExpContent: action.content,
         },
       };
@@ -152,7 +150,6 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         newExperienceMessage: {
           ...state.newExperienceMessage,
-          // inverse la valeur de hasANewMessageBeenSent
           receiverId: action.id,
         },
       };

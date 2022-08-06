@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 
 function Footer() {
 
+  // On récupère le statut de connexion dans le state
+  // Si la personne est connectée, on affiche le lien vers le back office
   const { logged } = useSelector((state) => state.user);
 
   return (

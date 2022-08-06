@@ -1,9 +1,8 @@
-// Composant qui gère l'affichage de la description
-// Spécifique à la page Home - V1
 // == Import
 import './style.scss';
 
-
+// Composant qui gère l'affichage de la description
+// Spécifique à la page Home & volunteer
 function Description() {
   return (
     <div className="Description">

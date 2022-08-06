@@ -1,8 +1,8 @@
 // == Import
-import LogIn from '../LogIn';
-import SignIn from '../SignIn';
 import 'semantic-ui-css/semantic.min.css';
 import './style.scss';
+import LogIn from '../LogIn';
+import SignIn from '../SignIn';
 import NavBar from '../Nav';
 import ProfileHeader from '../ProfileHeader';
 // Import de useSelector pour récupérer la valeur de connexion

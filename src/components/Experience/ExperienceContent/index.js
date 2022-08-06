@@ -4,8 +4,8 @@ import { Button, Icon } from 'semantic-ui-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchExperienceById } from '../../../actions/experience';
-import NewExperienceMessage from './NewMessage';
 import { setReceiverId, toggleNewExpMessage } from '../../../actions/message';
+import NewExperienceMessage from './NewMessage';
 
 function Experience() {
   // ----------------GatheredData--------------------
@@ -15,7 +15,7 @@ function Experience() {
     detailedExperienceUser, detailedExperienceStructure, detailedExperienceVolunteering,
   } = useSelector((state) => state.experiences);
   const { logged } = useSelector((state) => state.user);
-  //------------------------------------------------
+
   // ----------------Functions--------------------
   const dispatch = useDispatch();
   useEffect(() => {
@@ -26,7 +26,8 @@ function Experience() {
     dispatch(toggleNewExpMessage());
     dispatch(setReceiverId(detailedExperienceUser.id));
   };
-  //---------------------------------------------
+
+  //------------------Component---------------------------
   return (
     <div className="content__page__all content__page__others experience">
       <div className="experience__title">

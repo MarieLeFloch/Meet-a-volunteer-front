@@ -1,15 +1,11 @@
 // Imports
 import './style.scss';
-import { Image, Button, Icon } from 'semantic-ui-react';
-import Avatar from '../../../../assets/image/user-default.png';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { changeFieldValue } from '../../../../actions/profile';
-import { Input } from 'semantic-ui-react';
-  
+import { Image } from 'semantic-ui-react';
+import { useSelector } from 'react-redux';  
 
 function ProfileIntro() {
 
+    // On récupère les infos du state qu'on a besoin d'afficher dans l'intro
   const { pseudo, biography, profilePicture } = useSelector((state) => state.profile.profileDetails);
 
   // Verif si profil personnel

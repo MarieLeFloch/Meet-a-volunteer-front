@@ -18,17 +18,12 @@ function ContactContent() {
       <div className="item__container">
 
         <div className="phone__bloc">
-
           <div className="phone__picto">
             <img src={phoneIcon} alt="" className="phone__img" />
           </div>
-
           <div className="phone__number">
-
             <h1>CALL US</h1>
             <p> <strong>France:</strong>+33 245897831 </p>
-            {/* <p> <strong>International:</strong> +1 385-954-6666 </p> */}
-
           </div>
 
         </div>
@@ -37,27 +32,21 @@ function ContactContent() {
           <div className="mail__picto">
             <img src={mailIcon} alt="" className="mail__img" />
           </div>
-
           <div className="mail__adress">
             <h1>MAIL US</h1>
             <p> <strong>Mail adress: </strong>admin@gmail.com </p>
-
           </div>
-
         </div>
 
         <div className="sn__bloc">
           <div className="sn__picto">
             <img src={snIcon} alt="" className="sn__img" />
           </div>
-
           <div className="sn__adress">
             <h1>FOLLOW US</h1>
             <p> <strong>Facebook: </strong>meetavolunteer </p>
             <p> <strong>Instagram: </strong>@meetavolunteer </p>
-
           </div>
-
         </div>
 
       </div>

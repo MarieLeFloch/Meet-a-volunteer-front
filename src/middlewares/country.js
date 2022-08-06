@@ -1,5 +1,6 @@
 // Middleware : s'occupe de ce qui est asynchrone
 // typiquement : appels API
+// Ici on fait appel à une API externe restcountries.com
 
 //= = Imports
 // Import d'axios pour les requêtes API
@@ -10,13 +11,9 @@ import { FETCH_COUNTRY, saveCountry } from '../actions/country';
 const countryMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_COUNTRY: {
-      const state = store.getState();
-      const { countryList } = state.user.settings;
-
       axios.get('https://restcountries.com/v3.1/all?fields=name')
 
         .then((response) => {
-          // console.log(response)
           const countryName = [
           ];
           let i = 0;

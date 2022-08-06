@@ -17,11 +17,9 @@ const axiosInstance = axios.create({
 const messageMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_RECEIVED_MESSAGE: {
-      // On renseigne le end point
       const state = store.getState();
       // Récupération de l'id de l'utilisateur connecté dans le state
       const { id, token } = state.user.login;
-      // console.log(id);
 
       // Requête API avec transmission du token pour authentification
       axiosInstance.get(
@@ -31,7 +29,6 @@ const messageMiddleware = (store) => (next) => (action) => {
 
       // On traite la réponse
         .then((response) => {
-          console.log(response);
           store.dispatch(saveReceivedMessage(response.data));
         })
       // On catche la potentielle erreur
@@ -52,7 +49,6 @@ const messageMiddleware = (store) => (next) => (action) => {
       // console.log(messageContent);
 
       // Requête API avec transmission du token pour authentification
-      //! le header à la fin !!
       axiosInstance.post(
         '/message',
         {
@@ -61,16 +57,10 @@ const messageMiddleware = (store) => (next) => (action) => {
         },
 
         { headers: { Authorization: `Bearer ${token}` } },
-        // {
-        //   message: messageContent,
-        //   userReceiver: receiverId
-        // },
-
       )
 
       // On traite la réponse
         .then((response) => {
-          console.log(response);
         })
       // On catche la potentielle erreur
         .catch(
@@ -89,7 +79,6 @@ const messageMiddleware = (store) => (next) => (action) => {
       // console.log(messageContent);
 
       // Requête API avec transmission du token pour authentification
-      //! le header à la fin !!
       axiosInstance.post(
         '/message',
         {
@@ -98,18 +87,11 @@ const messageMiddleware = (store) => (next) => (action) => {
         },
 
         { headers: { Authorization: `Bearer ${token}` } },
-        // {
-        //   message: messageContent,
-        //   userReceiver: receiverId
-        // },
-
       )
 
       // On traite la réponse
         .then((response) => {
-          console.log(response); 
           store.dispatch(changeNewMessageExpContent(''));
-          console.log(receiverId)
         })
       // On catche la potentielle erreur
         .catch(

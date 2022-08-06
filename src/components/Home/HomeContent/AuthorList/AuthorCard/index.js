@@ -5,13 +5,15 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { saveIdProfile } from '../../../../../actions/profile';
 
+// On récupère en destructuring les infos du/de la volontaire
+// passées en props via map dans les composants de la liste des auteurs prolifiques & liste des volontaires
 function AuthorCard({
   pseudoSlug, pseudo, profilePicture, id, nativeCountry, expCounter,
 }) {
   const dispatch = useDispatch();
 
+  // Enregistrement de l'id du profil cliqué pour lancer la récupération de ses infos
   const handleClickProfile = () => {
-    console.log(id);
     dispatch(saveIdProfile(id));
   };
 

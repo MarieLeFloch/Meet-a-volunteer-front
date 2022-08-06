@@ -4,7 +4,17 @@
 // Import d'axios pour les requêtes API
 import axios from 'axios';
 import {
-  ADD_EXPERIENCE, FETCH_EXPERIENCES_BY_ID, FETCH_EXPERIENCES_HOME, saveAddedExpId, saveAddedExpSlug, saveExperienceData, saveExperiencesHome, saveExperienceStructure, saveExperienceThematics, saveExperienceUser, saveExperienceVolunteering, toggleFormError, toggleFormSuccess,
+  ADD_EXPERIENCE, 
+  FETCH_EXPERIENCES_BY_ID, 
+  FETCH_EXPERIENCES_HOME, 
+  saveExperienceData, 
+  saveExperiencesHome, 
+  saveExperienceStructure, 
+  saveExperienceThematics, 
+  saveExperienceUser, 
+  saveExperienceVolunteering, 
+  toggleFormError, 
+  toggleFormSuccess,
 } from '../actions/experience';
 
 const axiosInstance = axios.create({
@@ -14,11 +24,6 @@ const axiosInstance = axios.create({
 const homeExperienceMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_EXPERIENCES_HOME: {
-      // On renseigne le end point
-      // const state = store.getState();
-      // const { filtredThematicId } = state.thematic;
-      // console.log(filtredThematicId);
-
       axiosInstance.get('/experiences/random/8/0')
 
       // On traite la réponse
@@ -107,16 +112,11 @@ const homeExperienceMiddleware = (store) => (next) => (action) => {
       return next(action);
     }
     case FETCH_EXPERIENCES_BY_ID: {
-      // On renseigne le end point
-      // const state = store.getState();
-      // const { filtredThematicId } = state.thematic;
-      // console.log(filtredThematicId);
       const { experiences: { experienceId } } = store.getState();
       axiosInstance.get(`/experiences/${experienceId}`)
 
       // On traite la réponse
         .then((response) => {
-          console.log(response);
           store.dispatch(saveExperienceData(response.data));
           store.dispatch(saveExperienceThematics(response.data.thematic));
           store.dispatch(saveExperienceUser(response.data.user));

@@ -1,8 +1,10 @@
+// Imports
 import './style.scss';
 import PageHeader from '../Header/PageHeader';
 import ContactsContent from '../Contacts/ContactContent';
 import Footer from './../Footer';
 
+// Composant page contact
 function Contacts() {
   return (
     <div className="container__page__all">
@@ -14,5 +16,6 @@ function Contacts() {
   </div>
   )
 }
-      
+
+// Export
 export default Contacts;

@@ -1,9 +1,10 @@
+// Imports
+import './style.scss';
 import Footer from '../Footer';
 import PageHeader from '../Header/PageHeader';
 import Experience from './ExperienceContent';
-import './style.scss';
-import { useSelector } from 'react-redux';
 
+// Composant de la page d'expérience detaillée
 function ExperiencePage() {
   return (
     <div className="container__page__all">

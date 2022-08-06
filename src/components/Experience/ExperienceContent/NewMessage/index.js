@@ -14,6 +14,7 @@ function NewExperienceMessage({ pseudo }) {
     isNewExpMessageOpened,
     hasANewExpMessageBeenSent,
   } = useSelector((state) => state.message.settings);
+  
   // On récupère les infos du destinataire du nouveau message
   const { receiverPseudo, messageExpContent } = useSelector((state) => state.message.newExperienceMessage);
 

@@ -2,35 +2,43 @@
 import './style.scss';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
+// Import des méthodes des librairies
 import { Route, Routes, useLocation } from 'react-router-dom';
-
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
+// Import de nos méthodes (requêtes API)
+import { fetchCountry } from '../../actions/country';
+import { fetchThematics } from '../../actions/thematic';
+import { fetchExperiencesHome } from '../../actions/experience';
+
+// Import de nos composants
 import Home from '../Home';
 import Contacts from '../Contacts';
 import LegalMentions from '../LegalMentions';
 import About from '../About';
 import Error from '../404';
 import ExperiencePage from '../Experience';
-import { fetchCountry } from '../../actions/country';
-import { fetchThematics } from '../../actions/thematic';
 import Volunteers from '../Volunteers';
 import Profile from '../Profile';
 import Conversation from '../Conversation';
 import ExperienceAdd from '../ExperienceAdd';
 import ThematicExperience from '../ThematicExperience';
-import { fetchExperiencesHome } from '../../actions/experience';
 import ProfileUpdate from '../ProfileUpdate';
 
 
 // == Composant
 function App() {
+  // On récupère le statut de connexion dans le state, logged = true si la personne s'est connectée
   const { logged } = useSelector((state) => state.user);
-  // console.log(logged);
 
   const dispatch = useDispatch();
   const location = useLocation();
-  // On récupère dès le chargement de notre application la liste des pays pour le formulaire d'inscription
+
+  // On récupère dès le chargement de notre application 
+  // -> la liste des pays pour les formulaires d'inscription
+  // -> la liste des thématiques pour notre scroll bar
+  // -> la liste aléatoire d'expériences à afficher sur la home
   useEffect(
     () => {
       dispatch(fetchCountry());
@@ -40,6 +48,8 @@ function App() {
     [],
   );
 
+  // On remet la position au top de la page lors de chaque redirection (changement d'url)
+  // location représente l'url actuelle
   useEffect(
     () => {
       window.scrollTo(0, 0);
@@ -47,6 +57,8 @@ function App() {
     [location],
   );
   
+  // On inclue dans app toutes les routes de notre application, et on associe le composant correspondant
+  // Pour celles accessibles que lorsqu'on est connecté, on fourni le composant correspond si logged est true, sinon on redirige vers une 404
   return (
     <div className="app">
       <Routes>

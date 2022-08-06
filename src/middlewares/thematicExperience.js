@@ -15,8 +15,7 @@ const thematicExperienceMiddleware = (store) => (next) => (action) => {
       // On renseigne le end point
       const state = store.getState();
       const { filtredThematicId } = state.thematic;
-      // console.log(filtredThematicId);
-
+      
       axiosInstance.get(`/experiences/thematic/${filtredThematicId}/20/0`)
 
       // On traite la réponse

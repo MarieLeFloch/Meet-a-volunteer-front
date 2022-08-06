@@ -4,30 +4,25 @@ import {
   Form, Select, Button, Input,
 } from 'semantic-ui-react';
 import { useDispatch, useSelector } from 'react-redux';
-import Avatar from '../../../assets/image/user-default.png';
 import { submitProfile, changeFieldValue } from '../../../actions/profile';
 
 function ProfileUpdateForm() {
 // -----------------RECUPERATION DES DONNEES DU STATE------------------
   const {
-    id, pseudo, firstname, lastname, age, profilePicture, email, biography, nativeCountry, phone,
+    pseudo, firstname, lastname, age, profilePicture, email, biography, nativeCountry,
   } = useSelector((state) => state.profile.profileDetails);
-
-  const {
-    password,
-  } = useSelector((state) => state.user.login);
 
   const countryList = useSelector((state) => state.country.countryList);
 
   const dispatch = useDispatch();
+
+  // Envoi du formulaire
   const handleSubmit = () => {
-    console.log(profilePicture);
     dispatch(submitProfile());
   };
+
   // -------------- HANDLES ON CHANGE ------------
   const handleImageChange = (event) => {
-    // const output = document.getElementById('output');
-    // output.src = URL.createObjectURL(event.target.files[0]);
     console.log(event.target.files[0]);
     dispatch(changeFieldValue((event.target.files[0]), 'profilePicture'));
   };
@@ -58,7 +53,6 @@ function ProfileUpdateForm() {
 
   // Ecouteur d'événement : on peut mettre l'événement en argument, et aussi la valeur
   const handleCountryChange = (event, value) => {
-    // console.log(value.value);
     dispatch(changeFieldValue(value.value, 'nativeCountry'));
   };
 

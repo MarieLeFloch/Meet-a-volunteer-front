@@ -1,5 +1,4 @@
 //= = Imports
-
 import axios from 'axios';
 import {
   FETCH_VOLUNTEERING_TYPE, saveVolunteeringType, FETCH_RECEPTION_STRUCTURE, saveReceptionStructure,

@@ -9,30 +9,34 @@ import {
 } from '../../../../actions/message';
 
 function NewMessage() {
-  // On récupère la propriété du store dans message settings
+  // On récupère les infos du store qui permettent de gérer l'affichage
   const { isNewMessageOpened, hasANewMessageBeenSent } = useSelector((state) => state.message.settings);
-  // On récupère les infos du destinataire du nouveau message
+
+  // On récupère les infos du destinataire du nouveau message & son contenu pour les afficher (champs contrôlés)
   const { receiverPseudo, messageContent } = useSelector((state) => state.message.newMessage);
 
   const dispatch = useDispatch();
 
+  // Méthode gérant l'affichage de l'encart
   const handleToggleNewMessage = () => {
-    // console.log('je suis la');
     if (hasANewMessageBeenSent) {
       dispatch(toggleSuccessMessage());
     }
     dispatch(toggleNewMessageSettings());
   };
 
+  // Méthode gérant l'affichage du message de succès d'envoi
   const handleToggleSuccessMessage = () => {
     dispatch(toggleSuccessMessage());
     dispatch(saveNewMessage());
   };
 
+  // Méthode permettant l'enregistrement du contenu du message (champ contrôlé)
   const handleNewMessageContent = (event) => {
     dispatch(changeNewMessageContent(event.currentTarget.value));
   };
 
+  // Méthode gérant l'envoi du nouveau message (requête POST)
   const submitNewMessage = () => {
     dispatch(saveNewMessage());
   };
@@ -54,7 +58,6 @@ function NewMessage() {
           <Form.Field
             control={Input}
             label="Pseudo"
-                // placeholder='Pseudo'
             value={receiverPseudo}
           />
           <Form.Field

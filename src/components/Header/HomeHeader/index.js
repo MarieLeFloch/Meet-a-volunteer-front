@@ -1,14 +1,11 @@
 // == Import
-import { Image } from 'semantic-ui-react';
+import './style.scss';
 import Sliders from './Sliders';
 import Description from './Description';
 import LogIn from '../LogIn';
 import SignIn from '../SignIn';
-import 'semantic-ui-css/semantic.min.css';
-import './style.scss';
 import NavBar from '../Nav';
 import ProfileHeader from '../ProfileHeader';
-// Import de useSelector pour récupérer la valeur de connexion
 import { useSelector } from 'react-redux'
 
 function HomeHeader() {

@@ -1,3 +1,5 @@
+// Données utilisées pour le formulaire d'ajout d'une expérience
+
 export const chosenOptions = [
   { key: 'Yes', value: 'Yes', text: 'Yes' },
   { key: 'No', value: 'No', text: 'No' },

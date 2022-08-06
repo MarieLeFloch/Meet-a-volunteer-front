@@ -1,10 +1,8 @@
 @use 'src/styles/vars';
 
 .received__message {
-    // border: 1px solid vars.$color-dark2;
     background-color: vars.$color-light1;
     border-radius: 3px;
-    // width: 90%;
     margin: 1em auto;
     padding: 0.5em;
     width: 100%;
@@ -16,10 +14,6 @@
     &__topBar {
         display: flex;
         justify-content: space-between;
-
-        & .pseudo{
-            // font-weight: bold;
-        }
 
         & img{
             width: 190px;
@@ -43,7 +37,6 @@
         font-size: 12px ;
         height: 20px ;
         overflow:hidden;
-        // display:inline-block;
         text-overflow: ellipsis;        
     }
 
@@ -52,7 +45,6 @@
         text-align: left;
         padding-top: 0.3em;
         font-size: 14px;
-
     }
 
     &--unRead {

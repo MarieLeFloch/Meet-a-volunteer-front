@@ -7,7 +7,6 @@ function LegalMentionsContent () {
 
    <h1 className="main__title">Legal Mentions</h1>
 
-
     <div className="legalMentions__content">
       <div className="legalMentions__content--nav">
         <ul>

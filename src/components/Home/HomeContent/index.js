@@ -1,8 +1,8 @@
 // Imports
+import './style.scss';
 import CardList from './CardList';
 import ThematicList from './ThematicList';
 import AuthorList from './AuthorList';
-import './style.scss';
 
 function HomeContent() {
   return (

@@ -1,12 +1,15 @@
 // == Import
 import './style.scss';
 import HamburgerMenu from 'react-hamburger-menu';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import NavList from './NavList';
 import Logo from '../../../assets/image/logo.png';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function NavBar() {
+  // Gestion de la barre de nav à optimiser avec le responsive
+  // Ouverture / fermeture du menu au click
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleNav = () => {

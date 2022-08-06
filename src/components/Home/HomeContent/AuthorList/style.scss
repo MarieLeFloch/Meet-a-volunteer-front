@@ -38,9 +38,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  @media screen and (min-width: 1025px) {
-   // width: 33%;
-  }
 }
 .prolific__user--circle {
   padding-right: 0%;
@@ -53,8 +50,6 @@
   height: 200px;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
-  border-radius: 50%;
-  //border: 1px solid vars.$color-dark1 ;
-  
+  border-radius: 50%; 
 }
 
