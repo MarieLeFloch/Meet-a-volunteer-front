@@ -1,11 +1,9 @@
 .Conversation__content {
     padding-top: 8em;
-    width: 90%;
     margin: auto;
 
 
     @media screen and (min-width: 1025px) {
         width: 80%;
-        min-height: 100%;
     }
 }

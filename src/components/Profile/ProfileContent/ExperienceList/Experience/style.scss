@@ -54,11 +54,13 @@
 
     &--icon {
         position: absolute;
-        top: 14em;
-        right: 0em;
+        //! fixer quand retour des images
+        top: 8em;
+        right: 0;
 
         @media screen and (min-width: 1025px) {
             top: 0em;
+            right: -2em;
         }
     }
 

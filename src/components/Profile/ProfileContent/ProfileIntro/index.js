@@ -19,19 +19,9 @@ function ProfileIntro() {
 
 
   return (
+
       <div className='profile__intro'>
           <div className='profile__intro--image'>
-
-          {isOwnProfile &&
-          <div className='profile__edit'>
-            <h2 className='main__title'>Profile</h2>
-            <Link to={`/volunteers/${pseudo}/update`}>
-                    <Button icon className='profile__icon profile__intro__img--icon'>
-                        <Icon name='edit'/>
-                    </Button>
-            </Link>
-          </div>
-          }
 
               <Image src={`http://romain2518-server.eddi.cloud/images/pp/${profilePicture}`} avatar size="small" />
           </div>

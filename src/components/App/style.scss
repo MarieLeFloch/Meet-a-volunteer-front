@@ -1,10 +1,10 @@
 @use 'src/styles/vars';
 
-// Ajustement du footer
-// On met une hauteur minimale = à l'ensemble de l'écran, - le header (10em) & le footer (10em)
-.app > div:nth-child(2) {
-  min-height: calc(100vh - 20em);
-}
+// // Ajustement du footer
+// // On met une hauteur minimale = à l'ensemble de l'écran, - le header (10em) & le footer (10em)
+// .app > div:nth-child(1) {
+//   min-height: calc(100vh - 20em);
+// }
 
 // Centrage de toutes les pages
 .container__page__all {
@@ -39,6 +39,8 @@
   margin: auto;
   padding-bottom: 4em;
   max-width: 90%;
+  // ajustement du footer : contenu doit prendre min 100 vh - footer (10em)
+  min-height: calc(100vh - 10em);
 }
 
 

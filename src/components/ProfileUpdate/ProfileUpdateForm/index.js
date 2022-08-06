@@ -66,7 +66,6 @@ function ProfileUpdateForm() {
     <div className="content__page__all content__page__others profile__content">
       <div className="profile__form">
         <h2 className="main__title">Update profile</h2>
-        <div className='borduretest'></div>
         <div className="profile__form--content">
           <div className="profile__form--imgpreview">
             <img src={`http://romain2518-server.eddi.cloud/images/pp/${profilePicture}`} alt="" />
