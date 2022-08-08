@@ -28,12 +28,12 @@ function PersoInfos() {
   return (
     <div className='profile__infos'>
 
-        <h4>Personnal informations</h4>
+        <h4>Personal informations</h4>
         <ul>
             <li>Pseudo : {pseudo}</li>
             <li>Firstname : {firstname}</li>
             {isOwnProfile &&  <li>Lastname : {lastname}</li>}
-            <li>Age : {convertAge} ans</li>
+            <li>Age : {convertAge} years old</li>
             {isOwnProfile && <li>{email}</li>}
             <li>From : {nativeCountry}</li>
 

@@ -7,7 +7,7 @@ import { FETCH_THEMATICS, saveThematics } from '../actions/thematic';
 
 const axiosInstance = axios.create({
   // on définit l'url de base
-  baseURL: 'http://marielefloch-server.eddi.cloud/api',
+  baseURL: 'http://romain2518-server.eddi.cloud/api',
 });
 const thematicMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

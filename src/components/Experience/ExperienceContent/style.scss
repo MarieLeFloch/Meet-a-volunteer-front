@@ -1,13 +1,9 @@
 @use 'src/styles/vars';
 
 .experience {
-  margin:13rem auto auto auto;
-  border-top: 1px solid vars.$color-dark1;
-  width: 95%;
-  position: relative;
   margin-bottom: 5rem;
   &__title {
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
     color: vars.$color-dark2;
     letter-spacing : 0em;

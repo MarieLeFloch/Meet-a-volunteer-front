@@ -1,7 +1,7 @@
 .experience__form {
 
     @media (min-width: 1025px) {
-        width: 60%;
+        width: 50%;
     }
     
     &--content {
@@ -24,7 +24,20 @@
         margin-bottom: 1rem;
     }
     &__input {
-        max-width: 60%;
+        //max-width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    & .label{
+        background-color: white;
+        color: black;
+    }
+
+    & button.ui.button{
+        width: 10em;
+        margin: auto;
     }
 }   
 

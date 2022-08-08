@@ -62,6 +62,7 @@ function ExperienceForm() {
       dispatch(saveIdProfile(id));
       window.scrollTo(0, 0);
       setTimeout(() => {
+        dispatch(toggleFormSuccess());
         navigate(`/volunteers/${userPseudo}`);
       }, 4000);
     }

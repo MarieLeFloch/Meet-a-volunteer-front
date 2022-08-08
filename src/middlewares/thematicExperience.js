@@ -7,7 +7,7 @@ import { FETCH_EXPERIENCES_BY_THEMATIC, saveExperiencesByThematic } from '../act
 
 const axiosInstance = axios.create({
   // on définit l'url de base
-  baseURL: 'http://marielefloch-server.eddi.cloud/api',
+  baseURL: 'http://romain2518-server.eddi.cloud/api',
 });
 const thematicExperienceMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
